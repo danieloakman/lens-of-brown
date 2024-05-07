@@ -1,1 +1,0 @@
-import{h as o}from"./disclose-version.eYtK9eO8.js";function h(s,r,f){f=f==null?null:f+"";var i=s.__attributes??(s.__attributes={});o&&(i[r]=s.getAttribute(r),r==="src"||r==="href"||r==="srcset")||i[r]!==(i[r]=f)&&(f===null?s.removeAttribute(r):s.setAttribute(r,f))}export{h as s};
