@@ -31,7 +31,9 @@ jobs:
         run: pnpm run build
 
       - name: Deploy 🚀
-        run: pnpm run deploy
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          pnpm run deploy
 
       - uses: actions/upload-artifact@v3
         if: failure()
