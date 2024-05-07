@@ -31,7 +31,7 @@ jobs:
         run: pnpm run build
 
       - name: Deploy 🚀
-        run: pnpm run deploy:pages
+        run: pnpm run deploy
 
       - uses: actions/upload-artifact@v3
         if: failure()
