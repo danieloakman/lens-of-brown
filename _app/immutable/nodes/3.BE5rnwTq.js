@@ -1,0 +1,4 @@
+import{l as r,a as e,t,$ as p}from"../chunks/disclose-version.eYtK9eO8.js";const s=!1,l=s,c=l,d=!0,m=Object.freeze(Object.defineProperty({__proto__:null,csr:c,prerender:d},Symbol.toStringTag,{value:"Module"}));var u=t('<meta name="description" content="About this app">'),v=t(`<div class="text-column"><h1>About this app</h1> <p>This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
+		following into your command line and following the prompts:</p> <pre>npm create svelte@latest</pre> <p>The page you're looking at is purely static HTML, with no client-side interactivity needed.
+		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
+		the devtools network panel and reloading.</p></div>`);function g(o){var a=v();r(n=>{var i=u();p.title="About",e(n,i)}),e(o,a)}export{g as component,m as universal};
