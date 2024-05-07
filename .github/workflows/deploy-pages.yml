@@ -1,4 +1,4 @@
-name: Deploy Documentation
+name: Deploy Website with GH-Pages
 
 on:
   push:
@@ -27,10 +27,10 @@ jobs:
       - name: Install dependencies 🛠️
         run: pnpm install
 
-      - name: Build docs 🏗️
+      - name: Build 🏗️
         run: pnpm run build
 
-      - name: Deploy docs 🚀
+      - name: Deploy 🚀
         run: pnpm run deploy:pages
 
       - uses: actions/upload-artifact@v3
