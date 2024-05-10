@@ -2,9 +2,21 @@
 	import Autoplay from 'embla-carousel-autoplay';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
+	import { browser } from '$app/environment';
+	// import { windowSize } from '$stores/index.svelte';
 
-	export let delay = 3000;
-	export let images: { src: string; alt: string }[];
+	const windowSize = $state({ width: 0, height: 0 });
+	if (browser) {
+		window.addEventListener('resize', () => {
+      if (window.innerWidth !== windowSize.width)
+			  windowSize.width = window.innerWidth;
+			if (window.innerHeight !== windowSize.height)
+        windowSize.height = window.innerHeight;
+		});
+	}
+
+	let { delay = 5000, images }: { delay: number; images: { src: string; alt: string }[] } = $props();
+	// export let images: { src: string; alt: string }[];
 	const plugin = Autoplay({ delay, stopOnInteraction: true });
 </script>
 
@@ -15,12 +27,12 @@
 	on:mousenter={plugin.stop}
 	on:mouseleave={plugin.reset}
 >
-	<Carousel.Content>
+	<Carousel.Content class="w-full">
 		{#each images as { src, alt }}
-			<Carousel.Item>
-				<Card.Root>
-					<Card.Content class="flex items-center justify-center p-0">
-						<img {src} {alt} class="aspect-auto h-full w-full object-cover" />
+			<Carousel.Item class="w-full">
+				<Card.Root class="w-full">
+					<Card.Content class="flex w-full items-center justify-center p-0">
+						<img {src} {alt} class="h-full w-full" width={windowSize.width} />
 					</Card.Content>
 				</Card.Root>
 			</Carousel.Item>
@@ -29,11 +41,3 @@
 	<!-- <Carousel.Previous />
   <Carousel.Next /> -->
 </Carousel.Root>
-
-<style>
-	img {
-		width: 100%;
-		/* max-height: 100%;
-    max-width: 100%; */
-	}
-</style>

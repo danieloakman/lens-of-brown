@@ -19,7 +19,7 @@ const config = {
 		alias: {
 			$components: './src/lib/components',
 			// $icons: './src/lib/icons',
-			// $stores: './src/lib/stores',
+			$stores: './src/lib/stores',
 			// $types: './src/lib/types',
 			$utils: './src/lib/utils',
 			// $constants: './src/lib/constants.ts'
