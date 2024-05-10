@@ -3,19 +3,12 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 	import { browser } from '$app/environment';
-	// import { windowSize } from '$stores/index.svelte';
+	import { windowSize } from '$stores';
 
-	const windowSize = $state({ width: 0, height: 0 });
-	if (browser) {
-		window.addEventListener('resize', () => {
-      if (window.innerWidth !== windowSize.width)
-			  windowSize.width = window.innerWidth;
-			if (window.innerHeight !== windowSize.height)
-        windowSize.height = window.innerHeight;
-		});
-	}
+	windowSize.subscribe(console.log);
 
-	let { delay = 5000, images }: { delay: number; images: { src: string; alt: string }[] } = $props();
+	let { delay = 5000, images }: { delay?: number; images: { src: string; alt: string }[] } =
+		$props();
 	// export let images: { src: string; alt: string }[];
 	const plugin = Autoplay({ delay, stopOnInteraction: true });
 </script>
@@ -31,8 +24,9 @@
 		{#each images as { src, alt }}
 			<Carousel.Item class="w-full">
 				<Card.Root class="w-full">
-					<Card.Content class="flex w-full items-center justify-center p-0">
-						<img {src} {alt} class="h-full w-full" width={windowSize.width} />
+					<Card.Content class="flex w-full items-center justify-center p-0 container">
+						<!-- <div style={`background:image: url(${src})`}></div> -->
+						<img {src} {alt} class="w-full h-auto" />
 					</Card.Content>
 				</Card.Root>
 			</Carousel.Item>
@@ -41,3 +35,10 @@
 	<!-- <Carousel.Previous />
   <Carousel.Next /> -->
 </Carousel.Root>
+
+<style>
+	.container img {
+		width: 100%;
+		/* height: auto; */
+	}
+</style>
