@@ -1,10 +1,13 @@
 <script>
 	import Header from './Header.svelte';
-	import './styles.css';
+	// import './styles.css';
+	import { ModeWatcher, setMode } from "mode-watcher";
+	setMode('system');
 </script>
 
 <div class="app">
 	<Header />
+	<ModeWatcher />
 
 	<main>
 		<slot />
