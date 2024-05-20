@@ -1,14 +1,6 @@
 <script lang="ts">
 	import BannerImageCarousel from '$components/BannerImageCarousel.svelte';
-</script>
-
-<svelte:head>
-	<title>Lens of Brown</title>
-	<meta name="description" content="Lens of Brown Photography" />
-</svelte:head>
-
-<BannerImageCarousel
-	images={[
+	const imgs = [
 		{
 			src: 'https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature.jpg',
 			alt: 'grassy meadow'
@@ -25,7 +17,23 @@
 			src: 'https://vastphotos.com/files/uploads/photos/10691/peaceful-water-landscape-photo-l.jpg?v=20220712073521',
 			alt: 'Road with snowy mountains backdrop'
 		}
-	]}
+	];
+</script>
+
+<svelte:head>
+	<title>Lens of Brown</title>
+	<meta name="description" content="Lens of Brown Photography" />
+</svelte:head>
+
+<!-- <img class="w-full" src={imgs[0].src} alt={imgs[0].alt} /> -->
+<!-- <div
+	class="fill"
+	style="background-image: url('img1.jpg');"
+></div> -->
+<!-- <img class="fill" src="img1.jpg"> -->
+
+<BannerImageCarousel
+	images={imgs}
 />
 
 <section class="m-auto flex flex-col">
