@@ -25,17 +25,27 @@
 	<meta name="description" content="Lens of Brown Photography" />
 </svelte:head>
 
-<!-- <img class="w-full" src={imgs[0].src} alt={imgs[0].alt} /> -->
-<!-- <div
-	class="fill"
-	style="background-image: url('img1.jpg');"
-></div> -->
-<!-- <img class="fill" src="img1.jpg"> -->
+<div class="flex flex-col gap-10">
+	<!-- <img class="object-fit" src={imgs[0].src} alt={imgs[0].alt} /> -->
+	<BannerImageCarousel
+		images={imgs}
+	/>
+	
+	<section class="m-auto flex flex-col">
+		<h1 class="scroll-m-20 justify-center text-4xl font-semibold">Lens of Brown</h1>
+	</section>
+	
+	<section class="m-auto flex flex-col">
+		<h1 class="scroll-m-20 justify-center text-4xl font-semibold">Portfolio</h1>
+	</section>
+	
+	<section class="m-auto flex flex-col gap-2">
+		<h1 class="scroll-m-20 justify-center text-4xl font-semibold">Launching soon...</h1>
+		<p>Something</p>
+		<p>Something</p>
+		<p>Something</p>
+		<p>Something</p>
+		<p>Something</p>
+	</section>
+</div>
 
-<BannerImageCarousel
-	images={imgs}
-/>
-
-<section class="m-auto flex flex-col">
-	<h1 class="scroll-m-20 justify-center text-4xl font-semibold">Launching soon...</h1>
-</section>
