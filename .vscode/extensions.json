@@ -14,6 +14,7 @@
     "orta.vscode-twoslash-queries",
     "pmneo.tsimporter",
     "redhat.vscode-yaml",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss"
   ]
 }
