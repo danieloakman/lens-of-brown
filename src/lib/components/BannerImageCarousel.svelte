@@ -11,14 +11,14 @@
 <Carousel.Root
 	plugins={[plugin]}
 	class="flex"
-	opts={{ loop: true,  }}
+	opts={{ loop: true }}
 	on:mousenter={plugin.stop}
 	on:mouseleave={plugin.reset}
 >
 	<Carousel.Content class="flex">
 		{#each images as { src, alt }}
 			<Carousel.Item class="flex">
-						<img {src} {alt} class="object-cover  w-full" />
+				<img {src} {alt} class="object-cover w-full" />
 			</Carousel.Item>
 		{/each}
 	</Carousel.Content>
