@@ -1,6 +1,8 @@
 <script lang="ts">
 	import BannerImageCarousel from '$components/BannerImageCarousel.svelte';
-	const imgs = [
+	import type { ImgProps } from '$types';
+
+	const imgs: ImgProps[] = [
 		{
 			src: 'https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature.jpg',
 			alt: 'grassy meadow'

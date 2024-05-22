@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Autoplay from 'embla-carousel-autoplay';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
+	import type { ImgProps } from '$types';
 
-	let { delay = 5000, images }: { delay?: number; images: { src: string; alt: string }[] } =
-		$props();
+	let { delay = 5000, images }: { delay?: number; images: ImgProps[] } = $props();
 	// export let images: { src: string; alt: string }[];
 	const plugin = Autoplay({ delay, stopOnInteraction: true });
 </script>
