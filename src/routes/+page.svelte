@@ -40,11 +40,11 @@
 	</section>
 
 	<section class="m-auto flex flex-col gap-2">
-		<h1 class="scroll-m-20 justify-center text-4xl font-semibold">Launching soon...</h1>
 		<p>Something</p>
 		<p>Something</p>
 		<p>Something</p>
 		<p>Something</p>
 		<p>Something</p>
+		<h1 class="scroll-m-20 justify-center text-4xl lg:text-6xl font-semibold">Launching soon...</h1>
 	</section>
 </div>
