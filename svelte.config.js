@@ -25,10 +25,11 @@ const config = {
 		alias: {
 			$components: './src/lib/components',
 			$icons: './src/lib/icons',
+			// $services: './src/lib/services',
 			$stores: './src/lib/stores',
 			$types: './src/lib/types',
-			$utils: './src/lib/utils'
-			// $constants: './src/lib/constants.ts'
+			$utils: './src/lib/utils',
+			$constants: './src/lib/constants.ts'
 		}
 	}
 };

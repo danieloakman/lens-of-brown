@@ -1,0 +1,40 @@
+/*Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+/* (all other styles here...) */
+/*place global styles here */
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('/fonts/Inter.ttf');
+	/* font-display: swap; */
+}
+
+:root {
+	--theme-rounded-base: 20px;
+	--theme-rounded-container: 4px;
+}
+
+:root {
+	--theme-font-family-base: 'Inter', sans-serif;
+	--theme-font-family-heading: 'Inter', sans-serif;
+}
+
+/* * My global styles. * */
+
+.take-no-space {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	vertical-align: baseline !important;
+}
+.non-selectable {
+	user-select: none !important;
+}

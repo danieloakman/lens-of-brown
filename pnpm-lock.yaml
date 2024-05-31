@@ -34,6 +34,9 @@ devDependencies:
   '@playwright/test':
     specifier: ^1.28.1
     version: 1.43.1
+  '@skeletonlabs/skeleton':
+    specifier: ^2.10.0
+    version: 2.10.0(svelte@5.0.0-next.118)
   '@sveltejs/adapter-auto':
     specifier: ^3.0.0
     version: 3.2.0(@sveltejs/kit@2.5.7)
@@ -789,6 +792,15 @@ packages:
 
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
+    dev: true
+
+  /@skeletonlabs/skeleton@2.10.0(svelte@5.0.0-next.118):
+    resolution: {integrity: sha512-jPdDT9PCkGmlUgsgNvR99bK6N2pWG2GfdapwWqDVZkKIhTsLz4TeJNF3H26Pfkicoj4hNz486+WYa7iSpbn80g==}
+    peerDependencies:
+      svelte: ^3.56.0 || ^4.0.0
+    dependencies:
+      esm-env: 1.0.0
+      svelte: 5.0.0-next.118
     dev: true
 
   /@sveltejs/adapter-auto@3.2.0(@sveltejs/kit@2.5.7):
