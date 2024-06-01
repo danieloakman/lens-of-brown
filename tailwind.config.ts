@@ -3,7 +3,7 @@ import { skeleton } from '@skeletonlabs/tw-plugin';
 import { join } from 'path';
 import type { Config } from 'tailwindcss';
 
-import theme from './src/themes/trot1';
+// import theme from './src/themes/trot1';
 
 declare const require: NodeRequire;
 
@@ -24,7 +24,8 @@ const config = {
 		// 4. Append the Skeleton plugin (after other plugins)
 		skeleton({
 			themes: {
-				custom: [theme]
+				preset: ['seafoam']
+				// custom: [theme]
 			}
 		})
 	]

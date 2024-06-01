@@ -1,1 +1,1 @@
-export * from './misc';
+export type * from 'js-utils';

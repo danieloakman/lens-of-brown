@@ -1,58 +1,56 @@
 <script lang="ts">
-	// import Header from './Header.svelte';
-	// import './styles.css';
-	import { ModeWatcher, setMode } from 'mode-watcher';
-	import Header from './Header.svelte';
-	setMode('system');
+	// Most of your app wide CSS should be put in this file
+	import '../app.postcss';
+
+	// import { setTheme } from '$lib';
+	// setTheme();
+
+	import {
+		AppShell,
+		Drawer,
+		Modal,
+		Toast,
+		initializeStores,
+		setInitialClassState
+	} from '@skeletonlabs/skeleton';
+	initializeStores();
+
+	import Header from '$components/Header.svelte';
+	// import Footer from '$components/Footer.svelte';
+	import DrawerContents from '$components/DrawerContents.svelte';
+
+	import { toast } from '$utils';
+	toast.init();
+
+	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+
+	import { storePopup } from '@skeletonlabs/skeleton';
+	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 </script>
 
-<ModeWatcher />
+<Toast />
+<Drawer
+	position="right"
+	width="w-[280px] md:w-[480px]"
+	padding="p-4"
+	rounded="rounded-xl"
+	bgBackdrop="bg-gradient-to-tr from-primary-500/50 via-tertiary-500/50 to-secondary-500/50"
+>
+	<DrawerContents />
+</Drawer>
+<Modal />
 
-<div class="app">
-	<Header />
+<!-- eslint-disable-next-line -->
+<svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head>
 
-	<main>
-		<slot />
-	</main>
+<AppShell>
+	<svelte:fragment slot="header">
+		<Header />
+	</svelte:fragment>
 
-	<!-- <footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer> -->
-</div>
+	<!-- <svelte:fragment slot="footer">
+		<Footer />
+	</svelte:fragment> -->
 
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		/* padding: 1rem; */
-		width: 100%;
-		/* max-width: 64rem; */
-		/* margin: 0 auto; */
-		/* box-sizing: border-box; */
-	}
-
-	/* footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	} */
-
-	/* footer a {
-		font-weight: bold;
-	} */
-
-	/* @media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	} */
-</style>
+	<slot />
+</AppShell>

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { AddIcon } from '$icons';
+	import { Icon } from '$lib';
 	import type { ComponentType } from 'svelte';
 	import { createEventDispatcher } from 'svelte';
 
-	export let ButtonIcon: ComponentType = AddIcon;
+	export let ButtonIcon: ComponentType = Icon.CirclePlus;
 	export let value = '';
 	export let disabled = false;
 	export let placeholder = '';

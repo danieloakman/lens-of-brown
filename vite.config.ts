@@ -17,5 +17,5 @@ export default defineConfig({
 	},
 	define: {
 		'import.meta.vitest': undefined
-	},
+	}
 });

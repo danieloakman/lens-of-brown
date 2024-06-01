@@ -1,11 +1,5 @@
-import { writable } from 'svelte/store';
-
-import { browser } from '$app/environment';
-
-export const windowSize = writable({ width: 0, height: 0 });
-if (browser) {
-	windowSize.set({ width: window.innerWidth, height: window.innerHeight });
-	window.addEventListener('resize', () =>
-		windowSize.set({ width: window.innerWidth, height: window.innerHeight })
-	);
-}
+/*
+ * This is for implementations of stores. See lib/utils/stores/ for utilities for stores.
+ */
+export * from './ui';
+export * from './misc';

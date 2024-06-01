@@ -2,7 +2,7 @@
 	"recommendations": [
 		"usernamehw.errorlens",
 		"dbaeumer.vscode-eslint",
-	  "eamodio.gitlens",
+		"eamodio.gitlens",
 		"visualstudioexptteam.vscodeintellicode",
 		"ms-vscode.vscode-typescript-next",
 		"pkief.material-icon-theme",

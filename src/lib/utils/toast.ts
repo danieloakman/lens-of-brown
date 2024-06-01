@@ -1,5 +1,4 @@
 import { type ToastSettings, getToastStore } from '@skeletonlabs/skeleton';
-import { errorMessage } from '@together/shared/utils';
 import { type Fn, type Nullish, isNullish, once } from 'js-utils';
 
 export type CallOnCallbackResult = Nullish<
@@ -83,3 +82,8 @@ export const toast = {
 	triggerOnError: async <T extends Fn>(fn: T) =>
 		toast.triggerOn(fn, { error: (e) => errorMessage(e) })
 };
+
+function errorMessage(e: unknown): string {
+	// This was origianlly from `together`, but didn't copy it over.
+	return e instanceof Error ? e.message : String(e);
+}
