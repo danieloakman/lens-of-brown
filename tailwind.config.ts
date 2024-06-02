@@ -3,7 +3,6 @@ import { skeleton } from '@skeletonlabs/tw-plugin';
 import { join } from 'path';
 import type { Config } from 'tailwindcss';
 
-// import theme from './src/themes/trot1';
 import { brown1 } from './src/themes';
 
 declare const require: NodeRequire;
