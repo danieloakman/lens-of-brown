@@ -4,6 +4,7 @@ import { join } from 'path';
 import type { Config } from 'tailwindcss';
 
 // import theme from './src/themes/trot1';
+import { brown1 } from './src/themes';
 
 declare const require: NodeRequire;
 
@@ -24,8 +25,7 @@ const config = {
 		// 4. Append the Skeleton plugin (after other plugins)
 		skeleton({
 			themes: {
-				preset: ['seafoam']
-				// custom: [theme]
+				custom: [brown1]
 			}
 		})
 	]
