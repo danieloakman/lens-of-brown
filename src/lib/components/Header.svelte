@@ -21,7 +21,14 @@
 	const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 </script>
 
-<AppBar padding="p-2" gap="gap-2" background="variant-filled-surface">
+<AppBar
+	padding="p-2"
+	gap="gap-2"
+	background="variant-filled-surface"
+	gridColumns="grid-cols-3"
+	slotDefault="place-self-center"
+	slotTrail="place-content-end"
+>
 	<svelte:fragment slot="lead">
 		{#if canGoBack($routes)}
 			<button
@@ -33,7 +40,7 @@
 		{/if}
 	</svelte:fragment>
 
-	{#if !$routes.length}
+	<!-- {#if !$routes.length}
 		<span>Home</span>
 	{:else}
 		<ol class="flex flex-row gap-1">
@@ -44,9 +51,14 @@
 				{/if}
 			{/each}
 		</ol>
-	{/if}
+	{/if} -->
 
 	<!-- {$page.route.id} -->
+
+	<!-- <h1 class="text-3xl"> -->
+		<!-- TODO: put Lens of Brown logo or title here -->
+		<!-- <img src="imgs/Logo.png" alt="Logo" height="100px" /> -->
+	<!-- </h1> -->
 
 	<svelte:fragment slot="trail">
 		{#if $headerStore}
