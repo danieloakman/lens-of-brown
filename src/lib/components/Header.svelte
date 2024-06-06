@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { Icon, routes } from '$lib';
-	import { AppBar, LightSwitch, getDrawerStore } from '@skeletonlabs/skeleton';
+	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
 	import { headerStore } from '$stores/ui';
 
 	function canGoBack(routes: string[]): boolean {
