@@ -11,6 +11,8 @@ export const headerStore = writable<Nullish<ComponentType>>();
  */
 export const drawerContentStore = writable<Nullish<ComponentType>>();
 
+export const windowSize = $state({ w: 0, h: 0 });
+
 // /** Width and height of the window. */
 // export const windowSize = windowSizeStore({ window });
 

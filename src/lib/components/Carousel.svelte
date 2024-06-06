@@ -1,6 +1,4 @@
 <script lang="ts">
-	const windowSize: { w: number; h: number } = $state({ h: 0, w: 0 });
-
 	const {
 		buttons,
 		nextDelayMs = 5000,
@@ -44,8 +42,6 @@
 	}, nextDelayMs);
 </script>
 
-<svelte:window bind:innerWidth={windowSize.w} bind:innerHeight={windowSize.h} />
-
 <div class="grid grid-cols-[auto_1fr_auto] items-center">
 	<!-- Button: Left -->
 	<!-- <button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
@@ -58,7 +54,6 @@
 			  class="snap-center object-scale-down"
 				{src}
 				{alt}
-				height={windowSize.h}
 			/>
 		{/each}
 		<!-- Working example, but doesn't stretch the image -->
