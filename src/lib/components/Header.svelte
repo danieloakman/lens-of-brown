@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { Icon, routes } from '$lib';
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
-	import { headerStore } from '$stores/ui';
+	import { headerStore } from '$stores/ui.svelte';
 
 	function canGoBack(routes: string[]): boolean {
 		if (['about', 'settings'].includes(routes[0] ?? '')) return true;
@@ -23,7 +23,6 @@
 	padding=""
 	gap="gap-2"
 	background="variant-filled-surface"
-	gridColumns="grid-cols-3"
 	slotDefault="place-self-center"
 	slotTrail="place-content-end"
 >
@@ -38,7 +37,13 @@
 		{/if}
 	</svelte:fragment>
 
-	<a href="/" class="text-4xl">Lens of Brown</a>
+	<a href="/" class="sm:hidden text-4xl">Lens of Brown</a>
+
+	<div class="hidden sm:flex flex-row gap-5 items-baseline">
+		<a href="/about" class="md:text-2xl">About</a>
+		<a href="/" class="md:text-5xl">Lens of Brown</a>
+		<a href="/portfolio" class="md:text-2xl">Portfolio</a>
+	</div>
 
 	<svelte:fragment slot="trail">
 		{#if $headerStore}
