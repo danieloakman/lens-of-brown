@@ -38,7 +38,7 @@
 		{/if}
 	</svelte:fragment>
 
-	<h1 class="font-Black-mango text-4xl">Lens of Brown</h1>
+	<a href="/" class="text-4xl">Lens of Brown</a>
 
 	<svelte:fragment slot="trail">
 		{#if $headerStore}
