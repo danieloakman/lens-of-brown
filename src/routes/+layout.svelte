@@ -31,9 +31,9 @@
 <Toast />
 <Drawer
 	position="right"
-	width="w-[280px] md:w-[480px]"
-	padding="p-4"
-	rounded="rounded-xl"
+	width="w-[400px] md:w-[480px] lg:w-[700px]"
+	padding="p-0"
+	rounded="rounded-none"
 	bgBackdrop="bg-gradient-to-tr from-primary-500/50 via-tertiary-500/50 to-secondary-500/50"
 >
 	<DrawerContents />
