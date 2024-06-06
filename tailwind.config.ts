@@ -16,7 +16,10 @@ const config = {
 		join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')
 	],
 	theme: {
-		extend: {}
+		extend: {},
+		fontFamily: {
+			'Black-mango': 'Black-mango'
+		}
 	},
 	plugins: [
 		require('@tailwindcss/forms'),
