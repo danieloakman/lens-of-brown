@@ -57,11 +57,7 @@
 			class="btn-icon variant-filled-ghost w-16 p-0 m-0"
 			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 		>
-			{#if $drawerStore.open}
-				<Icon.PanelRightClose class="text-4xl" />
-			{:else}
-				<Icon.Menu class="text-4xl" />
-			{/if}
+			<Icon.Menu class="text-4xl" />
 		</button>
 	</svelte:fragment>
 </AppBar>
