@@ -21,7 +21,7 @@
 	const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 </script>
 
-<AppBar padding="p-2" gap="gap-2">
+<AppBar padding="p-2" gap="gap-2" background="variant-filled-surface">
 	<svelte:fragment slot="lead">
 		{#if canGoBack($routes)}
 			<button
@@ -54,13 +54,13 @@
 		{/if}
 
 		<button
-			class="btn-icon variant-filled-primary"
+			class="btn-icon variant-filled-ghost w-16 p-0 m-0"
 			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 		>
 			{#if $drawerStore.open}
-				<Icon.PanelRightClose />
+				<Icon.PanelRightClose class="text-4xl" />
 			{:else}
-				<Icon.Menu />
+				<Icon.Menu class="text-4xl" />
 			{/if}
 		</button>
 	</svelte:fragment>
