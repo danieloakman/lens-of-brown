@@ -3,7 +3,6 @@
 	import { Icon } from '$lib';
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
 	import { headerStore } from '$stores/ui.svelte';
-	import '../../app.postcss';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
