@@ -18,33 +18,44 @@
 	slotTrail="place-content-end"
 >
 	<svelte:fragment slot="lead">
-		<div></div>
+		<div class=""></div>
 	</svelte:fragment>
 
+	<!-- TODO: centre this -->
 	<a href="/" class="md:hidden text-3xl">Lens of Brown</a>
 
 	<nav class="hidden md:flex flex-row gap-5 items-baseline">
-		<a aria-current={isCurrentPage('/about')} href="/about" class="text-lg hover:text-tertiary-400"
-			>About</a
-		>
+		<a aria-current={isCurrentPage('/about')} href="/about" class="text-lg hover:text-tertiary-400">
+			About
+		</a>
 		<a
 			aria-current={isCurrentPage('/contact')}
 			href="/contact"
-			class="text-lg hover:text-tertiary-400">Contact</a
+			class="text-lg hover:text-tertiary-400"
 		>
-		<a aria-current={isCurrentPage('/')} href="/" class="text-5xl hover:text-tertiary-400"
-			>Lens of Brown</a
+			Contact
+		</a>
+		<a
+			aria-current={isCurrentPage('/')}
+			href="/"
+			class="text-5xl hover:text-tertiary-400"
 		>
+			Lens of Brown
+		</a>
 		<a
 			aria-current={isCurrentPage('/portfolio')}
 			href="/portfolio"
-			class="text-lg hover:text-tertiary-400">Portfolio</a
+			class="text-lg hover:text-tertiary-400"
 		>
+			Portfolio
+		</a>
 		<a
 			aria-current={isCurrentPage('/pricing')}
 			href="/pricing"
-			class="text-lg hover:text-tertiary-400">Pricing</a
+			class="text-lg hover:text-tertiary-400"
 		>
+			Pricing
+		</a>
 	</nav>
 
 	<svelte:fragment slot="trail">
