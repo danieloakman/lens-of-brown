@@ -1,22 +1,13 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import { Icon, routes } from '$lib';
+	import { page } from '$app/stores';
+	import { Icon } from '$lib';
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
 	import { headerStore } from '$stores/ui.svelte';
-
-	function canGoBack(routes: string[]): boolean {
-		if (['about', 'settings'].includes(routes[0] ?? '')) return true;
-		if (routes.length > 1) return true;
-		return false;
-	}
-
-	function goBack(routes: string[]) {
-		const current = routes.pop();
-		if (!current) return;
-		goto('/' + routes.join('/'));
-	}
+	import '../../app.postcss';
 
 	const drawerStore = getDrawerStore();
+	const isCurrentPage = (href: string): 'page' | undefined =>
+		href === $page.url.pathname ? 'page' : undefined;
 </script>
 
 <AppBar
@@ -27,23 +18,18 @@
 	slotTrail="place-content-end"
 >
 	<svelte:fragment slot="lead">
-		{#if canGoBack($routes)}
-			<button
-				class="btn-icon btn-sm variant-filled-primary my-0 py-0"
-				on:click={() => goBack($routes)}
-			>
-				<Icon.ChevronLeft />
-			</button>
-		{/if}
+		<div></div>
 	</svelte:fragment>
 
-	<a href="/" class="sm:hidden text-4xl">Lens of Brown</a>
+	<a href="/" class="md:hidden text-3xl">Lens of Brown</a>
 
-	<div class="hidden sm:flex flex-row gap-5 items-baseline">
-		<a href="/about" class="md:text-2xl">About</a>
-		<a href="/" class="md:text-5xl">Lens of Brown</a>
-		<a href="/portfolio" class="md:text-2xl">Portfolio</a>
-	</div>
+	<nav class="hidden md:flex flex-row gap-5 items-baseline">
+		<a aria-current={isCurrentPage('/about')} href="/about" class="text-lg">About</a>
+		<a aria-current={isCurrentPage('/contact')} href="/contact" class="text-lg">Contact</a>
+		<a aria-current={isCurrentPage('/')} href="/" class="text-5xl">Lens of Brown</a>
+		<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" class="text-lg">Portfolio</a>
+		<a aria-current={isCurrentPage('/pricing')} href="/pricing" class="text-lg">Pricing</a>
+	</nav>
 
 	<svelte:fragment slot="trail">
 		{#if $headerStore}
