@@ -2,7 +2,7 @@
 	"name": "lens-of-brown",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"deploy": "gh-pages -d build --nojekyll -u \"Daniel Oakman <42539848+danieloakman@users.noreply.github.com>\"",
