@@ -40,7 +40,7 @@
 			class="btn-icon variant-filled-ghost w-16 p-0 m-0"
 			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 		>
-			<Icon.Menu class="text-4xl" />
+			<Icon.Menu class="text-3xl" />
 		</button>
 	</svelte:fragment>
 </AppBar>
