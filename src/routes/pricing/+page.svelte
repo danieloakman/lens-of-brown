@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Divider from "$components/Divider.svelte";
+	import PriceList from "./PriceList.svelte";
 
 </script>
 
@@ -13,6 +14,7 @@
 	<h2 class="text-3xl mx-auto">MINI-SHOOTS (10 EDITED IMAGES)</h2>
 
 	<div>
+		<!-- <PriceList prices={[['FAMILY', 150]]} class="mx-auto px-10 py-5"/> -->
 		<div>
 			<span>FAMILY</span>
 			<span>$150</span>
