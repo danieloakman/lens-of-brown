@@ -21,40 +21,14 @@
 	</svelte:fragment>
 
 	<!-- TODO: centre this -->
-	<a href="/" class="md:hidden text-3xl">Lens of Brown</a>
+	<a href="/" class="md:hidden text-3xl font-Black-mango">Lens of Brown</a>
 
 	<nav class="hidden md:flex flex-row gap-5 items-baseline">
-		<a aria-current={isCurrentPage('/about')} href="/about" class="text-lg hover:text-tertiary-400">
-			About
-		</a>
-		<a
-			aria-current={isCurrentPage('/contact')}
-			href="/contact"
-			class="text-lg hover:text-tertiary-400"
-		>
-			Contact
-		</a>
-		<a
-			aria-current={isCurrentPage('/')}
-			href="/"
-			class="text-5xl hover:text-tertiary-400"
-		>
-			Lens of Brown
-		</a>
-		<a
-			aria-current={isCurrentPage('/portfolio')}
-			href="/portfolio"
-			class="text-lg hover:text-tertiary-400"
-		>
-			Portfolio
-		</a>
-		<a
-			aria-current={isCurrentPage('/pricing')}
-			href="/pricing"
-			class="text-lg hover:text-tertiary-400"
-		>
-			Pricing
-		</a>
+		<a aria-current={isCurrentPage('/about')} href="/about" class="header"> About </a>
+		<a aria-current={isCurrentPage('/contact')} href="/contact" class="header"> Contact </a>
+		<a aria-current={isCurrentPage('/')} href="/" class="header-home"> Lens of Brown </a>
+		<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" class="header"> Portfolio </a>
+		<a aria-current={isCurrentPage('/pricing')} href="/pricing" class="header"> Pricing </a>
 	</nav>
 
 	<svelte:fragment slot="trail">
@@ -70,3 +44,18 @@
 		</button>
 	</svelte:fragment>
 </AppBar>
+
+<style lang="postcss">
+	/* Highlights current route the page is on. */
+	a[aria-current='page'] {
+		@apply text-tertiary-400 underline;
+	}
+
+	.header {
+		@apply text-lg hover:text-tertiary-400 font-Black-mango;
+	}
+
+	.header-home {
+		@apply text-5xl hover:text-tertiary-400 font-Black-mango;
+	}
+</style>
