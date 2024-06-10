@@ -11,12 +11,6 @@ body {
 	@apply h-full overflow-hidden;
 }
 
-/*
-TODO: update fonts
-Black-mango - logo font *DONE*
-versailles - price guide font *HAVE NOT BEEN ABLE TO FIND FOR FREE*
-*/
-
 @font-face {
 	font-family: 'Inter';
 	src: url('/fonts/Inter.ttf');
@@ -26,7 +20,12 @@ versailles - price guide font *HAVE NOT BEEN ABLE TO FIND FOR FREE*
 @font-face {
 	font-family: 'Black-mango';
 	src: url('/fonts/BlackMango-Regular.ttf');
-	/* font-display: swap; */
+}
+
+@font-face {
+	/* This is a near enough similar font to what Trotty wanted: Versailles */
+	font-family: 'LongTime';
+	src: url('/fonts/LongTime.ttf');
 }
 
 :root {
@@ -49,9 +48,4 @@ versailles - price guide font *HAVE NOT BEEN ABLE TO FIND FOR FREE*
 }
 .non-selectable {
 	user-select: none !important;
-}
-
-/* Highlights current route the page is on. */
-a[aria-current='page'] {
-	@apply text-tertiary-400 underline
 }

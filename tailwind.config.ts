@@ -18,7 +18,8 @@ const config = {
 	theme: {
 		extend: {},
 		fontFamily: {
-			'Black-mango': 'Black-mango'
+			'Black-mango': 'Black-mango',
+			'LongTime': 'LongTime',
 		}
 	},
 	plugins: [
