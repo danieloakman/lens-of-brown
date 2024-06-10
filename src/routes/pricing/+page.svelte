@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Divider from "$components/Divider.svelte";
+
 </script>
 
 <div class="flex flex-col pb-8">
@@ -6,7 +8,7 @@
 		PRICE &nbsp;&nbsp; LIST*
 	</h1>
 
-	<hr class="!border-t-2" />
+	<Divider horizontal width={2}/>
 
 	<h2 class="text-3xl mx-auto">MINI-SHOOTS (10 EDITED IMAGES)</h2>
 
@@ -69,7 +71,7 @@
 		</div>
 	</div>
 
-  <hr class="!border-t-2"/>
+	<Divider horizontal />
 
   <h3 class="mx-auto">*PRICES SUBJECT TO CHANGE AT ANY TIME</h3>
 </div>
