@@ -83,8 +83,8 @@ devDependencies:
     specifier: ^6.1.1
     version: 6.1.1
   js-utils:
-    specifier: https://github.com/danieloakman/js-utils/releases/download/v0.10.0/package.tgz
-    version: '@github.com/danieloakman/js-utils/releases/download/v0.10.0/package.tgz'
+    specifier: https://github.com/danieloakman/js-utils/releases/download/v0.11.0/package.tgz
+    version: '@github.com/danieloakman/js-utils/releases/download/v0.11.0/package.tgz'
   postcss:
     specifier: ^8.4.33
     version: 8.4.38
@@ -3834,8 +3834,8 @@ packages:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
     dev: true
 
-  '@github.com/danieloakman/js-utils/releases/download/v0.10.0/package.tgz':
-    resolution: {tarball: https://github.com/danieloakman/js-utils/releases/download/v0.10.0/package.tgz}
+  '@github.com/danieloakman/js-utils/releases/download/v0.11.0/package.tgz':
+    resolution: {tarball: https://github.com/danieloakman/js-utils/releases/download/v0.11.0/package.tgz}
     name: js-utils
-    version: 0.10.0
+    version: 0.11.0
     dev: true
