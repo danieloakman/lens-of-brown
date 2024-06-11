@@ -50,11 +50,7 @@
 	<!-- Full Images -->
 	<div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto">
 		{#each imgs as { src, alt }}
-			<img
-			  class="snap-center object-scale-down"
-				{src}
-				{alt}
-			/>
+			<img class="snap-center object-scale-down" {src} {alt} />
 		{/each}
 		<!-- Working example, but doesn't stretch the image -->
 		<!-- {#each unsplashIds as unsplashId}

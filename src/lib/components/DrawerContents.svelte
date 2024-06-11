@@ -22,10 +22,9 @@
 	{#if $drawerContentStore}
 		<svelte:component this={$drawerContentStore} />
 	{:else}
-	<!-- TODO: put vertical nav here: -->
+		<!-- TODO: put vertical nav here: -->
 		<div>
 			<!-- <a href="/" class="btn-ghost">Home</a> -->
-
 		</div>
 	{/if}
 {/if}
