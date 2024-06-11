@@ -56,10 +56,10 @@
 		</div>
 	</div>
 
-	<div class="mx-auto p-6 card flex flex-row justify-between gap-2">
-		<span>LENS.OFBROWN</span>
-		<Divider vertical width={2} />
-		<span>INFO@LENSOFBROWN.COM.AU</span>
+	<div class="mx-auto card card-hover flex flex-row justify-between gap-2">
+		<a href="https://www.instagram.com/lens.ofbrown/" class="p-3" target="_blank">LENS.OFBROWN</a>
+		<Divider vertical class="p-0 m-0" width={1} />
+		<a href="mailto: info@lensofbrown.com.au" class="p-3">INFO@LENSOFBROWN.COM.AU</a>
 	</div>
 
 	<Divider horizontal />
@@ -69,9 +69,9 @@
 
 <style lang="postcss">
 	h1 {
-		@apply text-5xl
+		@apply text-5xl;
 	}
 	h2 {
-		@apply text-3xl
+		@apply text-3xl;
 	}
 </style>
