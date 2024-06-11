@@ -11,9 +11,9 @@
 {#if horizontal}
 	<hr style={`border-top-width:${width}px`} {...rest} />
 {:else if vertical}
-<!-- TODO: Fix width: -->
 	<span
 		class={'divider-vertical w-full' + rest.class}
+		style={`border-left-width:${width}px`}
 		{...omit(rest, 'class')}
 	>
 	</span>

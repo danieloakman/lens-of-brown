@@ -58,7 +58,7 @@
 
 	<div class="mx-auto p-6 card flex flex-row justify-between gap-2">
 		<span>LENS.OFBROWN</span>
-		<Divider vertical class="text-success-500 w-full" width={10} />
+		<Divider vertical width={2} />
 		<span>INFO@LENSOFBROWN.COM.AU</span>
 	</div>
 
