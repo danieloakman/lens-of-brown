@@ -19,9 +19,7 @@
 </script>
 
 <div class="flex flex-col pb-8 gap-10">
-	<h1 class="text-primary-500 dark:text-primary-100 mx-auto pt-10">
-		PRICE &nbsp;&nbsp; LIST*
-	</h1>
+	<h1 class="text-primary-500 dark:text-primary-100 mx-auto pt-10">PRICE &nbsp;&nbsp; LIST*</h1>
 
 	<Divider horizontal />
 
@@ -57,9 +55,11 @@
 	</div>
 
 	<div class="mx-auto card card-hover flex flex-row justify-between gap-2">
-		<a href="https://www.instagram.com/lens.ofbrown/" class="p-3" target="_blank">LENS.OFBROWN</a>
+		<a href="https://www.instagram.com/lens.ofbrown" class="p-3" target="_blank"> LENS.OFBROWN </a>
 		<Divider vertical class="p-0 m-0" width={1} />
-		<a href="mailto: info@lensofbrown.com.au" class="p-3">INFO@LENSOFBROWN.COM.AU</a>
+		<a href="mailto: info@lensofbrown.com.au" class="p-3" target="_blank">
+			INFO@LENSOFBROWN.COM.AU
+		</a>
 	</div>
 
 	<Divider horizontal />
