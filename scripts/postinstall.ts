@@ -1,11 +1,10 @@
 #! bun
+import { $ } from 'bun';
 import { stat, writeFile } from 'fs/promises';
 import { globIterateSync } from 'glob';
 import { join, relative, sep } from 'path';
 
 if (import.meta.main) {
-	console.log('Running postinstall script!');
-
 	const rootPath = join(import.meta.dir, '..');
 	const staticManifestPath = join(rootPath, 'src/lib/static-manifest.ts');
 	const staticPath = join(rootPath, 'static');
@@ -24,10 +23,14 @@ if (import.meta.main) {
 		}
 	}
 
+	console.log(`Writing static manifest file to ${relative(rootPath, staticManifestPath)}`);
+
 	await writeFile(
 		staticManifestPath,
 		`
 export const STATIC_FILES = ${JSON.stringify(json, null, 2)} as const;
 `.trimStart()
 	);
+
+	await $`prettier --write ${staticManifestPath}`;
 }

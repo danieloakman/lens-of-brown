@@ -12,7 +12,7 @@ export const toast = {
 	init: () => {
 		toastStore().freeze(0);
 		toastStore().unfreeze(0);
-		console.debug('Toast store initialised.');
+		// console.debug('Toast store initialised.');
 	},
 	close: (id: string) => toastStore().close(id),
 	freeze: (index: number) => toastStore().freeze(index),

@@ -1,8 +1,14 @@
 <script lang="ts">
-	import Carousel from '$components/Carousel.svelte';
+	import ImgCarousel from '$components/ImgCarousel.svelte';
+	import LensOfBrownLogo from '$components/LensOfBrownLogo.svelte';
+	import { STATIC_FILES, windowSize } from '$lib';
+
+	const imgs = Object.values(STATIC_FILES.imgs.clients)
+		.slice(0, 5)
+		.map((src: string) => ({ src, alt: 'Client photo' }));
 </script>
 
-<Carousel
+<!-- <Carousel
 	imgs={[
 		{
 			src: 'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?cs=srgb&dl=pexels-bri-schneiter-28802-346529.jpg&fm=jpg',
@@ -25,4 +31,12 @@
 			alt: 'A desert'
 		}
 	]}
-/>
+/> -->
+
+<div class="flex flex-col gap-2">
+	<!-- TODO: ImgCarousel doesn't appear here, find out why -->
+	<ImgCarousel class="flex w-full" {imgs} nextDelayMs={3000} width="500px" height="500px" />
+	
+
+	<LensOfBrownLogo class="mx-auto p-4"/>
+</div>

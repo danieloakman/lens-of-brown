@@ -23,7 +23,7 @@
 
 	<Divider horizontal />
 
-	<div class="flex flex-col mx-auto gap-6">
+	<div class="flex flex-col mx-auto gap-6 p-4">
 		<div class="flex flex-col gap-6">
 			<h2>MINI-SHOOTS (10 EDITED IMAGES)</h2>
 
@@ -55,9 +55,9 @@
 	</div>
 
 	<div class="mx-auto card card-hover flex flex-row justify-between gap-2">
-		<a href="https://www.instagram.com/lens.ofbrown" class="p-3" target="_blank"> LENS.OFBROWN </a>
+		<a href="https://www.instagram.com/lens.ofbrown" class="p-2 text-xs sm:text-sm md:text-base" target="_blank"> LENS.OFBROWN </a>
 		<Divider vertical class="p-0 m-0" width={1} />
-		<a href="mailto: info@lensofbrown.com.au" class="p-3" target="_blank">
+		<a href="mailto: info@lensofbrown.com.au" class="p-2 text-xs sm:text-sm md:text-base" target="_blank">
 			INFO@LENSOFBROWN.COM.AU
 		</a>
 	</div>
