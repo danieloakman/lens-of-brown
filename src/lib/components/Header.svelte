@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import { Icon } from '$lib';
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
-	import { headerStore } from '$stores/ui.svelte';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
@@ -15,15 +14,18 @@
 	background="variant-filled-surface"
 	slotDefault="place-self-center"
 	slotTrail="place-content-end"
+	shadow="shadow-lg"
 >
 	<svelte:fragment slot="lead">
-		<div class=""></div>
+		<div class="md:hidden w-16 ps-auto"></div>
 	</svelte:fragment>
 
 	<!-- TODO: centre this -->
-	<a href="/" class="md:hidden text-3xl font-Black-mango">Lens of Brown</a>
+	<a href="/" aria-current={isCurrentPage('/')} class="md:hidden text-3xl font-Black-mango">
+		Lens of Brown
+	</a>
 
-	<nav class="hidden md:flex flex-row gap-5 items-baseline">
+	<nav class="hidden md:flex flex-row gap-5 items-baseline py-2">
 		<a aria-current={isCurrentPage('/about')} href="/about" class="header"> About </a>
 		<a aria-current={isCurrentPage('/contact')} href="/contact" class="header"> Contact </a>
 		<a aria-current={isCurrentPage('/')} href="/" class="header-home"> Lens of Brown </a>
@@ -32,12 +34,8 @@
 	</nav>
 
 	<svelte:fragment slot="trail">
-		{#if $headerStore}
-			<svelte:component this={$headerStore} />
-		{/if}
-
 		<button
-			class="btn-icon variant-filled-ghost w-16 p-0 m-0"
+			class="md:hidden btn-icon variant-filled-ghost w-16"
 			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 		>
 			<Icon.Menu class="text-3xl" />
