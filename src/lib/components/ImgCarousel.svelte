@@ -70,7 +70,6 @@
 			/>
 		{/if}
 	</div>
-	<!-- {/key} -->
 
 	{#if buttons}
 		<button type="button" class="btn-icon variant-filled" onclick={() => i++}>
