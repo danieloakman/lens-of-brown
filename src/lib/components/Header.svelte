@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { Icon } from '$lib';
-	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
+	import { AppBar, LightSwitch, getDrawerStore } from '@skeletonlabs/skeleton';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
@@ -17,7 +17,7 @@
 	shadow="shadow-lg"
 >
 	<svelte:fragment slot="lead">
-		<div class="md:hidden w-16 ps-auto"></div>
+		<div class=" w-16 ps-auto"></div>
 	</svelte:fragment>
 
 	<!-- TODO: centre this -->
@@ -40,6 +40,11 @@
 		>
 			<Icon.Menu class="text-3xl" />
 		</button>
+
+		<!-- Maybe don't use this -->
+		<div class="hidden md:flex w-16">
+			<LightSwitch />
+		</div>
 	</svelte:fragment>
 </AppBar>
 
