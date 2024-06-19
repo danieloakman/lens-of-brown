@@ -39,6 +39,7 @@
 		"eslint-plugin-svelte": "^2.40.0",
 		"gh-pages": "^6.1.1",
 		"glob": "^10.4.2",
+		"iteragain": "^4.0.1",
 		"js-utils": "https://github.com/danieloakman/js-utils/releases/download/v0.11.0/package.tgz",
 		"postcss": "^8.4.33",
 		"prettier": "^3.3.2",
