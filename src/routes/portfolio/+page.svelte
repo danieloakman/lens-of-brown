@@ -13,6 +13,6 @@
 </script>
 
 <div class="p-4 grid grid-cols-2 gap-4">
-	<ImgCarousel class="" imgs={randImgs.take(3)} />
-	<ImgCarousel class="" imgs={randImgs.take(3)} />
+	<ImgCarousel class="" nextDelayMs={3000} imgs={randImgs.take(3)} />
+	<ImgCarousel class="" nextDelayMs={5000} imgs={randImgs.take(3)} />
 </div>
