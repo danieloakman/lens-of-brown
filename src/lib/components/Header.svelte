@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { facebookUrl, instagramUrl } from '$constants';
 	import { Icon } from '$lib';
 	import { AppBar, LightSwitch, getDrawerStore } from '@skeletonlabs/skeleton';
 
@@ -17,7 +18,14 @@
 	shadow="shadow-lg"
 >
 	<svelte:fragment slot="lead">
-		<div class=" w-16 ps-auto"></div>
+		<div class="w-16 flex flex-row ps-2 gap-1">
+			<a href={instagramUrl} target="_blank" class="btn-icon">
+				<Icon.Instagram class="text-2xl" />
+			</a>
+			<a href={facebookUrl} target="_blank" class="btn-icon">
+				<Icon.Facebook class="text-2xl" />
+			</a>
+		</div>
 	</svelte:fragment>
 
 	<!-- TODO: centre this -->
@@ -35,7 +43,7 @@
 
 	<svelte:fragment slot="trail">
 		<button
-			class="md:hidden btn-icon variant-filled-ghost w-16"
+			class="md:hidden btn-icon w-16"
 			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 		>
 			<Icon.Menu class="text-3xl" />
