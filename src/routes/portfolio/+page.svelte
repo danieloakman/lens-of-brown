@@ -26,14 +26,14 @@
 
 		return array;
 	}
-	const seed = 5;
+	const seed = 10;
 	const imgs = take(
 		shuffle(iter(Object.values(STATIC_FILES.imgs.clients) as string[]).toArray(), seed),
-		10
+		15
 	);
 </script>
 
-<div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 	{#each imgs as img}
 		<img alt="Portfolio image for lens of brown" src={img} />
 	{/each}
