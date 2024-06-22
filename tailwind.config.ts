@@ -20,6 +20,7 @@ const config = {
 		fontFamily: {
 			'Black-mango': 'Black-mango',
 			'Forum': 'Forum',
+			'Cormorant': 'Cormorant',
 			// LongTime: 'LongTime'
 		}
 	},
