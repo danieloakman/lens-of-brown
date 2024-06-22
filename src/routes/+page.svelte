@@ -35,8 +35,7 @@
 
 <div class="flex flex-col gap-2">
 	<!-- TODO: ImgCarousel doesn't appear here, find out why -->
-	<ImgCarousel class="flex w-full" {imgs} nextDelayMs={3000} width="500px" height="500px" />
+	<!-- <ImgCarousel class="" {imgs} nextDelayMs={3000} width="500px" height="500px" /> -->
 	
-
-	<LensOfBrownLogo class="mx-auto p-4"/>
+	<!-- <LensOfBrownLogo class="mx-auto p-4"/> -->
 </div>
