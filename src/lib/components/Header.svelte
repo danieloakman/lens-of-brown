@@ -15,7 +15,7 @@
 	background="variant-filled-surface"
 	slotDefault="place-self-center"
 	slotTrail="place-content-end"
-	shadow="shadow-lg"
+	shadow="shadow-xl"
 >
 	<svelte:fragment slot="lead">
 		<div class="w-16 flex flex-row ps-2 gap-1">
