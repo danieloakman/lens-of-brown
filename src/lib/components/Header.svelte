@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { FACEBOOK_URL, INFO_EMAIL, INSTAGRAM_URL } from '$constants';
-	import { Icon, STATIC_FILES } from '$lib';
+	import { Icon, STATIC_FILES, windowSize } from '$lib';
 	import { AppBar, LightSwitch, getDrawerStore } from '@skeletonlabs/skeleton';
 
 	const drawerStore = getDrawerStore();
@@ -43,17 +43,39 @@
 	</a> -->
 
 	<nav class="flex flex-row gap-5 items-center">
-		<a aria-current={isCurrentPage('/about')} href="/about" class="header hidden min-[910px]:flex">ABOUT</a>
-		<a aria-current={isCurrentPage('/contact')} href="/contact" class="header hidden min-[910px]:flex">CONTACT</a>
+		<a aria-current={isCurrentPage('/about')} href="/about" class="header hidden min-[910px]:flex"
+			>ABOUT</a
+		>
+		<a
+			aria-current={isCurrentPage('/contact')}
+			href="/contact"
+			class="header hidden min-[910px]:flex">CONTACT</a
+		>
 		<a href="/" aria-current={isCurrentPage('/')}>
-			<img
-				src={STATIC_FILES.imgs['transparent-logo-sideways.png']}
-				alt="Lens of Brown logo - header"
-				class="h-[100px]"
-			/>
+			{#if windowSize.w < 410}
+				<img
+					src={STATIC_FILES.imgs['transparent-logo-sideways.png']}
+					alt="Lens of Brown logo - header"
+					class="h-[70px]"
+				/>
+			{:else}
+				<img
+					src={STATIC_FILES.imgs['transparent-logo-sideways.png']}
+					alt="Lens of Brown logo - header"
+					class="h-[100px]"
+				/>
+			{/if}
 		</a>
-		<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" class="header hidden min-[910px]:flex">PORTFOLIO</a>
-		<a aria-current={isCurrentPage('/pricing')} href="/pricing" class="header hidden min-[910px]:flex">PRICING</a>
+		<a
+			aria-current={isCurrentPage('/portfolio')}
+			href="/portfolio"
+			class="header hidden min-[910px]:flex">PORTFOLIO</a
+		>
+		<a
+			aria-current={isCurrentPage('/pricing')}
+			href="/pricing"
+			class="header hidden min-[910px]:flex">PRICING</a
+		>
 	</nav>
 
 	<svelte:fragment slot="trail">
