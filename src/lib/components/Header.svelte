@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { FACEBOOK_URL, INFO_EMAIL, INSTAGRAM_URL } from '$constants';
-	import { Icon } from '$lib';
+	import { Icon, STATIC_FILES } from '$lib';
 	import { AppBar, LightSwitch, getDrawerStore } from '@skeletonlabs/skeleton';
 
 	const drawerStore = getDrawerStore();
@@ -12,7 +12,7 @@
 <AppBar
 	padding=""
 	gap="gap-2"
-	background="variant-filled-surface"
+	background=""
 	slotDefault="place-self-center"
 	slotTrail="place-content-end"
 	shadow="shadow-xl"
@@ -33,7 +33,7 @@
 
 	<!-- TODO: centre this -->
 	<a href="/" aria-current={isCurrentPage('/')} class="min-[910px]:hidden text-2xl min-[390px]:text-3xl font-Black-mango">
-		Lens of Brown
+		<img src={STATIC_FILES.imgs['transparent-logo-sideways.png']} alt="Lens of Brown logo - header" class="h-[100px] brightness-100"/>
 	</a>
 
 	<nav class="hidden min-[910px]:flex flex-row gap-5 items-baseline py-2">
