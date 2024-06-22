@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { FACEBOOK_URL, INFO_EMAIL, INSTAGRAM_URL } from '$constants';
 	import { Icon, STATIC_FILES, windowSize } from '$lib';
-	import { AppBar, LightSwitch, getDrawerStore } from '@skeletonlabs/skeleton';
+	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
@@ -71,7 +71,7 @@
 			class="min-[910px]:hidden btn-icon w-16"
 			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 		>
-			<Icon.Menu class="text-3xl" />
+			<Icon.Menu class="text-2xl text-primary-500" />
 		</button>
 
 		<div class="hidden min-[910px]:flex w-16">

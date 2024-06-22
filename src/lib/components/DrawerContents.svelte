@@ -2,7 +2,7 @@
 	import { dev } from '$app/environment';
 	import { page } from '$app/stores';
 	import { drawerContentStore, windowSize, Icon } from '$lib';
-	import { getDrawerStore, LightSwitch } from '@skeletonlabs/skeleton';
+	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import Divider from './Divider.svelte';
 
 	const drawerStore = getDrawerStore();
@@ -14,7 +14,8 @@
 	<div
 		class="m-0 px-4 h-[65px] card flex flex-row justify-between items-center varient-filled-surface rounded-none"
 	>
-		<LightSwitch />
+		<!-- <LightSwitch /> -->
+		<div></div>
 		<!-- {#if dev}
 			<span class="card p-1 m-0">{windowSize.w}, {windowSize.h}</span>
 		{/if} -->
