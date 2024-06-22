@@ -12,12 +12,13 @@ export const STATIC_FILES = {
 	'browserconfig.xml': 'browserconfig.xml',
 	fonts: {
 		'Inter.ttf': 'fonts/Inter.ttf',
+		'Forum-Regular.ttf': 'fonts/Forum-Regular.ttf',
 		'BlackMango-Regular.ttf': 'fonts/BlackMango-Regular.ttf',
 		'LongTime.ttf': 'fonts/LongTime.ttf'
 	},
 	imgs: {
-		'logo-sideways-on-white.png': 'imgs/logo-sideways-on-white.png',
 		'Price list.png': 'imgs/Price list.png',
+		'transparent-logo-sideways.png': 'imgs/transparent-logo-sideways.png',
 		'Logo.png': 'imgs/Logo.png',
 		clients: {
 			'P5150491.JPG': 'imgs/clients/P5150491.JPG',
