@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { facebookUrl, instagramUrl } from '$constants';
+	import { FACEBOOK_URL, INFO_EMAIL, INSTAGRAM_URL } from '$constants';
 	import { Icon } from '$lib';
 	import { AppBar, LightSwitch, getDrawerStore } from '@skeletonlabs/skeleton';
 
@@ -19,21 +19,24 @@
 >
 	<svelte:fragment slot="lead">
 		<div class="w-16 flex flex-row ps-2 gap-1">
-			<a href={instagramUrl} target="_blank" class="btn-icon">
-				<Icon.Instagram class="text-2xl" />
+			<a href={INSTAGRAM_URL} target="_blank" class="btn-icon">
+				<Icon.Instagram class="text-xl min-[430px]:text-2xl" />
 			</a>
-			<a href={facebookUrl} target="_blank" class="btn-icon">
-				<Icon.Facebook class="text-2xl" />
+			<a href={FACEBOOK_URL} target="_blank" class="btn-icon">
+				<Icon.Facebook class="text-xl min-[430px]:text-2xl" />
+			</a>
+			<a href={INFO_EMAIL} target="_blank" class="btn-icon">
+				<Icon.Mail class="text-xl min-[430px]:text-2xl" />
 			</a>
 		</div>
 	</svelte:fragment>
 
 	<!-- TODO: centre this -->
-	<a href="/" aria-current={isCurrentPage('/')} class="md:hidden text-3xl font-Black-mango">
+	<a href="/" aria-current={isCurrentPage('/')} class="min-[910px]:hidden text-2xl min-[390px]:text-3xl font-Black-mango">
 		Lens of Brown
 	</a>
 
-	<nav class="hidden md:flex flex-row gap-5 items-baseline py-2">
+	<nav class="hidden min-[910px]:flex flex-row gap-5 items-baseline py-2">
 		<a aria-current={isCurrentPage('/about')} href="/about" class="header"> About </a>
 		<a aria-current={isCurrentPage('/contact')} href="/contact" class="header"> Contact </a>
 		<a aria-current={isCurrentPage('/')} href="/" class="header-home"> Lens of Brown </a>
@@ -43,14 +46,14 @@
 
 	<svelte:fragment slot="trail">
 		<button
-			class="md:hidden btn-icon w-16"
+			class="min-[910px]:hidden btn-icon w-16"
 			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 		>
 			<Icon.Menu class="text-3xl" />
 		</button>
 
 		<!-- Maybe don't use this -->
-		<div class="hidden md:flex w-16">
+		<div class="hidden min-[910px]:flex w-16">
 			<LightSwitch />
 		</div>
 	</svelte:fragment>
@@ -69,4 +72,5 @@
 	.header-home {
 		@apply text-5xl hover:text-tertiary-400 font-Black-mango;
 	}
+
 </style>
