@@ -36,7 +36,7 @@
 <div class="flex flex-col">
 	<h1 class="p-4 text-center">See what we've been up to!</h1>
 
-	<div class="py-4 px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+	<div class="py-4 px-4 md:px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 		{#each imgs as img}
 			<img
 				alt="Portfolio for lens of brown"
