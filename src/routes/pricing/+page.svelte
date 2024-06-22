@@ -3,12 +3,13 @@
 
 	type PricePackage = [name: string, amount: number];
 	const miniShoots: PricePackage[] = [
-		['FAMILY', 150],
-		['COUPLES', 150],
-		['ENGAGEMENT', 150],
-		['SOLO', 100],
-		['PETS', 100]
+		['Family', 150],
+		['Couples', 150],
+		['Engagement', 150],
+		['Solo', 100],
+		['Pets', 100]
 	];
+	// TODO: make the below lower case:
 	const packages: PricePackage[] = [
 		['FAMILY OR SIBLINGS', 300],
 		['COUPLES', 300],
@@ -19,7 +20,7 @@
 </script>
 
 <div class="flex flex-col pb-8 gap-10">
-	<h1 class="text-primary-500 dark:text-primary-100 mx-auto pt-10">PRICE &nbsp;&nbsp; LIST*</h1>
+	<h1 class="text-primary-500 dark:text-primary-100 mx-auto pt-10">PRICE LIST*</h1>
 
 	<Divider horizontal />
 
@@ -30,8 +31,8 @@
 			<div class="flex flex-col w-full px-6 gap-4">
 				{#each miniShoots as [name, amount]}
 					<div class="flex flex-row justify-between">
-						<span class="text-lg">{name}</span>
-						<span class="text-lg"><b>$</b>{amount}</span>
+						<span>{name}</span>
+						<span><b>$</b>{amount}</span>
 					</div>
 				{/each}
 			</div>
@@ -46,21 +47,21 @@
 			<div class="flex flex-col w-full px-6 gap-4">
 				{#each packages as [name, amount]}
 					<div class="flex flex-row justify-between">
-						<span class="text-lg">{name}</span>
-						<span class="text-lg"><b>$</b>{amount}</span>
+						<span>{name}</span>
+						<span><b>$</b>{amount}</span>
 					</div>
 				{/each}
 			</div>
 		</div>
 	</div>
 
-	<div class="mx-auto card card-hover flex flex-row justify-between gap-2">
+	<!-- <div class="mx-auto card card-hover flex flex-row justify-between gap-2">
 		<a href="https://www.instagram.com/lens.ofbrown" class="p-2 text-xs sm:text-sm md:text-base" target="_blank"> LENS.OFBROWN </a>
 		<Divider vertical class="p-0 m-0" width={1} />
 		<a href="mailto: info@lensofbrown.com.au" class="p-2 text-xs sm:text-sm md:text-base" target="_blank">
 			INFO@LENSOFBROWN.COM.AU
 		</a>
-	</div>
+	</div> -->
 
 	<Divider horizontal />
 
@@ -69,9 +70,18 @@
 
 <style lang="postcss">
 	h1 {
-		@apply text-5xl;
+		@apply text-5xl font-Forum;
 	}
+
 	h2 {
-		@apply text-3xl;
+		@apply text-3xl font-Forum;
+	}
+
+	h3 {
+		@apply text-xl font-Forum;
+	}
+
+	span {
+		@apply text-xl font-Forum;
 	}
 </style>

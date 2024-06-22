@@ -2,16 +2,13 @@
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 
-	// import { setTheme } from '$lib';
-	// setTheme();
-
 	import {
 		AppShell,
 		Drawer,
 		Modal,
 		Toast,
 		initializeStores,
-		setInitialClassState
+		// setInitialClassState
 	} from '@skeletonlabs/skeleton';
 	initializeStores();
 
@@ -44,7 +41,7 @@
 <Modal />
 
 <!-- eslint-disable-next-line -->
-<svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head>
+<!-- <svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head> -->
 
 <AppShell>
 	<svelte:fragment slot="header">

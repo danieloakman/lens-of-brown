@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { STATIC_FILES } from "$lib";
 	import type { HTMLAttributes } from "svelte/elements";
 	import Divider from "./Divider.svelte";
+  import AndroidChromeLogo from '$static/android-chrome-512x512.png?url';
 
   const {
     ...rest
@@ -12,7 +12,7 @@
 
 <div {...rest}>
   <div class="flex flex-row">
-    <img src={STATIC_FILES["android-chrome-512x512.png"]} width="95px" alt="Lens of Brown logo"/>
+    <img src={AndroidChromeLogo} width="95px" alt="Lens of Brown logo"/>
     <div class="flex flex-col gap-2">
       <span class="text-4xl font-Black-mango text-center mx-6">lens of</span>  
       <Divider horizontal />

@@ -2,6 +2,8 @@
  * Frequently used icons: https://icones.js.org/collection/lucide
  */
 // @ts-nocheck
+import ArrowLeft from 'virtual:icons/lucide/arrow-left';
+import ArrowRight from 'virtual:icons/lucide/arrow-right';
 import ArrowRightToLine from 'virtual:icons/lucide/arrow-right-from-line';
 import ChevronLeft from 'virtual:icons/lucide/chevron-left';
 import CirclePlus from 'virtual:icons/lucide/circle-plus';
@@ -19,5 +21,7 @@ export const Icon = {
 	ArrowRightToLine,
 	Instagram,
 	Facebook,
-	Mail
+	Mail,
+	ArrowLeft,
+	ArrowRight
 };
