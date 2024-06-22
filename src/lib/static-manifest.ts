@@ -13,8 +13,8 @@ export const STATIC_FILES = {
 	fonts: {
 		'Inter.ttf': 'fonts/Inter.ttf',
 		'Forum-Regular.ttf': 'fonts/Forum-Regular.ttf',
-		'BlackMango-Regular.ttf': 'fonts/BlackMango-Regular.ttf',
-		'LongTime.ttf': 'fonts/LongTime.ttf'
+		'CormorantGaramond-Regular.ttf': 'fonts/CormorantGaramond-Regular.ttf',
+		'BlackMango-Regular.ttf': 'fonts/BlackMango-Regular.ttf'
 	},
 	imgs: {
 		'Price list.png': 'imgs/Price list.png',
