@@ -11,7 +11,7 @@
 
 <AppBar
 	padding=""
-	gap="gap-2"
+	gap="gap-0"
 	background=""
 	slotDefault="place-self-center"
 	slotTrail="place-content-end"
@@ -29,18 +29,6 @@
 			</a>
 		</div>
 	</svelte:fragment>
-
-	<!-- <a
-		href="/"
-		aria-current={isCurrentPage('/')}
-		class="min-[910px]:hidden"
-	>
-		<img
-			src={STATIC_FILES.imgs['transparent-logo-sideways.png']}
-			alt="Lens of Brown logo - header"
-			class="h-[100px]"
-		/>
-	</a> -->
 
 	<nav class="flex flex-row gap-5 items-center">
 		<a aria-current={isCurrentPage('/about')} href="/about" class="header hidden min-[910px]:flex"
