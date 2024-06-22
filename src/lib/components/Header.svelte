@@ -30,8 +30,7 @@
 		</div>
 	</svelte:fragment>
 
-	<!-- TODO: centre this -->
-	<a
+	<!-- <a
 		href="/"
 		aria-current={isCurrentPage('/')}
 		class="min-[910px]:hidden"
@@ -39,13 +38,13 @@
 		<img
 			src={STATIC_FILES.imgs['transparent-logo-sideways.png']}
 			alt="Lens of Brown logo - header"
+			class="h-[100px]"
 		/>
-	</a>
+	</a> -->
 
-	<nav class="hidden min-[910px]:flex flex-row gap-5 items-center py-2">
-		<a aria-current={isCurrentPage('/about')} href="/about" class="header">ABOUT</a>
-		<a aria-current={isCurrentPage('/contact')} href="/contact" class="header">CONTACT</a>
-		<!-- <a aria-current={isCurrentPage('/')} href="/" class="header-home"> Lens of Brown </a> -->
+	<nav class="flex flex-row gap-5 items-center">
+		<a aria-current={isCurrentPage('/about')} href="/about" class="header hidden min-[910px]:flex">ABOUT</a>
+		<a aria-current={isCurrentPage('/contact')} href="/contact" class="header hidden min-[910px]:flex">CONTACT</a>
 		<a href="/" aria-current={isCurrentPage('/')}>
 			<img
 				src={STATIC_FILES.imgs['transparent-logo-sideways.png']}
@@ -53,8 +52,8 @@
 				class="h-[100px]"
 			/>
 		</a>
-		<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" class="header">PORTFOLIO</a>
-		<a aria-current={isCurrentPage('/pricing')} href="/pricing" class="header">PRICING</a>
+		<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" class="header hidden min-[910px]:flex">PORTFOLIO</a>
+		<a aria-current={isCurrentPage('/pricing')} href="/pricing" class="header hidden min-[910px]:flex">PRICING</a>
 	</nav>
 
 	<svelte:fragment slot="trail">
@@ -65,9 +64,8 @@
 			<Icon.Menu class="text-3xl" />
 		</button>
 
-		<!-- Maybe don't use this -->
 		<div class="hidden min-[910px]:flex w-16">
-			<LightSwitch />
+			<!-- <LightSwitch /> -->
 		</div>
 	</svelte:fragment>
 </AppBar>
@@ -83,9 +81,4 @@
 		@apply text-lg font-Forum text-primary-500;
 		@apply transition duration-300 ease-in-out hover:scale-110;
 	}
-
-	/* .header-home {
-		@apply text-5xl font-Forum;
-		@apply transition duration-300 ease-in-out hover:scale-110;
-	} */
 </style>
