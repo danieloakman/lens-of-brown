@@ -29,12 +29,31 @@
 	const seed = 10;
 	const imgs = take(
 		shuffle(iter(Object.values(STATIC_FILES.imgs.clients) as string[]).toArray(), seed),
-		15
+		12
 	);
 </script>
 
-<div class="p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-	{#each imgs as img}
-		<img alt="Portfolio image for lens of brown" src={img} />
-	{/each}
+<div class="flex flex-col">
+	<h1>See what we've been up to!</h1>
+
+	<div class="py-4 px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+		{#each imgs as img}
+			<img
+				alt="Portfolio for lens of brown"
+				src={img}
+				loading="lazy"
+				class="w-[600px] object-cover aspect-square rounded-lg hover-sm"
+			/>
+		{/each}
+	</div>
 </div>
+
+<style lang="postcss">
+	h1 {
+		@apply text-5xl mx-auto p-4;
+	}
+
+	.hover-sm {
+		@apply transition duration-300 ease-in-out hover:scale-105;
+	}
+</style>
