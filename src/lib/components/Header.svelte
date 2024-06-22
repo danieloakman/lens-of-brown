@@ -19,13 +19,13 @@
 >
 	<svelte:fragment slot="lead">
 		<div class="w-16 flex flex-row ps-2 gap-1">
-			<a href={INSTAGRAM_URL} target="_blank" class="btn-icon">
+			<a href={INSTAGRAM_URL} target="_blank" class="btn-icon hover-big">
 				<Icon.Instagram class="text-xl min-[430px]:text-2xl" />
 			</a>
-			<a href={FACEBOOK_URL} target="_blank" class="btn-icon">
+			<a href={FACEBOOK_URL} target="_blank" class="btn-icon hover-big">
 				<Icon.Facebook class="text-xl min-[430px]:text-2xl" />
 			</a>
-			<a href={INFO_EMAIL} target="_blank" class="btn-icon">
+			<a href={INFO_EMAIL} target="_blank" class="btn-icon hover-big">
 				<Icon.Mail class="text-xl min-[430px]:text-2xl" />
 			</a>
 		</div>
@@ -66,11 +66,13 @@
 	}
 
 	.header {
-		@apply text-lg hover:text-tertiary-400 font-Black-mango;
+		@apply text-lg font-Black-mango;
+		@apply transition duration-300 ease-in-out hover:text-tertiary-400 hover:scale-125;
 	}
 
 	.header-home {
-		@apply text-5xl hover:text-tertiary-400 font-Black-mango;
+		@apply text-5xl font-Black-mango;
+		@apply transition duration-300 ease-in-out hover:text-tertiary-400  hover:scale-110;
 	}
 
 </style>
