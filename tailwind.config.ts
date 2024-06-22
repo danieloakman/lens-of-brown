@@ -19,7 +19,8 @@ const config = {
 		extend: {},
 		fontFamily: {
 			'Black-mango': 'Black-mango',
-			LongTime: 'LongTime'
+			'Forum': 'Forum',
+			// LongTime: 'LongTime'
 		}
 	},
 	plugins: [

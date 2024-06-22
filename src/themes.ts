@@ -1,6 +1,6 @@
 import type { CustomThemeConfig } from '@skeletonlabs/tw-plugin';
 
-const font = `LongTime, Black-mango, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'`;
+const font = `Forum, LongTime, Black-mango, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'`;
 
 export const brown1: CustomThemeConfig = {
 	name: 'brown1',
