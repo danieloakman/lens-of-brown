@@ -1,9 +1,11 @@
 <script lang="ts">
+	import type { BasicImg } from "$types";
+
 	const {
 		buttons,
 		nextDelayMs = 5000,
 		imgs
-	}: { buttons?: boolean; nextDelayMs?: number; imgs: { src: string; alt: string }[] } = $props();
+	}: { buttons?: boolean; nextDelayMs?: number; imgs: BasicImg[] } = $props();
 
 	let elemCarousel: HTMLDivElement | undefined;
 	const unsplashIds = [

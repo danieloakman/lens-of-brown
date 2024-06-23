@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { BasicImg } from '$types';
 	import { quintOut } from 'svelte/easing';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { crossfade } from 'svelte/transition';
@@ -18,7 +19,7 @@
 		width?: string;
 		height?: string;
 		fadeDurationMs?: number;
-		imgs: { src: string; alt: string }[];
+		imgs: BasicImg[];
 	} & HTMLAttributes<HTMLDivElement> = $props();
 
 	let i = $state(0);

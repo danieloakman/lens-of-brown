@@ -2,8 +2,9 @@
 	import ImgCarousel from '$components/ImgCarousel.svelte';
 	import LensOfBrownLogo from '$components/LensOfBrownLogo.svelte';
 	import { STATIC_FILES, windowSize } from '$lib';
+	import type { BasicImg } from '$types';
 
-	const imgs = Object.values(STATIC_FILES.imgs.clients)
+	const imgs: BasicImg[] = Object.values(STATIC_FILES.imgs.clients)
 		.slice(0, 5)
 		.map((src: string) => ({ src, alt: 'Client photo' }));
 </script>
