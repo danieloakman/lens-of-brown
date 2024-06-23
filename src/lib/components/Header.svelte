@@ -84,7 +84,11 @@
 	/* Highlights current route the page is on. */
 	/* TODO: need to add a little caret or nicer underline when selected */
 	a[aria-current='page'] {
-		@apply font-black;
+		@apply font-black transition duration-300 ease-in-out hover:brightness-125;
+	}
+
+	a img:hover {
+		@apply transition duration-300 ease-in-out hover:brightness-125;
 	}
 
 	.header {
