@@ -2,6 +2,7 @@
 	import { STATIC_FILES } from '$lib';
 	import { iter, take } from 'iteragain';
 	import TwoImg from './TwoImg.svelte';
+	import { goto } from '$app/navigation';
 
 	function random(seed: number) {
 		var x = Math.sin(seed++) * 10000;
@@ -37,30 +38,16 @@
 <div class="flex flex-col">
 	<h1 class="p-4 text-center">See what we've been up to!</h1>
 
-	<!-- Sections in grid: -->
-	<!-- <h1>Family</h1>
-
-	<h1>Couples</h1>
-
-	<h1>Animals</h1>
-
-	<h1>Events</h1>
-
-	<h1>Portraits</h1>
-
-	<h1>Landscape</h1> -->
-
-	<!-- TODO once we have pics of weddings <h1>Weddings</h1> -->
-
 	<!-- 
 	TODO: On hover crossfade to another image
 	2x2 on desktop, 1x4 on mobile
 	Title below image square, with subheading
 	 -->
-	<div class="py-4 px-4 mx-auto md:px-52 grid grid-cols-1 md:grid-cols-2 gap-32">
-		<div class="flex flex-col gap-4">
+	<div class="py-4 px-4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-24">
+		<div class="cell" onclick={() => goto('/portfolio/family')}>
 			<TwoImg
 				class="rounded-lg w-[400px] aspect-square object-cover"
+				loading="lazy"
 				imgs={[
 					{
 						src: STATIC_FILES.imgs.clients['P5151059.JPG'],
@@ -75,29 +62,62 @@
 			<h2>Family</h2>
 		</div>
 
-		<div class="flex flex-col gap-4">
+		<div class="cell">
 			<TwoImg
 				class="rounded-lg w-[400px] aspect-square object-cover"
 				loading="lazy"
 				imgs={[
 					{
 						src: STATIC_FILES.imgs.clients['P6020120.jpg'],
-						alt: 'Family of 4 amongst Autumn leaves.'
+						alt: 'Ginger dog preparing to run.'
 					},
 					{
 						src: STATIC_FILES.imgs.clients['P6020330.jpg'],
-						alt: 'Boy and girl toddlers playing with Autumn leaves.'
+						alt: 'Ginger dog laying on back with purple flowers in background.'
 					}
 				]}
 			/>
 			<h2>Animals</h2>
 		</div>
-		<!-- <img
-				alt="Portfolio for lens of brown"
-				src={img}
+
+		<div class="cell">
+			<TwoImg
+				class="rounded-lg w-[400px] aspect-square object-cover"
 				loading="lazy"
-				class="w-[400px] object-cover aspect-square rounded-lg hover-sm"
-			/> -->
+				imgs={[
+					{
+						// TODO: swap to couples photos
+						src: STATIC_FILES.imgs.clients['P6020120.jpg'],
+						alt: 'Ginger dog preparing to run.'
+					},
+					{
+						src: STATIC_FILES.imgs.clients['P6020330.jpg'],
+						alt: 'Ginger dog laying on back with purple flowers in background.'
+					}
+				]}
+			/>
+			<h2>Couples</h2>
+		</div>
+
+		<div class="cell">
+			<h2>Animals</h2>
+		</div>
+
+		<div class="cell">
+			<h2>Events</h2>
+		</div>
+
+		<div class="cell">
+			<h2>Portraits</h2>
+		</div>
+
+		<div class="cell">
+			<h2>Landscape</h2>
+		</div>
+
+		<div class="cell">
+			<h2>Weddings</h2>
+		</div>
 	</div>
 </div>
 
@@ -112,5 +132,9 @@
 
 	h3 {
 		@apply text-3xl text-center;
+	}
+
+	.cell {
+		@apply flex flex-col gap-4;
 	}
 </style>
