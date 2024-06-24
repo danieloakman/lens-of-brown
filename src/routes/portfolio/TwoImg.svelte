@@ -1,6 +1,6 @@
 <!-- Displays one image, then on hover or click, display another. -->
 <script lang="ts">
-	import { noop, omit, once } from 'js-utils';
+	import { noop, omit } from 'js-utils';
 	import { quintOut } from 'svelte/easing';
 	import type { HTMLImgAttributes } from 'svelte/elements';
 	import { crossfade } from 'svelte/transition';
