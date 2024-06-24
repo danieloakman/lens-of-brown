@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Icon } from '$lib/icons';
 	import type { BasicImg } from '$types';
-	import A from '../../../static/imgs/clients/P6020120.jpg';
 
 	const {
 		buttons,

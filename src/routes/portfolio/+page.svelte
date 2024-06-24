@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { STATIC_FILES } from '$lib';
 	import type { BasicImg } from '$types';
 	import TwoImg from './TwoImg.svelte';
 
@@ -44,6 +43,9 @@
 		src: '',
 		alt: 'todo'
 	};
+
+	import fam4 from '$imgs/clients/P5151059.jpg?url';
+	import twoToddlers from '$imgs/clients/P5152015.jpg?url';
 	const sections: Section[] = [
 		{
 			title: 'Families',
@@ -51,11 +53,11 @@
 			href: '/portfolio/families',
 			imgs: [
 				{
-					src: STATIC_FILES.imgs.clients['P5151059.JPG'],
+					src: fam4,
 					alt: 'Family of 4 amongst Autumn leaves.'
 				},
 				{
-					src: STATIC_FILES.imgs.clients['P5152015.JPG'],
+					src: twoToddlers,
 					alt: 'Boy and girl toddlers playing with Autumn leaves.'
 				}
 			]
@@ -65,14 +67,16 @@
 			subheading: 'todo',
 			href: '/portfolio/animals',
 			imgs: [
-				{
-					src: STATIC_FILES.imgs.clients['P6020330.jpg'],
-					alt: 'Ginger dog preparing to run.'
-				},
-				{
-					src: STATIC_FILES.imgs.clients['P6020120.jpg'],
-					alt: 'Ginger dog laying on back with purple flowers in background.'
-				}
+				IMG_TODO,
+				IMG_TODO
+				// {
+				// 	src: STATIC_FILES.imgs.clients['P6020330.jpg'],
+				// 	alt: 'Ginger dog preparing to run.'
+				// },
+				// {
+				// 	src: STATIC_FILES.imgs.clients['P6020120.jpg'],
+				// 	alt: 'Ginger dog laying on back with purple flowers in background.'
+				// }
 			]
 		},
 		{
@@ -80,14 +84,16 @@
 			subheading: 'todo',
 			href: '/portfolio/couples',
 			imgs: [
-				{
-					src: STATIC_FILES.imgs.clients['P6184044.JPG'],
-					alt: 'A couple in front of a lighthouse, looking at the camera.'
-				},
-				{
-					src: STATIC_FILES.imgs.clients['P6184010.JPG'],
-					alt: 'A couple in front of a lighthouse, looking at each other.'
-				}
+				IMG_TODO,
+				IMG_TODO
+				// {
+				// 	src: STATIC_FILES.imgs.clients['P6184044.JPG'],
+				// 	alt: 'A couple in front of a lighthouse, looking at the camera.'
+				// },
+				// {
+				// 	src: STATIC_FILES.imgs.clients['P6184010.JPG'],
+				// 	alt: 'A couple in front of a lighthouse, looking at each other.'
+				// }
 			]
 		},
 		{

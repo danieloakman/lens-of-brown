@@ -20,7 +20,7 @@ const config = {
 			fallback: '404.html',
 			precompress: false,
 			strict: true,
-			trailingSlash: 'always'
+			trailingSlash: 'always',
 		}),
 		alias: {
 			$components: './src/lib/components',
@@ -30,7 +30,7 @@ const config = {
 			$constants: './src/lib/constants',
 			$static: './static',
 			$imgs: './static/imgs',
-		}
+		},
 	}
 };
 
