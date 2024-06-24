@@ -1,21 +1,17 @@
 <script lang="ts">
-	import type { BasicImg } from "$types";
+	import { Icon } from '$lib/icons';
+	import type { BasicImg } from '$types';
+	import A from '../../../static/imgs/clients/P6020120.jpg';
 
 	const {
 		buttons,
 		nextDelayMs = 5000,
-		imgs
-	}: { buttons?: boolean; nextDelayMs?: number; imgs: BasicImg[] } = $props();
+		imgs,
+		imgClass = '',
+		containerClass = ''
+	}: { buttons?: boolean; nextDelayMs?: number; imgs: BasicImg[], imgClass?: string; containerClass?: string } = $props();
 
 	let elemCarousel: HTMLDivElement | undefined;
-	const unsplashIds = [
-		'vjUokUWbFOs',
-		'1aJuPtQJX_I',
-		'Jp6O3FFRdEI',
-		'I3C_eojFVQY',
-		's0fXOuyTH1M',
-		'z_X0PxmBuIQ'
-	];
 
 	function carouselLeft(): void {
 		if (!elemCarousel) return;
@@ -35,24 +31,25 @@
 		elemCarousel.scroll(x, 0);
 	}
 
-	function carouselThumbnail(index: number) {
-		elemCarousel?.scroll(elemCarousel.clientWidth * index, 0);
-	}
+	// function carouselThumbnail(index: number) {
+	// 	elemCarousel?.scroll(elemCarousel.clientWidth * index, 0);
+	// }
 
 	setInterval(() => {
 		carouselRight();
 	}, nextDelayMs);
 </script>
 
-<div class="grid grid-cols-[auto_1fr_auto] items-center">
-	<!-- Button: Left -->
-	<!-- <button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
-		<i class="fa-solid fa-arrow-left" />
-	</button> -->
-	<!-- Full Images -->
+<div class={"grid grid-cols-[auto_1fr_auto] items-center " + containerClass}>
+	{#if buttons}
+		<button type="button" class="btn-icon variant-filled" onclick={carouselLeft}>
+			<Icon.ArrowLeft />
+		</button>
+	{/if}
+
 	<div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto">
 		{#each imgs as { src, alt }}
-			<img class="snap-center object-scale-down" {src} {alt} />
+			<img class={"snap-center " + imgClass} {src} {alt} />
 		{/each}
 		<!-- Working example, but doesn't stretch the image -->
 		<!-- {#each unsplashIds as unsplashId}
@@ -64,8 +61,10 @@
 			/>
 		{/each} -->
 	</div>
-	<!-- Button: Right -->
-	<!-- <button type="button" class="btn-icon variant-filled" on:click={carouselRight}>
-		<i class="fa-solid fa-arrow-right" />
-	</button> -->
+
+	{#if buttons}
+		<button type="button" class="btn-icon variant-filled-primary" onclick={carouselRight}>
+			<Icon.ArrowRight />
+		</button>
+	{/if}
 </div>
