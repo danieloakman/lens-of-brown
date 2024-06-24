@@ -19,6 +19,11 @@ export default defineConfig({
 		'import.meta.vitest': undefined
 	},
 	optimizeDeps: {
-		entries: ['iteragain']
+		entries: ['iteragain', 'js-utils']
+	},
+	server: {
+		fs: {
+			allow: ['static']
+		}
 	}
 });

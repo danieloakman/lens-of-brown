@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import preprocess from 'svelte-preprocess';
+import { sveltePreprocess } from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,7 +8,7 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		vitePreprocess(),
-		preprocess({
+		sveltePreprocess({
 			postcss: true
 		})
 	],
@@ -27,7 +27,8 @@ const config = {
 			$stores: './src/lib/stores',
 			$types: './src/lib/types',
 			$utils: './src/lib/utils',
-			$constants: './src/lib/constants'
+			$constants: './src/lib/constants',
+			$static: './static'
 		}
 	}
 };
