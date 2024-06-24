@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { dev } from '$app/environment';
 	import { page } from '$app/stores';
 	import { drawerContentStore, windowSize, Icon } from '$lib';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
@@ -44,10 +43,12 @@
 	a {
 		@apply font-Black-mango mx-auto p-2 text-xl;
 	}
+
 	/* Highlights current route the page is on. */
 	a[aria-current='page'] {
 		@apply font-bold underline;
 	}
+
 	a:hover {
 		@apply underline variant-outline-secondary rounded-lg p-2;
 	}
