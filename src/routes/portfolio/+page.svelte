@@ -46,9 +46,9 @@
 	};
 	const sections: Section[] = [
 		{
-			title: 'Family',
+			title: 'Families',
 			subheading: 'todo',
-			href: '/portfolio/family',
+			href: '/portfolio/families',
 			imgs: [
 				{
 					src: STATIC_FILES.imgs.clients['P5151059.JPG'],
@@ -103,9 +103,9 @@
 			imgs: [IMG_TODO, IMG_TODO]
 		},
 		{
-			title: 'Landscape',
+			title: 'Landscapes',
 			subheading: 'todo',
-			href: '/portfolio/landscape',
+			href: '/portfolio/landscapes',
 			imgs: [IMG_TODO, IMG_TODO]
 		},
 		{
@@ -144,9 +144,9 @@
 		@apply text-3xl text-center font-Forum;
 	}
 
-	span {
+	/* span {
 		@apply text-2xl;
-	}
+	} */
 
 	.cell {
 		@apply flex flex-col gap-2;
