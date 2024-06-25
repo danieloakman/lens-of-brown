@@ -10,7 +10,7 @@ const config = {
 		vitePreprocess(),
 		sveltePreprocess({
 			postcss: true
-		})
+		}),
 	],
 
 	kit: {
@@ -20,7 +20,7 @@ const config = {
 			fallback: '404.html',
 			precompress: false,
 			strict: true,
-			trailingSlash: 'always',
+			trailingSlash: 'always'
 		}),
 		alias: {
 			$components: './src/lib/components',
@@ -29,8 +29,8 @@ const config = {
 			$utils: './src/lib/utils',
 			$constants: './src/lib/constants',
 			$static: './static',
-			$imgs: './src/lib/imgs',
-		},
+			$imgs: './src/lib/imgs'
+		}
 	}
 };
 
