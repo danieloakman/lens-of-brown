@@ -3,6 +3,8 @@
 	import { FACEBOOK_URL, INFO_EMAIL, INSTAGRAM_URL } from '$constants/strings';
 	import { Icon, windowSize } from '$lib';
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
+	// @ts-expect-error
+	import SidewaysLogo from '$imgs/transparent-logo-sideways.png?enhanced';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
@@ -42,13 +44,13 @@
 		<a href="/" aria-current={isCurrentPage('/')}>
 			{#if windowSize.w < 410}
 				<enhanced:img
-					src="$imgs/transparent-logo-sideways.png?enhanced"
+					src={SidewaysLogo}
 					alt="Lens of Brown logo - header"
 					class="h-[70px] w-auto"
 				></enhanced:img>
 			{:else}
 				<enhanced:img
-					src="$imgs/transparent-logo-sideways.png?enhanced"
+					src={SidewaysLogo}
 					alt="Lens of Brown logo - header"
 					class="h-[100px] w-auto"
 				></enhanced:img>
