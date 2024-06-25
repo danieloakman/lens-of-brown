@@ -58,9 +58,5 @@
 		"vitest": "^1.6.0"
 	},
 	"type": "module",
-	"dependencies": {
-		"clsx": "^2.1.1",
-		"tailwind-merge": "^2.3.0",
-		"tailwind-variants": "^0.2.1"
 	}
 }
