@@ -3,7 +3,7 @@
 	import { FACEBOOK_URL, INFO_EMAIL, INSTAGRAM_URL } from '$constants';
 	import { Icon, windowSize } from '$lib';
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
-	import SidewaysLogo from '$static/imgs/transparent-logo-sideways.png?url';
+	import SidewaysLogo from '$imgs/transparent-logo-sideways.png?url';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>

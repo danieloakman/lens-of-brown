@@ -29,7 +29,7 @@ const config = {
 			$utils: './src/lib/utils',
 			$constants: './src/lib/constants',
 			$static: './static',
-			$imgs: './static/imgs',
+			$imgs: './src/lib/imgs',
 		},
 	}
 };

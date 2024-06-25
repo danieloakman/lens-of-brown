@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes } from "svelte/elements";
 	import Divider from "./Divider.svelte";
-  import AndroidChromeLogo from '$static/android-chrome-512x512.png';
+  import AndroidChromeLogo from '$static/android-chrome-512x512.png?url';
 
   const {
     ...rest

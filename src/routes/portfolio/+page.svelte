@@ -46,6 +46,10 @@
 
 	import fam4 from '$imgs/clients/P5151059.jpg?url';
 	import twoToddlers from '$imgs/clients/P5152015.jpg?url';
+	import dogA from '$imgs/clients/P6020330.jpg?url';
+	import dogB from '$imgs/clients/P6020120.jpg?url';
+	import couplesA from '$imgs/clients/P6184044.jpg?url';
+	import couplesB from '$imgs/clients/P6184010.jpg?url';
 	const sections: Section[] = [
 		{
 			title: 'Families',
@@ -67,16 +71,14 @@
 			subheading: 'todo',
 			href: '/portfolio/animals',
 			imgs: [
-				IMG_TODO,
-				IMG_TODO
-				// {
-				// 	src: STATIC_FILES.imgs.clients['P6020330.jpg'],
-				// 	alt: 'Ginger dog preparing to run.'
-				// },
-				// {
-				// 	src: STATIC_FILES.imgs.clients['P6020120.jpg'],
-				// 	alt: 'Ginger dog laying on back with purple flowers in background.'
-				// }
+				{
+					src: dogA,
+					alt: 'Ginger dog preparing to run.'
+				},
+				{
+					src: dogB,
+					alt: 'Ginger dog laying on back with purple flowers in background.'
+				}
 			]
 		},
 		{
@@ -84,16 +86,14 @@
 			subheading: 'todo',
 			href: '/portfolio/couples',
 			imgs: [
-				IMG_TODO,
-				IMG_TODO
-				// {
-				// 	src: STATIC_FILES.imgs.clients['P6184044.JPG'],
-				// 	alt: 'A couple in front of a lighthouse, looking at the camera.'
-				// },
-				// {
-				// 	src: STATIC_FILES.imgs.clients['P6184010.JPG'],
-				// 	alt: 'A couple in front of a lighthouse, looking at each other.'
-				// }
+				{
+					src: couplesA,
+					alt: 'A couple in front of a lighthouse, looking at the camera.'
+				},
+				{
+					src: couplesB,
+					alt: 'A couple in front of a lighthouse, looking at each other.'
+				}
 			]
 		},
 		{
