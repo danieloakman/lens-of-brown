@@ -57,6 +57,5 @@
 		"vite-plugin-tailwind-purgecss": "^0.3.3",
 		"vitest": "^1.6.0"
 	},
-	"type": "module",
-	}
+	"type": "module"
 }
