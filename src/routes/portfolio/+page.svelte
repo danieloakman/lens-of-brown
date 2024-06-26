@@ -44,12 +44,13 @@
 		alt: 'todo'
 	};
 
-	import fam4 from '$imgs/clients/P5151059.jpg?url';
-	import twoToddlers from '$imgs/clients/P5152015.jpg?url';
-	import dogA from '$imgs/clients/P6020330.jpg?url';
-	import dogB from '$imgs/clients/P6020120.jpg?url';
-	import couplesA from '$imgs/clients/P6184044.jpg?url';
-	import couplesB from '$imgs/clients/P6184010.jpg?url';
+	import fam4 from '$imgs/clients/P5151059.jpg?url&w=400&aspect=1:1&imagetools';
+	import twoToddlers from '$imgs/clients/P5152015.jpg?url&w=400&aspect=1:1&imagetools';
+	import dogA from '$imgs/clients/P6020330.jpg?url&w=400&aspect=1:1&imagetools';
+	import dogB from '$imgs/clients/P6020120.jpg?url&w=400&aspect=1:1&imagetools';
+	import couplesA from '$imgs/clients/P6184044.jpg?url&w=400&aspect=1:1&imagetools';
+	import couplesB from '$imgs/clients/P6184010.jpg?url&w=400&aspect=1:1&imagetools';
+	import TrotPortrait1 from '$imgs/trot_portrait_1.jpg?url&w=400&aspect=1:1&imagetools';
 	const sections: Section[] = [
 		{
 			title: 'Families',
@@ -106,7 +107,10 @@
 			title: 'Portraits',
 			subheading: 'todo',
 			href: '/portfolio/portraits',
-			imgs: [IMG_TODO, IMG_TODO]
+			imgs: [{
+				src: TrotPortrait1,
+				alt: ''
+			}, IMG_TODO]
 		},
 		{
 			title: 'Landscapes',
