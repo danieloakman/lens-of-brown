@@ -74,11 +74,11 @@
 			imgs: [
 				{
 					src: dogA,
-					alt: 'Ginger dog preparing to run.'
+					alt: 'Ginger dog laying on back with purple flowers in background.'
 				},
 				{
 					src: dogB,
-					alt: 'Ginger dog laying on back with purple flowers in background.'
+					alt: 'Ginger dog preparing to run.'
 				}
 			]
 		},
