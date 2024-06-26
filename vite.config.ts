@@ -23,9 +23,9 @@ export default defineConfig({
 	optimizeDeps: {
 		entries: ['iteragain', 'js-utils']
 	},
-	server: {
-		fs: {
-			allow: ['static']
-		}
-	}
+	// server: {
+	// 	fs: {
+	// 		allow: ['static']
+	// 	}
+	// }
 });
