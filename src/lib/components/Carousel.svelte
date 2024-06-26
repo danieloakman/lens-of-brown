@@ -1,17 +1,16 @@
 <script lang="ts">
 	import { Icon } from '$lib/icons';
-	import type { BasicImg } from '$types';
 	import type { Snippet } from 'svelte';
 
 	const {
 		buttons,
 		nextDelayMs = 5000,
-		imgs,
+		children,
 		class: klass = ''
 	}: {
 		buttons?: boolean;
 		nextDelayMs?: number;
-		imgs: Snippet;
+		children: Snippet;
 		class?: string;
 	} = $props();
 
@@ -52,7 +51,9 @@
 	{/if}
 
 	<div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto">
-		{@render imgs()}
+		{#if children}
+			{@render children()}
+		{/if}
 		<!-- {#each imgs as { src, alt }}
 			<img class={"snap-center " + imgClass} {src} {alt} />
 		{/each} -->
