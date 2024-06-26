@@ -1,4 +1,3 @@
-import type { ASSET_PATH } from '$constants';
 import type { Action } from 'svelte/action';
 
 // export type StateFn<T extends Fn, FnName extends string = 'call'> = {
@@ -81,5 +80,3 @@ export const disableWhenHandling: Action<
 		update
 	};
 };
-
-export const assetPath = (src: ASSET_PATH): string => src;
