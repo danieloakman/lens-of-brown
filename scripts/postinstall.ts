@@ -21,12 +21,13 @@ if (import.meta.main) {
 	const paths: string[] = filesIn(join(imgsPath, '**/*'), imgsPath)
 		.map((s) => `$imgs/${s}`)
 		.concat(filesIn(join(staticPath, '**/*'), staticPath).map((s) => `$static/${s}`))
+		.sort((a, b) => a.localeCompare(b))
 		.toArray();
 	if (!paths.length) {
 		console.warn('No images found');
 		process.exit(0);
 	}
-	console.log(`Writing ${relative(rootPath, assetConstantsPath)}`);
+	console.log(`Writing ${paths.length} asset paths to ${relative(rootPath, assetConstantsPath)}`);
 	await writeFile(
 		assetConstantsPath,
 		`
