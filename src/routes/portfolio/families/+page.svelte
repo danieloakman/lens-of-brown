@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Carousel from '$components/Carousel.svelte';
-	import Img1 from '$imgs/clients/P5190160.jpg?aspect=1:1&w=700&webp&imagetools';
-	import Img2 from '$imgs/clients/P5190601.jpg?aspect=1:1&w=700&webp&imagetools';
+	import Img1 from '$imgs/bianca_cherie1.jpg?aspect=1:1&w=700&webp&imagetools';
+	import Img2 from '$imgs/bianca_cherie2.jpg?aspect=1:1&w=700&webp&imagetools';
 
 	let carousel: Carousel | null = null;
 	$effect(() => {

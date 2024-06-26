@@ -44,13 +44,13 @@
 		alt: 'todo'
 	};
 
-	import fam4 from '$imgs/clients/P5151059.jpg?url&w=400&aspect=1:1&imagetools';
-	import twoToddlers from '$imgs/clients/P5152015.jpg?url&w=400&aspect=1:1&imagetools';
-	import dogA from '$imgs/clients/P6020330.jpg?url&w=400&aspect=1:1&imagetools';
-	import dogB from '$imgs/clients/P6020120.jpg?url&w=400&aspect=1:1&imagetools';
-	import couplesA from '$imgs/clients/P6184044.jpg?url&w=400&aspect=1:1&imagetools';
-	import couplesB from '$imgs/clients/P6184010.jpg?url&w=400&aspect=1:1&imagetools';
-	import TrotPortrait1 from '$imgs/trot_portrait_1.jpg?url&w=400&aspect=1:1&imagetools';
+	import fam4 from '$imgs/tim_bear1.jpg';
+	import twoToddlers from '$imgs/tim_bear2.jpg?url&w=400&aspect=1:1&imagetools';
+	import dogA from '$imgs/honey_santos2.jpg?url&w=400&aspect=1:1&imagetools';
+	import dogB from '$imgs/honey_santos1.jpg?url&w=400&aspect=1:1&imagetools';
+	import couplesA from '$imgs/scott_churchill1.jpg?url&w=400&aspect=1:1&imagetools';
+	import couplesB from '$imgs/scott_churchill2.jpg?url&w=400&aspect=1:1&imagetools';
+	import TrotPortrait1 from '$imgs/trot_portrait1.jpg?url&w=400&aspect=1:1&imagetools';
 	const sections: Section[] = [
 		{
 			title: 'Families',
@@ -88,11 +88,11 @@
 			href: '/portfolio/couples',
 			imgs: [
 				{
-					src: couplesA,
+					src: couplesB,
 					alt: 'A couple in front of a lighthouse, looking at the camera.'
 				},
 				{
-					src: couplesB,
+					src: couplesA,
 					alt: 'A couple in front of a lighthouse, looking at each other.'
 				}
 			]
