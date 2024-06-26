@@ -1,41 +1,42 @@
-<script>
+<script lang="ts">
+	import ImgCarousel from '$components/ImgCarousel.svelte';
+	import LensOfBrownLogo from '$components/LensOfBrownLogo.svelte';
+	import { windowSize } from '$lib';
+	import type { BasicImg } from '$types';
+
+	// const imgs: BasicImg[] = Object.values(STATIC_FILES.imgs.clients)
+	// 	.slice(0, 5)
+	// 	.map((src: string) => ({ src, alt: 'Client photo' }));
 </script>
 
-<svelte:head>
-	<title>Lens of Brown</title>
-	<meta name="description" content="Lens of Brown Photography" />
-</svelte:head>
+<!-- <Carousel
+	imgs={[
+		{
+			src: 'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?cs=srgb&dl=pexels-bri-schneiter-28802-346529.jpg&fm=jpg',
+			alt: 'A beautiful lake'
+		},
+		{
+			src: 'https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg?cs=srgb&dl=pexels-fotios-photos-1107717.jpg&fm=jpg',
+			alt: 'A beautiful green plain by the water'
+		},
+		// {
+		// 	src: 'https://thecamerastore.com/cdn/shop/articles/GINAYEOLANDSCAPE-1_800x.jpg?v=1687296669',
+		// 	alt: 'A beautiful mountain with pine trees and a river'
+		// },
+		// {
+		// 	src: 'https://i.natgeofe.com/n/2a832501-483e-422f-985c-0e93757b7d84/6.jpg?w=1436&h=1078',
+		// 	alt: 'A road and sunset'
+		// },
+		{
+			src: 'https://photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg',
+			alt: 'A desert'
+		}
+	]}
+/> -->
 
-<section>
-	<h1 class="welcome">Launching soon...</h1>
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+<div class="flex flex-col gap-2">
+	<!-- TODO: ImgCarousel doesn't appear here, find out why -->
+	<!-- <ImgCarousel class="" {imgs} nextDelayMs={3000} width="500px" height="500px" /> -->
+	
+	<!-- <LensOfBrownLogo class="mx-auto p-4"/> -->
+</div>

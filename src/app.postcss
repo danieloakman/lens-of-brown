@@ -1,0 +1,76 @@
+/*Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+/* (all other styles here...) */
+/*place global styles here */
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('/fonts/Inter.ttf');
+	/* font-display: swap; */
+}
+
+/* For tabs or header nav links */
+@font-face {
+	font-family: 'Black-mango';
+	src: url('/fonts/BlackMango-Regular.ttf');
+}
+
+/* For headings, upper case. */
+@font-face {
+	font-family: 'Forum';
+	src: url('/fonts/Forum-Regular.ttf');
+}
+
+/* For other text which can include lower case. */
+@font-face {
+	font-family: 'Cormorant';
+	src: url('/fonts/CormorantGaramond-Regular.ttf');
+}
+
+:root {
+	--theme-rounded-base: 20px;
+	--theme-rounded-container: 4px;
+}
+
+:root {
+	--theme-font-family-base: 'Inter', sans-serif;
+	--theme-font-family-heading: 'Inter', sans-serif;
+}
+
+/* * My global styles. * */
+
+.take-no-space {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	vertical-align: baseline !important;
+}
+
+.non-selectable {
+	user-select: none !important;
+}
+
+.hover-sm {
+	@apply transition duration-300 ease-in-out hover:scale-105;
+}
+
+.hover-md {
+	@apply transition duration-300 ease-in-out hover:scale-110;
+
+}
+
+.hover-lg {
+	@apply transition duration-300 ease-in-out hover:scale-125;
+}
+
+.hover-shadow {
+	@apply transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/30;
+}

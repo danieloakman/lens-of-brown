@@ -1,0 +1,12 @@
+{
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"dotenv.enableAutocloaking": false,
+	"search.exclude": {
+		"**/.sst": true,
+		"**/dist": true,
+		"**/build": true
+	},
+	"typescript.tsdk": "node_modules/typescript/lib"
+}
