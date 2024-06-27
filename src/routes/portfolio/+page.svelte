@@ -47,10 +47,10 @@
 	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?url&w=400&aspect=1:1&imagetools';
 	import TimBear4 from '$imgs/tim_bear4.jpg?url&w=400&aspect=1:1&imagetools';
 	import Wombat1 from '$imgs/wombat1.jpg?url&w=400&aspect=1:1&imagetools';
-	import HoneySantos4 from '$imgs/honey_santos4.jpg?url&w=400&aspect=1:1&imagetools';
+	import HoneySantos4 from '$imgs/animals/honey_santos4.jpg?url&w=400&aspect=1:1&imagetools';
 	import ScottChurchill1 from '$imgs/scott_churchill1.jpg?url&w=400&aspect=1:1&imagetools';
 	import DanAndTrot2 from '$imgs/dan_and_trot2.jpg?url&w=400&aspect=1:1&imagetools';
-	import TrotPortrait1 from '$imgs/trot_portrait1.jpg?url&w=400&aspect=1:1&imagetools';
+	import TrotPortrait1 from '$imgs/portraits/trot_portrait1.jpg?url&w=400&aspect=1:1&imagetools';
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?url&w=400&aspect=1:1&imagetools';
 	import Landscape1 from '$imgs/landscape1.jpg?url&w=400&aspect=1:1&imagetools';
 	import Landscape2 from '$imgs/landscape2.jpg?url&w=400&aspect=1:1&imagetools';
@@ -73,6 +73,8 @@
 					alt: 'todo'
 				}
 			]
+			// TODO: 12 photos:
+			// shannon_brodbeck1
 		},
 		{
 			title: 'Portraits',
