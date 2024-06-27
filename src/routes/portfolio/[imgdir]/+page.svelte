@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { iife } from 'js-utils';
-	import type { ImportGlobOptions } from 'vite';
 
 	const imgdir = $page.params.imgdir;
 	const imgs: Record<string, { default: string }> = iife(() => {
-		const query = {} as const;
+		// **The following non-dynamic if statements are required for vite to correctly resolve the glob.**
+		// To add more image directories, add more if statements.
 		if (imgdir === 'portraits')
 			return import.meta.glob('$imgs/portraits/*.{jpg,jpeg,png,webp}', {
 				eager: true,
