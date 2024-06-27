@@ -12,6 +12,7 @@
 	});
 </script>
 
+<!-- All PORTRAITS, no aspect-ratio 1/1, keep it portrait orientation. -->
 <!-- On desktop: 3x3 pictures, slightly smaller gap than /portfolio between pics -->
 <!-- On mobile, 2x6 pictures,  -->
 <div class="px-4 py-20 flex flex-col gap-4">
