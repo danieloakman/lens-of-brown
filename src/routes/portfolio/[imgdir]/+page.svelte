@@ -1,25 +1,67 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { iife } from 'js-utils';
+	import type { ImportGlobOptions } from 'vite';
 
 	const imgdir = $page.params.imgdir;
-	let imgs: Record<string, { default: string }> = {};
-	if (imgdir === 'portraits') {
-		imgs = import.meta.glob('$imgs/portraits/*.{jpg,jpeg,png,webp}', {
-			eager: true,
-			query: {
-				aspect: '1:1',
-				w: 700,
-				webp: true,
-				url: true,
-				imagetools: true
-			}
-		});
-	}
+	const imgs: Record<string, { default: string }> = iife(() => {
+		const query = {} as const;
+		if (imgdir === 'portraits')
+			return import.meta.glob('$imgs/portraits/*.{jpg,jpeg,png,webp}', {
+				eager: true,
+				query: {
+					enhanced: true
+				}
+			});
+		if (imgdir === 'families')
+			return import.meta.glob('$imgs/families/*.{jpg,jpeg,png,webp}', {
+				eager: true,
+				query: {
+					enhanced: true
+				}
+			});
+		if (imgdir === 'couples')
+			return import.meta.glob('$imgs/couples/*.{jpg,jpeg,png,webp}', {
+				eager: true,
+				query: {
+					enhanced: true
+				}
+			});
+		if (imgdir === 'landscapes')
+			return import.meta.glob('$imgs/landscapes/*.{jpg,jpeg,png,webp}', {
+				eager: true,
+				query: {
+					enhanced: true
+				}
+			});
+		if (imgdir === 'weddings')
+			return import.meta.glob('$imgs/weddings/*.{jpg,jpeg,png,webp}', {
+				eager: true,
+				query: {
+					enhanced: true
+				}
+			});
+		if (imgdir === 'events')
+			return import.meta.glob('$imgs/events/*.{jpg,jpeg,png,webp}', {
+				eager: true,
+				query: {
+					enhanced: true
+				}
+			});
+		if (imgdir === 'animals')
+			return import.meta.glob('$imgs/animals/*.{jpg,jpeg,png,webp}', {
+				eager: true,
+				query: {
+					enhanced: true
+				}
+			});
+		throw new Error(`Unknown imgdir: ${imgdir}`);
+	});
 </script>
 
-<div class="flex flex-col">
-	{#each Object.values(imgs) as { default: img }}
-		<span>{JSON.stringify(img)}</span>
+<div class="grid grid-cols-2 md:grid-cols-3">
+	{#each Object.values(imgs) as { default: src }}
+		<enhanced:img {src} alt="" class="w-[700px]"></enhanced:img>
 	{/each}
 </div>
 

@@ -174,6 +174,7 @@
 </div>
 
 <style lang="postcss">
+	/* TODO: Swap all h2's to h1s and adjust their text size */
 	h1 {
 		@apply text-5xl mx-auto font-Forum;
 	}
