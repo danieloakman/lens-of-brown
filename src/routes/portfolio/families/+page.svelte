@@ -12,8 +12,10 @@
 	});
 </script>
 
-<div class="p-4 flex flex-col gap-4">
-	<h1 class="text-5xl text-center">Families</h1>
+<!-- On desktop: 3x3 pictures, slightly smaller gap than /portfolio between pics -->
+<!-- On mobile, 2x6 pictures,  -->
+<div class="px-4 py-20 flex flex-col gap-4">
+	<h1 class="text-3xl text-center font-Forum">FAMILIES, SIBLINGS & LITTLE ONES</h1>
 	<Carousel
 		bind:this={carousel}
 		class="w-[600px] mx-auto rounded-container-token"

@@ -44,96 +44,127 @@
 		alt: 'todo'
 	};
 
-	import fam4 from '$imgs/tim_bear1.jpg';
-	import twoToddlers from '$imgs/tim_bear2.jpg?url&w=400&aspect=1:1&imagetools';
-	import dogA from '$imgs/honey_santos2.jpg?url&w=400&aspect=1:1&imagetools';
-	import dogB from '$imgs/honey_santos1.jpg?url&w=400&aspect=1:1&imagetools';
-	import couplesA from '$imgs/scott_churchill1.jpg?url&w=400&aspect=1:1&imagetools';
-	import couplesB from '$imgs/scott_churchill2.jpg?url&w=400&aspect=1:1&imagetools';
+	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?url&w=400&aspect=1:1&imagetools';
+	import TimBear4 from '$imgs/tim_bear4.jpg?url&w=400&aspect=1:1&imagetools';
+	import Wombat1 from '$imgs/wombat1.jpg?url&w=400&aspect=1:1&imagetools';
+	import HoneySantos4 from '$imgs/honey_santos4.jpg?url&w=400&aspect=1:1&imagetools';
+	import ScottChurchill1 from '$imgs/scott_churchill1.jpg?url&w=400&aspect=1:1&imagetools';
+	import DanAndTrot2 from '$imgs/dan_and_trot2.jpg?url&w=400&aspect=1:1&imagetools';
 	import TrotPortrait1 from '$imgs/trot_portrait1.jpg?url&w=400&aspect=1:1&imagetools';
+	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?url&w=400&aspect=1:1&imagetools';
+	import Landscape1 from '$imgs/landscape1.jpg?url&w=400&aspect=1:1&imagetools';
+	import Landscape2 from '$imgs/landscape2.jpg?url&w=400&aspect=1:1&imagetools';
+	import Events1 from '$imgs/events1.jpg?url&w=400&aspect=1:1&imagetools';
+	import Events2 from '$imgs/events2.jpg?url&w=400&aspect=1:1&imagetools';
+
+	// TODO: on mobile, only load 1 picture and don't do cross fade.
 	const sections: Section[] = [
 		{
 			title: 'Families',
-			subheading: 'todo',
+			subheading: '+ siblings & little ones',
 			href: '/portfolio/families',
 			imgs: [
 				{
-					src: fam4,
-					alt: 'Family of 4 amongst Autumn leaves.'
+					src: ShannonBrodbeck1,
+					alt: 'Family of 5 ...' // tODO: edit this
 				},
 				{
-					src: twoToddlers,
-					alt: 'Boy and girl toddlers playing with Autumn leaves.'
+					src: TimBear4,
+					alt: 'todo'
+				}
+			]
+		},
+		{
+			title: 'Portraits',
+			subheading: '+ headshots',
+			href: '/portfolio/portraits',
+			imgs: [
+				{
+					src: TrotPortrait1,
+					alt: ''
+				},
+				{ src: BiancaCherie4, alt: 'todo' }
+			] // TODO: bianc_cherie4
+		},
+		{
+			title: 'Landscapes',
+			subheading: '+ cities and nature',
+			href: '/portfolio/landscapes',
+			imgs: [
+				{
+					src: Landscape2,
+					alt: 'todo'
+				},
+				{
+					src: Landscape1,
+					alt: 'todo'
 				}
 			]
 		},
 		{
 			title: 'Animals',
-			subheading: 'todo',
+			subheading: '+ pets & natives',
 			href: '/portfolio/animals',
 			imgs: [
+				// TODO: Swap wombat1 and honey_santos4 in here:
 				{
-					src: dogA,
-					alt: 'Ginger dog laying on back with purple flowers in background.'
+					src: Wombat1,
+					alt: 'todo'
 				},
 				{
-					src: dogB,
-					alt: 'Ginger dog preparing to run.'
+					src: HoneySantos4,
+					alt: 'todo'
 				}
 			]
 		},
 		{
 			title: 'Couples',
-			subheading: 'todo',
+			subheading: '+ engagements & proposals',
 			href: '/portfolio/couples',
 			imgs: [
 				{
-					src: couplesB,
-					alt: 'A couple in front of a lighthouse, looking at the camera.'
+					src: DanAndTrot2,
+					alt: 'todo'
 				},
 				{
-					src: couplesA,
+					src: ScottChurchill1,
 					alt: 'A couple in front of a lighthouse, looking at each other.'
 				}
 			]
 		},
 		{
 			title: 'Events',
-			subheading: 'todo',
+			subheading: '+ special occasions',
 			href: '/portfolio/events',
-			imgs: [IMG_TODO, IMG_TODO]
-		},
-		{
-			title: 'Portraits',
-			subheading: 'todo',
-			href: '/portfolio/portraits',
-			imgs: [{
-				src: TrotPortrait1,
-				alt: ''
-			}, IMG_TODO]
-		},
-		{
-			title: 'Landscapes',
-			subheading: 'todo',
-			href: '/portfolio/landscapes',
-			imgs: [IMG_TODO, IMG_TODO]
-		},
-		{
-			title: 'Weddings',
-			subheading: 'todo',
-			href: '/portfolio/weddings',
-			imgs: [IMG_TODO, IMG_TODO]
+			imgs: [
+				{
+					src: Events2,
+					alt: 'todo'
+				},
+				{
+					src: Events1,
+					alt: 'todo'
+				}
+			]
 		}
+		// {
+		// 	title: 'Weddings',
+		// 	subheading: 'todo',
+		// 	href: '/portfolio/weddings',
+		// 	imgs: [IMG_TODO, IMG_TODO]
+		// }
 	];
 </script>
 
 <div class="flex flex-col">
-	<h1 class="p-4 text-center">See what we've been up to!</h1>
-
-	<div class="py-4 px-4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10">
+	<div class="py-4 px-12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10">
 		{#each sections as { title, imgs, subheading, href }}
 			<a class="cell" {href}>
-				<TwoImg class="rounded-lg w-[400px] aspect-square object-cover" loading="lazy" {imgs} />
+				<TwoImg
+					class="rounded-container-token w-[400px] aspect-square object-cover"
+					loading="lazy"
+					{imgs}
+				/>
 				<h2>{title}</h2>
 				<h3>{subheading}</h3>
 			</a>
