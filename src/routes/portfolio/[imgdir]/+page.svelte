@@ -1,67 +1,104 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { iife } from 'js-utils';
+	import { iife, propIs, isObjectLike } from 'js-utils';
+	import { iter, repeat } from 'iteragain';
+	import { dev } from '$app/environment';
 
-	const imgdir = $page.params.imgdir;
+	type ImgDir =
+		| 'portraits'
+		| 'families'
+		| 'couples'
+		| 'landscapes'
+		| 'weddings'
+		| 'events'
+		| 'animals';
+
+	const imgdir = $page.params.imgdir as ImgDir | unknown;
+	let alts: IterableIterator<string> = repeat('todo', 12);
 	const imgs: Record<string, { default: string }> = iife(() => {
 		// **The following non-dynamic if statements are required for vite to correctly resolve the glob.**
 		// To add more image directories, add more if statements.
-		if (imgdir === 'portraits')
-			return import.meta.glob('$imgs/portraits/*.{jpg,jpeg,png,webp}', {
+		// if (imgdir === 'portraits') {
+		// 	return import.meta.glob('$imgs/portraits/*.{jpg,jpeg,png,webp}', {
+		// 		eager: true,
+		// 		query: {
+		// 			enhanced: true,
+		// 			aspect: '0.67:1'
+		// 		}
+		// 	});
+		// }
+		// if (imgdir === 'families')
+		// 	return import.meta.glob('$imgs/families/*.{jpg,jpeg,png,webp}', {
+		// 		eager: true,
+		// 		query: {
+		// 			enhanced: true,
+		// 			aspect: '0.67:1'
+		// 		}
+		// 	});
+		// if (imgdir === 'couples')
+		// 	return import.meta.glob('$imgs/couples/*.{jpg,jpeg,png,webp}', {
+		// 		eager: true,
+		// 		query: {
+		// 			enhanced: true,
+		// 			aspect: '0.67:1'
+		// 		}
+		// 	});
+		// if (imgdir === 'landscapes')
+		// 	return import.meta.glob('$imgs/landscapes/*.{jpg,jpeg,png,webp}', {
+		// 		eager: true,
+		// 		query: {
+		// 			enhanced: true,
+		// 			aspect: '0.67:1'
+		// 		}
+		// 	});
+		// if (imgdir === 'weddings')
+		// 	return import.meta.glob('$imgs/weddings/*.{jpg,jpeg,png,webp}', {
+		// 		eager: true,
+		// 		query: {
+		// 			enhanced: true,
+		// 			aspect: '0.67:1'
+		// 		}
+		// 	});
+		// if (imgdir === 'events')
+		// 	return import.meta.glob('$imgs/events/*.{jpg,jpeg,png,webp}', {
+		// 		eager: true,
+		// 		query: {
+		// 			enhanced: true,
+		// 			aspect: '0.67:1'
+		// 		}
+		// 	});
+		// if (imgdir === 'animals')
+		// 	return import.meta.glob('$imgs/animals/*.{jpg,jpeg,png,webp}', {
+		// 		eager: true,
+		// 		query: {
+		// 			enhanced: true,
+		// 			aspect: '0.67:1'
+		// 		}
+		// 	});
+		if (dev && imgdir === 'test') {
+			const imgs = import.meta.glob('$imgs/wombat*', {
 				eager: true,
 				query: {
-					enhanced: true
+					enhanced: true,
+					aspect: '0.67:1'
 				}
 			});
-		if (imgdir === 'families')
-			return import.meta.glob('$imgs/families/*.{jpg,jpeg,png,webp}', {
-				eager: true,
-				query: {
-					enhanced: true
-				}
-			});
-		if (imgdir === 'couples')
-			return import.meta.glob('$imgs/couples/*.{jpg,jpeg,png,webp}', {
-				eager: true,
-				query: {
-					enhanced: true
-				}
-			});
-		if (imgdir === 'landscapes')
-			return import.meta.glob('$imgs/landscapes/*.{jpg,jpeg,png,webp}', {
-				eager: true,
-				query: {
-					enhanced: true
-				}
-			});
-		if (imgdir === 'weddings')
-			return import.meta.glob('$imgs/weddings/*.{jpg,jpeg,png,webp}', {
-				eager: true,
-				query: {
-					enhanced: true
-				}
-			});
-		if (imgdir === 'events')
-			return import.meta.glob('$imgs/events/*.{jpg,jpeg,png,webp}', {
-				eager: true,
-				query: {
-					enhanced: true
-				}
-			});
-		if (imgdir === 'animals')
-			return import.meta.glob('$imgs/animals/*.{jpg,jpeg,png,webp}', {
-				eager: true,
-				query: {
-					enhanced: true
-				}
-			});
+      const img = Object.values(imgs)[0];
+      if (!(isObjectLike(img) && ('default' in img))) throw new Error('test img.default is not a string');
+			return iter(repeat(img as { default: string }, 12))
+				.enumerate()
+				.reduce(
+					(a, [i, v]) => ((a[i.toString()] = v), a),
+					{} as Record<string, { default: string }>
+				);
+		}
 		throw new Error(`Unknown imgdir: ${imgdir}`);
 	});
 </script>
 
-<div class="grid grid-cols-2 md:grid-cols-3">
-	{#each Object.values(imgs) as { default: src }}
-		<enhanced:img {src} alt="" class="w-[700px]"></enhanced:img>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
+	{#each iter(Object.values(imgs)).pluck('default').zip(alts) as [src, alt]}
+		<enhanced:img {src} {alt} class="rounded-container-token w-[700px]"></enhanced:img>
 	{/each}
 </div>
 
