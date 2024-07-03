@@ -7,6 +7,10 @@
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
 		href === $page.url.pathname ? 'page' : undefined;
+
+	const onClickNav = () => {
+		drawerStore.close();
+	};
 </script>
 
 {#if $drawerStore.open}
@@ -18,7 +22,7 @@
 		<!-- {#if dev}
 			<span class="card p-1 m-0">{windowSize.w}, {windowSize.h}</span>
 		{/if} -->
-		<button class="btn btn-icon variant-filled-ghost" on:click={() => drawerStore.close()}>
+		<button class="btn btn-icon variant-filled-ghost" onclick={() => drawerStore.close()}>
 			<Icon.ArrowRightToLine class="text-3xl" />
 		</button>
 	</div>
@@ -29,12 +33,14 @@
 		<svelte:component this={$drawerContentStore} />
 	{:else}
 		<nav class="flex flex-col gap-4 p-4">
-			<a aria-current={isCurrentPage('/')} href="/"> Home </a>
+			<a aria-current={isCurrentPage('/')} href="/" onclick={onClickNav}> Home </a>
 			<Divider horizontal />
-			<a aria-current={isCurrentPage('/about')} href="/about"> About </a>
-			<a aria-current={isCurrentPage('/contact')} href="/contact"> Contact </a>
-			<a aria-current={isCurrentPage('/portfolio')} href="/portfolio"> Portfolio </a>
-			<a aria-current={isCurrentPage('/pricing')} href="/pricing"> Pricing </a>
+			<a aria-current={isCurrentPage('/about')} href="/about" onclick={onClickNav}> About </a>
+			<a aria-current={isCurrentPage('/contact')} href="/contact" onclick={onClickNav}> Contact </a>
+			<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" onclick={onClickNav}>
+				Portfolio
+			</a>
+			<a aria-current={isCurrentPage('/pricing')} href="/pricing" onclick={onClickNav}> Pricing </a>
 		</nav>
 	{/if}
 {/if}
