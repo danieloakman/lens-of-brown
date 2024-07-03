@@ -8,24 +8,28 @@
 
 	const {
 		children,
-		class: classContainer = '',
 		backdrop,
+		class: containerClass = '',
+		backdropClass = '',
+		childrenClass = '',
 		...rest
 	}: HTMLAttributes<HTMLDivElement> & {
 		innerClass?: string;
+		backdropClass?: string;
+		childrenClass?: string;
 		backdrop?: Snippet;
 	} = $props();
 </script>
 
-<div class={'container ' + classContainer} {...rest}>
-	<div class="w-full h-full inner z-1">
+<div class={'container ' + containerClass} {...rest}>
+	<div class={"inner z-1 " + backdropClass}>
 		{#if backdrop}
 			{@render backdrop()}
 		{/if}
 	</div>
 
 	<!-- TODO: Put some of this class stuff as a component prop -->
-	<div class="w-full h-full inner z-2">
+	<div class={"inner z-2 " + childrenClass}>
 		{#if children}
 			{@render children()}
 		{/if}
