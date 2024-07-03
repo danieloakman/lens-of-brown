@@ -4,7 +4,8 @@
 	import { iter, repeat } from 'iteragain';
 
 	const assertImg = (obj: unknown): { default: string } => {
-		if (propIs(obj, 'default', 'object') || propIs(obj, 'default', 'string')) return obj as unknown as { default: string };
+		if (propIs(obj, 'default', 'object') || propIs(obj, 'default', 'string'))
+			return obj as unknown as { default: string };
 		throw new Error('Expected object with default string property');
 	};
 
