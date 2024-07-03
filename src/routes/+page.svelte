@@ -35,6 +35,7 @@
 /> -->
 
 <div class="flex flex-col gap-2">
+	<span class="text-center font-Forum">Todo</span>
 	<!-- TODO: ImgCarousel doesn't appear here, find out why -->
 	<!-- <ImgCarousel class="" {imgs} nextDelayMs={3000} width="500px" height="500px" /> -->
 	
