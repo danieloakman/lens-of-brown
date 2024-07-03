@@ -23,7 +23,16 @@
 
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { windowSize } from '$stores';
+	import { page } from '$app/stores';
+	import { capitalize } from 'js-utils';
+	import { derived } from 'svelte/store';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
+
+	const title = derived([page], ([{ route }]) => {
+		if (!route.id || route.id === '/') return 'Lens of Brown';
+		const firstRoute = route.id.split('/').filter(Boolean)[0];
+		return `${capitalize(firstRoute)} - Lens of Brown`;
+	});
 </script>
 
 <svelte:window bind:innerWidth={windowSize.w} bind:innerHeight={windowSize.h} />
@@ -42,6 +51,10 @@
 
 <!-- eslint-disable-next-line -->
 <!-- <svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head> -->
+
+<svelte:head>
+	<title>{$title}</title>
+</svelte:head>
 
 <AppShell>
 	<svelte:fragment slot="header">
