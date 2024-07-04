@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { BasicImg } from '$types';
 	import TwoImg from './TwoImg.svelte';
+	import Divider from '$components/Divider.svelte';
 
 	// function random(seed: number) {
 	// 	var x = Math.sin(seed++) * 10000;
@@ -159,32 +160,39 @@
 </script>
 
 <div class="flex flex-col">
-	<div class="py-4 px-12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10">
-		{#each sections as { title, imgs, subheading, href }}
-			<a class="cell" {href}>
-				<TwoImg
-					class="rounded-container-token w-[400px] aspect-square object-cover"
-					{imgs}
-				/>
-				<h2>{title}</h2>
-				<h3>{subheading}</h3>
-			</a>
-		{/each}
+	<div class="flex flex-col gap-10 mx-auto pb-4 pt-10 px-12">
+		<div>
+			<h3 class="uppercase italic">A peek through the</h3>
+			<h2 class="uppercase text-primary-500 ps-24">Lens of Brown...</h2>
+		</div>
+
+		<!-- TODO: make it stretch across entire page. -->
+		<!-- <Divider horizontal /> -->
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10">
+			{#each sections as { title, imgs, subheading, href }}
+				<a class="cell" {href}>
+					<TwoImg class="rounded-container-token w-[400px] aspect-square object-cover" {imgs} />
+					<h2 class="text-center">{title}</h2>
+					<h3 class="text-center">{subheading}</h3>
+				</a>
+			{/each}
+		</div>
 	</div>
 </div>
 
 <style lang="postcss">
 	/* TODO: Swap all h2's to h1s and adjust their text size */
 	h1 {
-		@apply text-5xl mx-auto font-Forum;
+		@apply text-5xl font-Forum;
 	}
 
 	h2 {
-		@apply text-4xl text-center font-Forum;
+		@apply text-4xl font-Forum;
 	}
 
 	h3 {
-		@apply text-3xl text-center font-Forum;
+		@apply text-3xl font-Forum;
 	}
 
 	/* span {

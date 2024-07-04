@@ -3,7 +3,7 @@
 	import HeadingBackdropImg from '$imgs/landscape1.jpg?enhanced&imagetools';
 </script>
 
-<Backdrop class="w-full mx-auto">
+<!-- <Backdrop class="w-full mx-auto">
 	{#snippet backdrop()}
 		<enhanced:img
 			class="w-full h-auto object-fill"
@@ -20,12 +20,26 @@
 			</a>
 		</div>
 	{/snippet}
-</Backdrop>
+</Backdrop> -->
 
-<div class="mx-auto p-4">
+<h2>All about</h2>
+<h1>Lens of Brown</h1>
+
+<!-- TODO:
+Inspo: acacia grace for this page.
+
+Heading: "All about \n Lens of Brown"
+
+Three portraits in a row, same size, static.
+
+Section: "When you book with us, you'll get:"
+Followed by tick boxes.
+-->
+
+<!-- <div class="mx-auto p-4">
 	<h3>Hello, ...</h3>
 	<span>TODO</span>
-</div>
+</div> -->
 
 <style lang="postcss">
 	h1 {
