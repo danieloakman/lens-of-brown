@@ -34,6 +34,15 @@
 	]}
 /> -->
 
+<!--
+TODO: main blurb
+
+Creating snaps for keeps.
+
+Wollongong based photography, servicing Greater Sydney and beyond. Candid, timeless images to capture your uniqueness.
+
+-->
+
 <div class="flex flex-col gap-2">
 	<span class="text-center font-Forum">Todo</span>
 	<!-- TODO: ImgCarousel doesn't appear here, find out why -->
