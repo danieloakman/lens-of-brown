@@ -1,17 +1,41 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { FACEBOOK_URL, INFO_EMAIL, INSTAGRAM_URL } from '$constants/strings';
-	import { Icon, windowSize } from '$lib';
-	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
-	// @ts-expect-error
-	import SidewaysLogo from '$imgs/transparent-logo-sideways.png?enhanced';
+	import { Icon } from '$lib';
+	import { getDrawerStore } from '@skeletonlabs/skeleton';
+	import SidewaysLogo from '$imgs/transparent-logo-sideways.png?enhanced&imagetools';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
 		href === $page.url.pathname ? 'page' : undefined;
 </script>
 
-<AppBar
+<div class="flex flex-row gap-2 justify-between">
+	<button
+		class="min-[910px]:hidden btn-icon w-16"
+		on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
+	>
+		<Icon.Menu class="text-2xl text-primary-500" />
+	</button>
+
+	<a href="/">
+		<enhanced:img
+			src={SidewaysLogo}
+			alt="Lens of Brown logo - header"
+			class="h-[100px] w-auto px-6"
+		></enhanced:img>
+	</a>
+
+	<div class="w-16 min-[910px]:hidden"></div>
+	<nav class="hidden min-[910px]:flex flex-row items-center gap-12 px-6">
+		<a href="/" class="header" aria-current={isCurrentPage('/')}>home</a>
+		<a href="/portfolio" class="header" aria-current={isCurrentPage('/portfolio')}>portfolio</a>
+		<a href="/services" class="header" aria-current={isCurrentPage('/services')}>services</a>
+		<a href="/about" class="header" aria-current={isCurrentPage('/about')}>about</a>
+		<a href="/contact" class="header" aria-current={isCurrentPage('/contact')}>contact</a>
+	</nav>
+</div>
+
+<!-- <AppBar
 	padding=""
 	gap="gap-0"
 	background=""
@@ -77,10 +101,10 @@
 		</button>
 
 		<div class="hidden min-[910px]:flex w-16">
-			<!-- <LightSwitch /> -->
+			// <LightSwitch />
 		</div>
 	</svelte:fragment>
-</AppBar>
+</AppBar> -->
 
 <style lang="postcss">
 	/* Highlights current route the page is on. */
@@ -94,7 +118,7 @@
 	}
 
 	.header {
-		@apply text-lg font-Forum text-primary-500;
+		@apply text-lg font-Forum text-primary-500 uppercase;
 		@apply transition duration-300 ease-in-out hover:scale-110;
 	}
 </style>
