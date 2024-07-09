@@ -58,7 +58,6 @@
 	import Events1 from '$imgs/events1.jpg?url&w=400&aspect=1:1&imagetools';
 	import Events2 from '$imgs/events2.jpg?url&w=400&aspect=1:1&imagetools';
 
-	// TODO: on mobile, only load 1 picture and don't do cross fade.
 	const sections: Section[] = [
 		{
 			title: 'Families',
@@ -159,6 +158,8 @@
 	];
 </script>
 
+<!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
+
 <div class="flex flex-col">
 	<div class="flex flex-col gap-10 mx-auto pb-4 pt-10 px-12">
 		<div>
@@ -166,7 +167,6 @@
 			<h2 class="uppercase text-primary-500 ps-24">Lens of Brown...</h2>
 		</div>
 
-		<!-- TODO: make it stretch across entire page. -->
 		<!-- <Divider horizontal /> -->
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10">

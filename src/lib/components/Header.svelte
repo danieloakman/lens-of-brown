@@ -11,6 +11,8 @@
 		href === $page.url.pathname ? 'page' : undefined;
 </script>
 
+<!-- TODO: copy as as is from zenfolio. But remove profile icon on the far right. -->
+
 <AppBar
 	padding=""
 	gap="gap-0"
