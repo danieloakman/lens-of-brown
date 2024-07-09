@@ -34,6 +34,8 @@
 		"@typescript-eslint/eslint-plugin": "^7.13.1",
 		"@typescript-eslint/parser": "^7.13.1",
 		"autoprefixer": "^10.4.16",
+		"embla-carousel-autoplay": "^8.1.6",
+		"embla-carousel-svelte": "^8.1.6",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.40.0",

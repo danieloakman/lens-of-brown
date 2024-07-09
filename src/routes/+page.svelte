@@ -1,13 +1,31 @@
 <script lang="ts">
-	import ImgCarousel from '$components/ImgCarousel.svelte';
-	import LensOfBrownLogo from '$components/LensOfBrownLogo.svelte';
-	import { windowSize } from '$lib';
-	import type { BasicImg } from '$types';
-
-	// const imgs: BasicImg[] = Object.values(STATIC_FILES.imgs.clients)
-	// 	.slice(0, 5)
-	// 	.map((src: string) => ({ src, alt: 'Client photo' }));
+	import Carousel from '$components/Carousel.svelte';
+	import Wombat1 from '$imgs/wombat1.jpg?w=750&imagetools';
+	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?w=750&imagetools';
+	import Events2 from '$imgs/events2.jpg?w=750&imagetools';
+	import Landscape2 from '$imgs/landscape2.jpg?w=750&imagetools';
+	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
 </script>
+
+<Carousel class="text-center" loop={true} autoplay={true}>
+	<img src={Wombat1} class="carousel-img" />
+	<img src={ShannonBrodbeck1} class="carousel-img" />
+	<img src={Events2} class="carousel-img" />
+	<img src={Landscape2} class="carousel-img" />
+	<img src={BiancaCherie4} class="carousel-img" />
+</Carousel>
+
+<!-- <div class="py-32"></div> -->
+
+<!-- <Carousel innerClass="gap-2 pt-32">
+	{#snippet children()}
+		<img src={Wombat1} class="carousel-img" />
+		<img src={Wombat1} class="carousel-img" />
+		<img src={Wombat1} class="carousel-img" />
+		<img src={Wombat1} class="carousel-img" />
+		<img src={Wombat1} class="carousel-img" />
+	{/snippet}
+</Carousel> -->
 
 <!-- <Carousel
 	imgs={[
@@ -43,10 +61,10 @@ Wollongong based photography, servicing Greater Sydney and beyond. Candid, timel
 
 -->
 
-<div class="flex flex-col gap-2">
-	<span class="text-center font-Forum">Todo</span>
-	<!-- TODO: ImgCarousel doesn't appear here, find out why -->
-	<!-- <ImgCarousel class="" {imgs} nextDelayMs={3000} width="500px" height="500px" /> -->
-	
-	<!-- <LensOfBrownLogo class="mx-auto p-4"/> -->
-</div>
+<style lang="postcss">
+	.carousel-img {
+		aspect-ratio: 0.8/1;
+		padding: 0 2px 0 2px;
+		@apply object-cover w-[600px] snap-center;
+	}
+</style>
