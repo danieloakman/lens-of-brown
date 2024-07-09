@@ -39,7 +39,7 @@
 
 <Toast />
 <Drawer
-	position="right"
+	position="left"
 	width="w-[200px] sm:w-[33%]"
 	padding="p-0"
 	rounded="rounded-none"
