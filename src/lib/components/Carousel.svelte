@@ -16,6 +16,7 @@
 		if (!rect) return 0;
 		return rect.top + rect.height / 2 - 56 / 2 /* 56px is the width of the side buttons */;
 	});
+	// TODO: fix buttons not updating when scrolling or resizing.
 
 	const {
 		class: klass = '',
