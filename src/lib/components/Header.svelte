@@ -21,7 +21,7 @@
 		<enhanced:img
 			src={SidewaysLogo}
 			alt="Lens of Brown logo - header"
-			class="h-[100px] w-auto px-6"
+			class="w-[280px] px-6"
 		></enhanced:img>
 	</a>
 
