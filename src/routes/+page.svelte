@@ -7,7 +7,12 @@
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
 </script>
 
-<Carousel class="text-center py-20" loop={true} autoplay={{ stopOnMouseEnter: true, delay: 5000 }} showButtons={true}>
+<Carousel
+	class="text-center py-20"
+	loop={true}
+	autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
+	showButtons={true}
+>
 	<img src={Wombat1} class="carousel-img" />
 	<img src={ShannonBrodbeck1} class="carousel-img" />
 	<img src={Events2} class="carousel-img" />
@@ -70,6 +75,6 @@ Remove the many pictures section on mobile.
 <style lang="postcss">
 	.carousel-img {
 		aspect-ratio: 0.8/1;
-		@apply object-cover w-[600px] snap-center px-2 rounded-md;
+		@apply w-[600px] px-2;
 	}
 </style>

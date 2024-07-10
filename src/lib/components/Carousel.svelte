@@ -19,6 +19,8 @@
 
 	const {
 		class: klass = '',
+		viewportClass = '',
+		containerClass = '',
 		loop = false,
 		autoplay,
 		showButtons = false,
@@ -29,6 +31,8 @@
 		loop?: boolean;
 		autoplay?: AutoplayOptionsType;
 		showButtons?: boolean;
+		viewportClass?: string;
+		containerClass?: string;
 	} = $props();
 
 	const plugins: EmblaParams['plugins'] = [];
@@ -50,13 +54,13 @@
 	{/if}
 
 	<div
-		class="embla__viewport"
+		class={'embla__viewport ' + viewportClass}
 		use:emblaCarouselSvelte={{ options: { loop }, plugins }}
 		on:emblaInit={(event) => {
 			emblaApi = event.detail;
 		}}
 	>
-		<div class="embla__container">
+		<div class={'embla__container ' + containerClass}>
 			{#if children}
 				{@render children()}
 			{/if}
@@ -77,6 +81,7 @@
 </div>
 
 <style lang="postcss">
+	/* I think because overflow is hidden, rounded borders doesn't work. */
 	.embla {
 		overflow: hidden;
 	}
