@@ -68,3 +68,9 @@ Wollongong based photography, servicing Greater Sydney and beyond. Candid, timel
 		@apply object-cover w-[600px] snap-center;
 	}
 </style>
+
+<!--
+TODO: put bottom banner here with social icon buttons and copyright. Remove "Cookie Settings" & "User agreement" though.
+Make the "Lens of Brown" title here cream and not brown.
+Remove the many pictures section on mobile.
+-->
