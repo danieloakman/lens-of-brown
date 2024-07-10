@@ -7,13 +7,28 @@
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
 </script>
 
-<Carousel class="text-center" loop={true} autoplay={true}>
+<Carousel class="text-center" loop={true} autoplay={true} showButtons={true}>
 	<img src={Wombat1} class="carousel-img" />
 	<img src={ShannonBrodbeck1} class="carousel-img" />
 	<img src={Events2} class="carousel-img" />
 	<img src={Landscape2} class="carousel-img" />
 	<img src={BiancaCherie4} class="carousel-img" />
 </Carousel>
+
+<!--
+TODO: main blurb
+
+Creating snaps for keeps.
+
+Wollongong based photography, servicing Greater Sydney and beyond. Candid, timeless images to capture your uniqueness.
+
+-->
+
+<!--
+TODO: put bottom banner here with social icon buttons and copyright. Remove "Cookie Settings" & "User agreement" though.
+Make the "Lens of Brown" title here cream and not brown.
+Remove the many pictures section on mobile.
+-->
 
 <!-- <div class="py-32"></div> -->
 
@@ -52,25 +67,9 @@
 	]}
 /> -->
 
-<!--
-TODO: main blurb
-
-Creating snaps for keeps.
-
-Wollongong based photography, servicing Greater Sydney and beyond. Candid, timeless images to capture your uniqueness.
-
--->
-
 <style lang="postcss">
 	.carousel-img {
 		aspect-ratio: 0.8/1;
-		padding: 0 2px 0 2px;
-		@apply object-cover w-[600px] snap-center;
+		@apply object-cover w-[600px] snap-center px-2 rounded-md;
 	}
 </style>
-
-<!--
-TODO: put bottom banner here with social icon buttons and copyright. Remove "Cookie Settings" & "User agreement" though.
-Make the "Lens of Brown" title here cream and not brown.
-Remove the many pictures section on mobile.
--->
