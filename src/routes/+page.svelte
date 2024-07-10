@@ -17,7 +17,7 @@
 		class="text-center"
 		loop={true}
 		autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
-		showButtons={false}
+		showButtons={true}
 	>
 		<img src={Wombat1} class="carousel-img" />
 		<img src={ShannonBrodbeck1} class="carousel-img" />
@@ -58,6 +58,6 @@ Remove the many pictures section on mobile.
 <style lang="postcss">
 	.carousel-img {
 		aspect-ratio: 0.8/1;
-		@apply w-[600px] px-1;
+		@apply w-[600px] px-1 rounded-lg;
 	}
 </style>
