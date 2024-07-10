@@ -2,6 +2,8 @@
 	import Carousel from '$components/Carousel.svelte';
 	import Divider from '$components/Divider.svelte';
 	import BottomBanner from '$components/BottomBanner.svelte';
+	import Testimonial from '$components/Testimonial.svelte';
+	import { range } from 'iteragain';
 
 	import Wombat1 from '$imgs/wombat1.jpg?w=750&imagetools';
 	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?w=750&imagetools';
@@ -36,6 +38,14 @@
 
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
+	<div class="grid grid-cols-3 px-10 gap-10">
+		{#each range(6) as i}
+			<div class="card w-full h-[250px] text-center">Pics go here</div>
+		{/each}
+	</div>
+
+	<Testimonial text={'Tim testimonial todo'} author={'Tim'} />
+
 	<BottomBanner />
 </div>
 
@@ -44,7 +54,6 @@ TODO: put bottom banner here with social icon buttons and copyright. Remove "Coo
 Make the "Lens of Brown" title here cream and not brown.
 Remove the many pictures section on mobile.
 -->
-
 
 <style lang="postcss">
 	.carousel-img {

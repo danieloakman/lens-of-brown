@@ -12,6 +12,7 @@ import Instagram from 'virtual:icons/lucide/instagram';
 import Mail from 'virtual:icons/lucide/mail';
 import Menu from 'virtual:icons/lucide/menu';
 import PanelRightClose from 'virtual:icons/lucide/panel-right-close';
+import Quote from 'virtual:icons/lucide/quote';
 
 export const Icon = {
 	Menu,
@@ -23,5 +24,6 @@ export const Icon = {
 	Facebook,
 	Mail,
 	ArrowLeft,
-	ArrowRight
+	ArrowRight,
+	Quote
 };
