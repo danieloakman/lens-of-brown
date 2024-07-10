@@ -1,3 +1,4 @@
+<!-- TODO: rename route as /services -->
 <script lang="ts">
 	import Divider from '$components/Divider.svelte';
 
@@ -18,6 +19,12 @@
 		['EVENTS', 450]
 	];
 </script>
+
+<!--
+TODO: Mini shoots, just list the packages, no nested dot points underneath. No checkbox. No "book" button.
+Replace "About this service" with "What to expect" 
+Family packages list: Family - starts from $300. Each item is listed like that.
+-->
 
 <div class="flex flex-col pb-8 gap-10">
 	<h1 class="text-primary-500 dark:text-primary-100 mx-auto pt-10">PRICE LIST*</h1>
@@ -67,6 +74,11 @@
 
 	<h3 class="mx-auto">*PRICES SUBJECT TO CHANGE</h3>
 </div>
+
+<!--
+TODO: make component for the "See more\n follow us on instagram" then some pictures. As well as the bottom banner
+that contains the social icon buttons. These are reused on most pages.
+-->
 
 <style lang="postcss">
 	h1 {
