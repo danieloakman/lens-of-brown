@@ -23,11 +23,11 @@
 		autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
 		showButtons={true}
 	>
-		<img src={Wombat1} class="carousel-img" />
-		<img src={ShannonBrodbeck1} class="carousel-img" />
-		<img src={Events2} class="carousel-img" />
-		<img src={Landscape2} class="carousel-img" />
-		<img src={BiancaCherie4} class="carousel-img" />
+		<img src={Wombat1} class="carousel-img" alt="A closeup of a Wombat" />
+		<img src={ShannonBrodbeck1} class="carousel-img" alt="A family portrait of 5 smiling in the sun" />
+		<img src={Events2} class="carousel-img" alt="A woman infront of the Sydney Opera House" />
+		<img src={Landscape2} class="carousel-img" alt="The great ocean road, Australia" />
+		<img src={BiancaCherie4} class="carousel-img" alt="A boy smiling, standing and having fun" />
 	</Carousel>
 
 	<div class="w-[90%] mx-auto max-w-[500px]">
