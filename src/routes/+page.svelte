@@ -24,7 +24,11 @@
 		showButtons={true}
 	>
 		<img src={Wombat1} class="carousel-img" alt="A closeup of a Wombat" />
-		<img src={ShannonBrodbeck1} class="carousel-img" alt="A family portrait of 5 smiling in the sun" />
+		<img
+			src={ShannonBrodbeck1}
+			class="carousel-img"
+			alt="A family portrait of 5 smiling in the sun"
+		/>
 		<img src={Events2} class="carousel-img" alt="A woman infront of the Sydney Opera House" />
 		<img src={Landscape2} class="carousel-img" alt="The great ocean road, Australia" />
 		<img src={BiancaCherie4} class="carousel-img" alt="A boy smiling, standing and having fun" />
@@ -40,8 +44,9 @@
 		</div>
 	</div>
 
-	<!-- TODO: hide divider on mobile -->
-	{@render divider()}
+	<div class="hidden sm:block">
+		{@render divider()}
+	</div>
 
 	<div class="hidden sm:grid grid-cols-3 px-10 gap-10">
 		{#each range(6) as i}
