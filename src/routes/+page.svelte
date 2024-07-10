@@ -40,9 +40,10 @@
 		</div>
 	</div>
 
+	<!-- TODO: hide divider on mobile -->
 	{@render divider()}
 
-	<div class="grid grid-cols-3 px-10 gap-10">
+	<div class="hidden sm:grid grid-cols-3 px-10 gap-10">
 		{#each range(6) as i}
 			<div class="card w-full h-[250px] text-center">Pics go here</div>
 		{/each}
@@ -51,6 +52,10 @@
 	{@render divider()}
 
 	<Testimonial text={"Insert Tim's testimonial"} author={'Tim'} />
+
+	{@render divider()}
+
+	<div class="mx-auto">For more</div>
 
 	<BottomBanner />
 </div>
