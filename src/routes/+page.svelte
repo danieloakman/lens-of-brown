@@ -7,7 +7,7 @@
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
 </script>
 
-<Carousel class="text-center" loop={true} autoplay={true} showButtons={true}>
+<Carousel class="text-center py-20" loop={true} autoplay={{ stopOnMouseEnter: true, delay: 5000 }} showButtons={true}>
 	<img src={Wombat1} class="carousel-img" />
 	<img src={ShannonBrodbeck1} class="carousel-img" />
 	<img src={Events2} class="carousel-img" />

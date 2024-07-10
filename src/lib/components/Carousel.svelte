@@ -1,10 +1,11 @@
 <script lang="ts">
 	import type { EmblaCarouselType } from 'embla-carousel';
 	import emblaCarouselSvelte, { type EmblaCarouselSvelteType } from 'embla-carousel-svelte';
-	import Autoplay from 'embla-carousel-autoplay';
+	import Autoplay, { type AutoplayOptionsType } from 'embla-carousel-autoplay';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { Snippet } from 'svelte';
 	import { Icon } from '$lib/icons';
+	import { fade } from 'svelte/transition';
 
 	type EmblaParams = Parameters<NonNullable<EmblaCarouselSvelteType['update']>>[number];
 	let emblaApi: EmblaCarouselType | undefined;
@@ -19,26 +20,27 @@
 	const {
 		class: klass = '',
 		loop = false,
-		autoplay = false,
+		autoplay,
 		showButtons = false,
 		children,
 		...rest
 	}: HTMLAttributes<HTMLDivElement> & {
 		children?: Snippet;
 		loop?: boolean;
-		autoplay?: boolean;
+		autoplay?: AutoplayOptionsType;
 		showButtons?: boolean;
 	} = $props();
 
 	const plugins: EmblaParams['plugins'] = [];
-	if (autoplay) plugins.push(Autoplay());
+	if (autoplay) plugins.push(Autoplay(autoplay));
 </script>
 
 <!-- svelte-ignore event_directive_deprecated -->
 <div class={'embla ' + klass} bind:this={rootDiv} {...rest}>
-	{#if showButtons}
+	{#if showButtons && half}
 		<!-- svelte-ignore event_directive_deprecated -->
 		<button
+			in:fade
 			class="btn btn-icon absolute z-10 variant-filled-primary text-xl w-14"
 			style={`top: ${half}px; left: 10px`}
 			on:click={() => emblaApi?.scrollPrev()}
@@ -61,9 +63,10 @@
 		</div>
 	</div>
 
-	{#if showButtons}
+	{#if showButtons && half}
 		<!-- svelte-ignore event_directive_deprecated -->
 		<button
+			in:fade
 			class="btn btn-icon absolute z-20 variant-filled-primary text-xl w-14"
 			style={`top: ${half}px; right: 10px`}
 			on:click={() => emblaApi?.scrollNext()}
