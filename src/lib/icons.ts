@@ -13,6 +13,8 @@ import Mail from 'virtual:icons/lucide/mail';
 import Menu from 'virtual:icons/lucide/menu';
 import PanelRightClose from 'virtual:icons/lucide/panel-right-close';
 import Quote from 'virtual:icons/lucide/quote';
+// This one looks more like the one on Zenfolio, but will import another icon pack:
+// import Quote from 'virtual:icons/ri/double-quotes-r';
 
 export const Icon = {
 	Menu,

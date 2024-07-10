@@ -1,15 +1,21 @@
 <script lang="ts">
 	import { Icon } from '$lib/icons';
-	const { text, author }: { text: string; author: string } = $props();
+
+	const {
+		text,
+		author,
+		class: klass = ''
+	}: { text: string; author: string; class?: string } = $props();
 </script>
 
-<div>
-  <!-- TODO -->
-	<div class="mx-auto">
-		<Icon.Quote />
-		<blockquote class="text-lg font-Forum">
-			<p class="italic">{text}</p>
-			<footer class="text-primary-500 font-Forum">{author}</footer>
-		</blockquote>
-	</div>
+<div class={'flex flex-col align-middle gap-4 bg-surface-200 mx-10 pb-5 ' + klass}>
+	<Icon.Quote
+		class="card mx-auto variant-filled-primary text-5xl rounded-[100%] p-5 w-16 h-16 relative -top-8"
+	/>
+	<blockquote class="flex flex-col gap-10">
+		<p class="italic text-center text-3xl">{text}</p>
+		<footer class="text-center text-xl text-primary-500 font-Black-Mango">
+			{author}
+		</footer>
+	</blockquote>
 </div>

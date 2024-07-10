@@ -12,6 +12,10 @@
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
 </script>
 
+{#snippet divider()}
+	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
+{/snippet}
+
 <div class="flex flex-col gap-20 pt-20">
 	<Carousel
 		class="text-center"
@@ -36,7 +40,7 @@
 		</div>
 	</div>
 
-	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
+	{@render divider()}
 
 	<div class="grid grid-cols-3 px-10 gap-10">
 		{#each range(6) as i}
@@ -44,7 +48,9 @@
 		{/each}
 	</div>
 
-	<Testimonial text={'Tim testimonial todo'} author={'Tim'} />
+	{@render divider()}
+
+	<Testimonial text={"Insert Tim's testimonial"} author={'Tim'} />
 
 	<BottomBanner />
 </div>
