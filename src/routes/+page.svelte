@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Carousel from '$components/Carousel.svelte';
 	import Divider from '$components/Divider.svelte';
+	import BottomBanner from '$components/BottomBanner.svelte';
 
 	import Wombat1 from '$imgs/wombat1.jpg?w=750&imagetools';
 	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?w=750&imagetools';
@@ -9,7 +10,7 @@
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
 </script>
 
-<div class="flex flex-col gap-20 pt-20 pb-10">
+<div class="flex flex-col gap-20 pt-20">
 	<Carousel
 		class="text-center"
 		loop={true}
@@ -34,6 +35,8 @@
 	</div>
 
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
+
+	<BottomBanner />
 </div>
 
 <!--
