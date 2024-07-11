@@ -56,7 +56,23 @@
 
 	{@render divider()}
 
-	<div class="mx-auto">For more</div>
+	<div class="mx-10">
+		<h2 class="text-center text-2xl text-primary-500 font-Forum">For more</h2>
+		<h3 class="text-center text-xl">
+			Follow us on Instagram <a href={INSTAGRAM_URL} target="_blank">@lens.ofbrown</a>
+		</h3>
+		<Carousel class="pt-4" showButtons>
+			<!-- TODO: fill with imgs that trotty wants -->
+			<img src={Wombat1} class="carousel-img-sq" />
+			<img src={Wombat1} class="carousel-img-sq" />
+			<img src={Wombat1} class="carousel-img-sq" />
+			<img src={Wombat1} class="carousel-img-sq" />
+			<img src={Wombat1} class="carousel-img-sq" />
+			<img src={Wombat1} class="carousel-img-sq" />
+			<img src={Wombat1} class="carousel-img-sq" />
+			<img src={Wombat1} class="carousel-img-sq" />
+		</Carousel>
+	</div>
 
 	<BottomBanner />
 </div>
