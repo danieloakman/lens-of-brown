@@ -11,10 +11,10 @@
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		imgs: Snippet;
 	}
-	const { imgs, ...rest }: Props = $props();
+	const { imgs, class: klass = '', ...rest }: Props = $props();
 </script>
 
-<div {...rest}>
+<div class={'mx-10 ' + klass} {...rest}>
 	<h2 class="text-center text-2xl text-primary-500 font-Forum">For more</h2>
 	<h3 class="text-center text-xl">
 		Follow us on Instagram <a href={INSTAGRAM_URL} target="_blank">@lens.ofbrown</a>
