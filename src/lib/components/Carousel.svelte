@@ -53,7 +53,7 @@
 			<button
 				in:fade
 				out:fade
-				class="btn btn-icon variant-filled-primary text-xl w-14"
+				class="btn-side"
 				on:click={() => emblaApi?.scrollPrev()}
 			>
 				<Icon.ArrowLeft />
@@ -80,7 +80,7 @@
 			<button
 				in:fade
 				out:fade
-				class="btn btn-icon variant-filled-primary text-xl w-14"
+				class="btn-side"
 				on:click={() => emblaApi?.scrollNext()}
 			>
 				<Icon.ArrowRight />
@@ -104,5 +104,9 @@
 	}
 	.embla__container {
 		display: flex;
+	}
+
+	.btn-side {
+		@apply btn btn-icon variant-filled-primary text-xl w-12 opacity-75
 	}
 </style>
