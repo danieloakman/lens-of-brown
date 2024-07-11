@@ -10,6 +10,7 @@
 	import Events2 from '$imgs/events2.jpg?w=750&imagetools';
 	import Landscape2 from '$imgs/landscape2.jpg?w=750&imagetools';
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
+	import { INSTAGRAM_URL } from '$constants';
 </script>
 
 {#snippet divider()}
@@ -17,12 +18,7 @@
 {/snippet}
 
 <div class="flex flex-col gap-20 pt-20">
-	<Carousel
-		class="text-center"
-		loop={true}
-		autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
-		showButtons={true}
-	>
+	<Carousel class="text-center" loop showButtons autoplay={{ stopOnMouseEnter: true, delay: 5000 }}>
 		<img src={Wombat1} class="carousel-img" alt="A closeup of a Wombat" />
 		<img
 			src={ShannonBrodbeck1}
@@ -74,6 +70,10 @@ Remove the many pictures section on mobile.
 <style lang="postcss">
 	.carousel-img {
 		aspect-ratio: 0.8/1;
-		@apply w-[600px] px-1 rounded-lg;
+		@apply w-[600px] px-1 rounded-lg object-cover;
+	}
+
+	.carousel-img-sq {
+		@apply w-[300px] px-1 rounded-lg aspect-square object-cover;
 	}
 </style>

@@ -3,12 +3,26 @@
 	import emblaCarouselSvelte, { type EmblaCarouselSvelteType } from 'embla-carousel-svelte';
 	import Autoplay, { type AutoplayOptionsType } from 'embla-carousel-autoplay';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import type { Snippet } from 'svelte';
+	import { untrack, type Snippet } from 'svelte';
 	import { Icon } from '$lib/icons';
 	import { fade } from 'svelte/transition';
 
 	type EmblaParams = Parameters<NonNullable<EmblaCarouselSvelteType['update']>>[number];
-	let emblaApi: EmblaCarouselType | undefined;
+	let emblaApi = $state<EmblaCarouselType | undefined>();
+	let slides = $state<{ inView: number[]; notInView: number[] }>({ inView: [1], notInView: [1] });
+	const canScrollNext = $derived.by(() => slides.notInView.length && emblaApi?.canScrollNext());
+	const canScrollPrev = $derived.by(() => slides.notInView.length && emblaApi?.canScrollPrev());
+
+	$effect(() => {
+		const cb = (e: EmblaCarouselType) =>
+			untrack(() => {
+				slides = { inView: e.slidesInView(), notInView: e.slidesNotInView() };
+			});
+		emblaApi?.on('scroll', cb);
+		return () => {
+			emblaApi?.off('scroll', cb);
+		};
+	});
 
 	const {
 		class: klass = '',
@@ -34,10 +48,11 @@
 
 <!-- svelte-ignore event_directive_deprecated -->
 <div class={'embla ' + klass} {...rest}>
-	{#if showButtons}
+	{#if showButtons && canScrollPrev}
 		<div class="inner me-auto z-10 ps-2">
 			<button
 				in:fade
+				out:fade
 				class="btn btn-icon variant-filled-primary text-xl w-14"
 				on:click={() => emblaApi?.scrollPrev()}
 			>
@@ -60,10 +75,11 @@
 		</div>
 	</div>
 
-	{#if showButtons}
+	{#if showButtons && canScrollNext}
 		<div class="inner ms-auto z-10 pe-2">
 			<button
 				in:fade
+				out:fade
 				class="btn btn-icon variant-filled-primary text-xl w-14"
 				on:click={() => emblaApi?.scrollNext()}
 			>
