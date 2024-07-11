@@ -11,6 +11,7 @@
 	import Landscape2 from '$imgs/landscape2.jpg?w=750&imagetools';
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
 	import { INSTAGRAM_URL } from '$constants';
+	import ForMore from '$components/ForMore.svelte';
 </script>
 
 {#snippet divider()}
@@ -56,23 +57,19 @@
 
 	{@render divider()}
 
-	<div class="mx-10">
-		<h2 class="text-center text-2xl text-primary-500 font-Forum">For more</h2>
-		<h3 class="text-center text-xl">
-			Follow us on Instagram <a href={INSTAGRAM_URL} target="_blank">@lens.ofbrown</a>
-		</h3>
-		<Carousel class="pt-4" showButtons>
+	<ForMore class="mx-10">
+		{#snippet imgs()}
 			<!-- TODO: fill with imgs that trotty wants -->
-			<img src={Wombat1} class="carousel-img-sq" />
-			<img src={Wombat1} class="carousel-img-sq" />
-			<img src={Wombat1} class="carousel-img-sq" />
-			<img src={Wombat1} class="carousel-img-sq" />
-			<img src={Wombat1} class="carousel-img-sq" />
-			<img src={Wombat1} class="carousel-img-sq" />
-			<img src={Wombat1} class="carousel-img-sq" />
-			<img src={Wombat1} class="carousel-img-sq" />
-		</Carousel>
-	</div>
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+		{/snippet}
+	</ForMore>
 
 	<BottomBanner />
 </div>
