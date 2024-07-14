@@ -2,49 +2,7 @@
 	import type { BasicImg } from '$types';
 	import TwoImg from './TwoImg.svelte';
 	import Divider from '$components/Divider.svelte';
-
-	// function random(seed: number) {
-	// 	var x = Math.sin(seed++) * 10000;
-	// 	return x - Math.floor(x);
-	// }
-	// function shuffle<T>(array: T[], seed: number): T[] {
-	// 	// TODO: refactor this
-	// 	var m = array.length,
-	// 		t,
-	// 		i;
-
-	// 	// While there remain elements to shuffle…
-	// 	while (m) {
-	// 		// Pick a remaining element…
-	// 		i = Math.floor(random(seed) * m--);
-
-	// 		// And swap it with the current element.
-	// 		t = array[m];
-	// 		array[m] = array[i] as T;
-	// 		array[i] = t as T;
-	// 		++seed;
-	// 	}
-
-	// 	return array;
-	// }
-	// const seed = 10;
-	// const imgs = take(
-	// 	shuffle(iter(Object.values(STATIC_FILES.imgs.clients) as string[]).toArray(), seed),
-	// 	12
-	// );
-
-	interface Section {
-		title: string;
-		subheading: string;
-		href: string;
-		imgs: [BasicImg, BasicImg];
-	}
-
-	const IMG_TODO: BasicImg = {
-		src: '',
-		alt: 'todo'
-	};
-
+	import { Icon } from '$lib/icons';
 	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?url&w=400&aspect=1:1&imagetools';
 	import TimBear4 from '$imgs/tim_bear4.jpg?url&w=400&aspect=1:1&imagetools';
 	import Wombat1 from '$imgs/wombat1.jpg?url&w=400&aspect=1:1&imagetools';
@@ -57,6 +15,15 @@
 	import Landscape2 from '$imgs/landscape2.jpg?url&w=400&aspect=1:1&imagetools';
 	import Events1 from '$imgs/events1.jpg?url&w=400&aspect=1:1&imagetools';
 	import Events2 from '$imgs/events2.jpg?url&w=400&aspect=1:1&imagetools';
+	import BottomBanner from '$components/BottomBanner.svelte';
+	import Testimonial from '$components/Testimonial.svelte';
+
+	interface Section {
+		title: string;
+		subheading: string;
+		href: string;
+		imgs: [BasicImg, BasicImg];
+	}
 
 	const sections: Section[] = [
 		{
@@ -160,46 +127,32 @@
 
 <!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
 
-<div class="flex flex-col">
-	<div class="flex flex-col gap-10 mx-auto pb-4 pt-10 px-12">
-		<div>
-			<h3 class="uppercase italic">A peek through the</h3>
-			<h2 class="uppercase text-primary-500 ps-24">Lens of Brown...</h2>
-		</div>
+{#snippet divider()}
+	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
+{/snippet}
 
-		<!-- <Divider horizontal /> -->
+<div class="flex flex-col gap-20 py-20 mx-auto justify-center items-center">
+	<h3 class="text-center text-4xl font-Forum text-primary-500">Browse our Portfolio</h3>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10">
-			{#each sections as { title, imgs, subheading, href }}
-				<a class="cell" {href}>
-					<TwoImg class="rounded-container-token w-[400px] aspect-square object-cover" {imgs} />
-					<h2 class="text-center">{title}</h2>
-					<h3 class="text-center">{subheading}</h3>
+	<div class="grid grid-cols-1 min-[820px]:grid-cols-2 min-[1240px]:grid-cols-3 gap-3">
+		{#each sections as { title, imgs, subheading, href }}
+			<div class="flex flex-col gap-2 bg-surface-200 rounded-container-token">
+				<a {href}>
+					<TwoImg
+						class="rounded-tl-container-token rounded-tr-container-token w-[400px] aspect-square object-cover"
+						{imgs}
+					/>
 				</a>
-			{/each}
-		</div>
+				<div class="flex flex-col px-6 py-10">
+					<h2 class="text-2xl font-Forum text-primary-500 pb-3">{title}</h2>
+					<h3 class="text-xl pb-12">{subheading}</h3>
+					<a class="flex flex-row" {href}>See More <Icon.ArrowUpRight class="w-2" /></a>
+				</div>
+			</div>
+		{/each}
 	</div>
+
+	{@render divider()}
+
 </div>
-
-<style lang="postcss">
-	/* TODO: Swap all h2's to h1s and adjust their text size */
-	h1 {
-		@apply text-5xl font-Forum;
-	}
-
-	h2 {
-		@apply text-4xl font-Forum;
-	}
-
-	h3 {
-		@apply text-3xl font-Forum;
-	}
-
-	/* span {
-		@apply text-2xl;
-	} */
-
-	.cell {
-		@apply flex flex-col gap-2;
-	}
-</style>
+<BottomBanner />
