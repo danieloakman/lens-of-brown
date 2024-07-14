@@ -17,19 +17,49 @@
 	import Events2 from '$imgs/events2.jpg?url&w=400&aspect=1:1&imagetools';
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import Testimonial from '$components/Testimonial.svelte';
+	import ForMore from '$components/ForMore.svelte';
+</script>
 
-	interface Section {
-		title: string;
-		subheading: string;
-		href: string;
-		imgs: [BasicImg, BasicImg];
-	}
+<!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
 
-	const sections: Section[] = [
-		{
+{#snippet divider()}
+	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
+{/snippet}
+
+{#snippet portfolioSection({
+	title,
+	subheading,
+	href,
+	imgs
+}: {
+	title: string;
+	subheading: string;
+	href: string;
+	imgs: [BasicImg, BasicImg];
+})}
+	<div class="flex flex-col gap-2 bg-surface-200 rounded-container-token">
+		<a {href}>
+			<TwoImg
+				class="rounded-tl-container-token rounded-tr-container-token w-[400px] aspect-square object-cover"
+				{imgs}
+			/>
+		</a>
+		<div class="flex flex-col px-6 py-10">
+			<h2 class="text-2xl font-Forum text-primary-500 pb-3">{title}</h2>
+			<h3 class="text-xl pb-12">{subheading}</h3>
+			<a class="flex flex-row" {href}>See More <Icon.ArrowUpRight class="w-2" /></a>
+		</div>
+	</div>
+{/snippet}
+
+<div class="flex flex-col gap-20 pt-20 mx-auto">
+	<h3 class="text-center text-4xl font-Forum text-primary-500">Browse our Portfolio</h3>
+
+	<div class="grid grid-cols-1 min-[820px]:grid-cols-2 min-[1240px]:grid-cols-3 self-center gap-3">
+		{@render portfolioSection({
 			title: 'Families',
-			subheading: '+ siblings & little ones',
 			href: '/portfolio/families',
+			subheading: '+ siblings & little ones',
 			imgs: [
 				{
 					src: ShannonBrodbeck1,
@@ -40,22 +70,20 @@
 					alt: 'todo'
 				}
 			]
-			// TODO: 12 photos:
-			// shannon_brodbeck1
-		},
-		{
+		})}
+		{@render portfolioSection({
 			title: 'Portraits',
-			subheading: '+ headshots',
 			href: '/portfolio/portraits',
+			subheading: '+ headshots',
 			imgs: [
 				{
 					src: TrotPortrait1,
 					alt: ''
 				},
 				{ src: BiancaCherie4, alt: 'todo' }
-			] // TODO: bianc_cherie4
-		},
-		{
+			]
+		})}
+		{@render portfolioSection({
 			title: 'Landscapes',
 			subheading: '+ cities and nature',
 			href: '/portfolio/landscapes',
@@ -69,8 +97,8 @@
 					alt: 'todo'
 				}
 			]
-		},
-		{
+		})}
+		{@render portfolioSection({
 			title: 'Animals',
 			subheading: '+ pets & natives',
 			href: '/portfolio/animals',
@@ -85,8 +113,8 @@
 					alt: 'todo'
 				}
 			]
-		},
-		{
+		})}
+		{@render portfolioSection({
 			title: 'Couples',
 			subheading: '+ engagements & proposals',
 			href: '/portfolio/couples',
@@ -100,8 +128,8 @@
 					alt: 'A couple in front of a lighthouse, looking at each other.'
 				}
 			]
-		},
-		{
+		})}
+		{@render portfolioSection({
 			title: 'Events',
 			subheading: '+ special occasions',
 			href: '/portfolio/events',
@@ -115,44 +143,49 @@
 					alt: 'todo'
 				}
 			]
-		}
-		// {
-		// 	title: 'Weddings',
-		// 	subheading: 'todo',
-		// 	href: '/portfolio/weddings',
-		// 	imgs: [IMG_TODO, IMG_TODO]
-		// }
-	];
-</script>
-
-<!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
-
-{#snippet divider()}
-	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
-{/snippet}
-
-<div class="flex flex-col gap-20 py-20 mx-auto justify-center items-center">
-	<h3 class="text-center text-4xl font-Forum text-primary-500">Browse our Portfolio</h3>
-
-	<div class="grid grid-cols-1 min-[820px]:grid-cols-2 min-[1240px]:grid-cols-3 gap-3">
-		{#each sections as { title, imgs, subheading, href }}
-			<div class="flex flex-col gap-2 bg-surface-200 rounded-container-token">
-				<a {href}>
-					<TwoImg
-						class="rounded-tl-container-token rounded-tr-container-token w-[400px] aspect-square object-cover"
-						{imgs}
-					/>
-				</a>
-				<div class="flex flex-col px-6 py-10">
-					<h2 class="text-2xl font-Forum text-primary-500 pb-3">{title}</h2>
-					<h3 class="text-xl pb-12">{subheading}</h3>
-					<a class="flex flex-row" {href}>See More <Icon.ArrowUpRight class="w-2" /></a>
-				</div>
-			</div>
-		{/each}
+		})}
+		<!-- {@render portfolioSection({
+			title: 'Weddings',
+			href: '/portfolio/weddings',
+			subheading: '+ elopements',
+			imgs: [
+				{
+					src: ShannonBrodbeck1,
+					alt: 'todo'
+				},
+				{
+					src: TimBear4,
+					alt: 'todo'
+				}
+			]
+		})} -->
 	</div>
 
 	{@render divider()}
 
+	<Testimonial author="Somebody" text="todo" />
+
+	{@render divider()}
+
+	<ForMore >
+		{#snippet imgs()}
+			<!-- TODO: fill with imgs that trotty wants -->
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
+		{/snippet}
+	</ForMore>
+
+	<BottomBanner />
 </div>
-<BottomBanner />
+
+<style lang="postcss">
+	.carousel-img-sq {
+		@apply w-[300px] px-1 rounded-lg aspect-square object-cover;
+	}
+</style>
