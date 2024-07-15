@@ -5,6 +5,8 @@
 	import SelectInput from '$components/SelectInput.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import Divider from '$components/Divider.svelte';
+	import { INSTAGRAM_URL, FACEBOOK_URL, INFO_EMAIL } from '$constants';
+	import DanAndTrot from '$imgs/dan_and_trot1.jpg?w=400&h=400&fit=cover&position=right bottom&imagetools';
 </script>
 
 <!--
@@ -65,7 +67,21 @@ Replace map pic with landscape pic.
 
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
-	<div></div>
+	<div class="bg-surface-200 p-10">
+		<img
+			src={DanAndTrot}
+			class="float-right w-[400px] h-[400px] opacity-60 relative -right-32"
+			alt=""
+		/>
+		<div class="flex flex-col gap-10">
+			<h2 class="text-2xl uppercase text-primary-500 font-Forum">Locations we service</h2>
+			<ul>TODO: two columns dot points list of locations we shoot at</ul>
+			<h2 class="text-2xl uppercase text-primary-500 font-Forum">Contact us</h2>
+			<a href={INSTAGRAM_URL}>Lens.ofbrown</a>
+			<a href={FACEBOOK_URL}>Facebook</a>
+			<a href={INFO_EMAIL}>EMAIL</a>
+		</div>
+	</div>
 
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
