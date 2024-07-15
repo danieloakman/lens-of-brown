@@ -14,6 +14,7 @@ import Mail from 'virtual:icons/lucide/mail';
 import Menu from 'virtual:icons/lucide/menu';
 import PanelRightClose from 'virtual:icons/lucide/panel-right-close';
 import Quote from 'virtual:icons/lucide/quote';
+import SquareCheckBig from 'virtual:icons/lucide/square-check-big';
 
 // This one looks more like the one on Zenfolio, but will import another icon pack:
 // import Quote from 'virtual:icons/ri/double-quotes-r';
@@ -30,5 +31,6 @@ export const Icon = {
 	ArrowLeft,
 	ArrowRight,
 	Quote,
-	ArrowUpRight
+	ArrowUpRight,
+	SquareCheckBig
 };
