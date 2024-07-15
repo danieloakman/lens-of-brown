@@ -2,6 +2,7 @@
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import PageBody from '$components/PageBody.svelte';
 	import Input from '$components/Input.svelte';
+	import ForMore from '$components/ForMore.svelte';
 </script>
 
 <!--
@@ -28,15 +29,17 @@ Replace map pic with landscape pic.
 			label="What kind of shoot type are you interested in?"
 			required
 			type="select"
-      options={[
-        ['portrait', 'Portrait'],
-        ['landscape', 'Landscape'],
-        ['event', 'Event'],
-        ['product', 'Product'],
-        ['other', 'Other'],
-      ]}
+			options={[
+				['portrait', 'Portrait'],
+				['landscape', 'Landscape'],
+				['event', 'Event'],
+				['product', 'Product'],
+				['other', 'Other']
+			]}
 		/>
 	</form>
+
+	<ForMore />
 </PageBody>
 
 <BottomBanner />
