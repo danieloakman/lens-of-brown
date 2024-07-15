@@ -26,7 +26,7 @@
 <label class={'label ' + klass}>
 	<span class="text-2xl font-Forum uppercase">{_label}{required ? ' *' : ''}</span>
 	{#if type === 'textarea'}
-		<textarea {name} class="textarea text-xl" rows={4} bind:value {inputmode} {required}></textarea>
+		<textarea {name} class="textarea text-xl" rows={3} bind:value {inputmode} {required}></textarea>
 	{:else}
 		<input {name} class="input text-xl" {placeholder} {required} {inputmode} bind:value />
 	{/if}
