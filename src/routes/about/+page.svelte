@@ -1,60 +1,41 @@
 <script lang="ts">
-	import Backdrop from '$components/Backdrop.svelte';
-	import HeadingBackdropImg from '$imgs/landscape1.jpg?enhanced&imagetools';
+	import PageBody from '$components/PageBody.svelte';
+	import Divider from '$components/Divider.svelte';
+	import BottomBanner from '$components/BottomBanner.svelte';
+	import ForMore from '$components/ForMore.svelte';
+	import DanAndTrot from '$imgs/dan_and_trot2.jpg?url&w=400&aspect=1:1&imagetools';
 </script>
 
-<!-- <Backdrop class="w-full mx-auto">
-	{#snippet backdrop()}
-		<enhanced:img
-			class="w-full h-auto object-fill"
-			src={HeadingBackdropImg}
-			alt="Backdrop of a wombat"
-		></enhanced:img>
-	{/snippet}
-	{#snippet children()}
-		<div class="w-full h-full flex flex-col gap-5 children-text-white">
-			<h3 class="text-black min-[650px]:text-white">About Lens of Brown</h3>
-			<h1 class="text-white">our story</h1>
-			<a href="/contact">
-				<h3 class="text-white">Get in touch</h3>
-			</a>
+<PageBody class="gap-20 py-20">
+	<div class="flex flex-row gap-10">
+		<img src={DanAndTrot} alt="TODO" class="object-cover rounded-full" />
+		<div class="flex flex-col gap-5">
+			<h3 class="text-2xl font-Forum">Hi there!</h3>
+			<h1 class="text-5xl font-Forum text-primary-500">Welcome to Lens of Brown</h1>
+			<p class="text-xl">
+				In the last few years I've learnt that successfully photographing a wedding requires so much
+				more than good technical knowledge. It's about knowing how to be. I build trust quickly and
+				effortlessly with every guest - in every situation - so I can portray them as naturally and
+				authentically as possible. I can never quite decide if I'm an energetic person or a clam
+				one. I hide ini the shadows to capture the gentles of moments and I'm right up there with
+				the craziest on the dance floor, sucking up the energy and vibrance. These are the images
+				that will keep the memories and feelings fresh fo generations to come.
+			</p>
 		</div>
-	{/snippet}
-</Backdrop> -->
+	</div>
 
-<h2>All about</h2>
-<h1>Lens of Brown</h1>
+	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
-<!-- TODO:
-Inspo: acacia grace for this page.
+	<div class="flex flex-col gap-5">
+		<h1 class="text-center text-5xl font-Forum text-primary-500">FAQs</h1>
+		<div class="bg-surface-200 w-full h-[300px]">
+			<span></span>
+		</div>
+	</div>
 
-Heading: "All about \n Lens of Brown"
+	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
-Three portraits in a row, same size, static.
+	<ForMore />
+</PageBody>
 
-Section: "When you book with us, you'll get:"
-Followed by tick boxes.
--->
-
-<!-- <div class="mx-auto p-4">
-	<h3>Hello, ...</h3>
-	<span>TODO</span>
-</div> -->
-
-<style lang="postcss">
-	h1 {
-		@apply text-5xl text-center font-Forum uppercase;
-	}
-
-	h2 {
-		@apply text-3xl text-center font-Forum uppercase;
-	}
-
-	h3 {
-		@apply text-xl text-center font-Forum uppercase;
-	}
-
-	span {
-		@apply text-lg text-center;
-	}
-</style>
+<BottomBanner />
