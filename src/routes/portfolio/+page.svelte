@@ -167,25 +167,7 @@
 
 	{@render divider()}
 
-	<ForMore >
-		{#snippet imgs()}
-			<!-- TODO: fill with imgs that trotty wants -->
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-		{/snippet}
-	</ForMore>
+	<ForMore />
 
 	<BottomBanner />
 </div>
-
-<style lang="postcss">
-	.carousel-img-sq {
-		@apply w-[300px] px-1 rounded-lg aspect-square object-cover;
-	}
-</style>

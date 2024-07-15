@@ -10,7 +10,6 @@
 	import Events2 from '$imgs/events2.jpg?w=750&imagetools';
 	import Landscape2 from '$imgs/landscape2.jpg?w=750&imagetools';
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
-	import { INSTAGRAM_URL } from '$constants';
 	import ForMore from '$components/ForMore.svelte';
 </script>
 
@@ -57,19 +56,7 @@
 
 	{@render divider()}
 
-	<ForMore>
-		{#snippet imgs()}
-			<!-- TODO: fill with imgs that trotty wants -->
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-			<img src={Wombat1} class="carousel-img-sq" loading="lazy" />
-		{/snippet}
-	</ForMore>
+	<ForMore />
 
 	<BottomBanner />
 </div>
@@ -78,9 +65,5 @@
 	.carousel-img {
 		aspect-ratio: 0.8/1;
 		@apply w-[600px] px-1 rounded-lg object-cover;
-	}
-
-	.carousel-img-sq {
-		@apply w-[300px] px-1 rounded-lg aspect-square object-cover;
 	}
 </style>

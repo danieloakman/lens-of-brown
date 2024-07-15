@@ -1,17 +1,15 @@
 <!--
 @component ForMore
-@description Section that includes a link to the Instagram and a small Carousel of images.
+@description Section that includes a link to the Instagram and a small amount of recent images.
 -->
 <script lang="ts">
 	import { INSTAGRAM_URL } from '$constants';
-	import type { Snippet } from 'svelte';
 	import Carousel from './Carousel.svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
+	import Wombat1 from '$imgs/wombat1.jpg?url&w=400&aspect=1:1&imagetools';
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		imgs: Snippet;
-	}
-	const { imgs, class: klass = '', ...rest }: Props = $props();
+	interface Props extends HTMLAttributes<HTMLDivElement> {}
+	const { class: klass = '', ...rest }: Props = $props();
 </script>
 
 <div class={'mx-10 ' + klass} {...rest}>
@@ -20,6 +18,21 @@
 		Follow us on Instagram <a href={INSTAGRAM_URL} target="_blank">@lens.ofbrown</a>
 	</h3>
 	<Carousel class="pt-4" showButtons>
-		{@render imgs()}
+		<!-- {@render imgs()} -->
+		<!-- TODO: fill with imgs that trotty wants -->
+		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 	</Carousel>
 </div>
+
+<style lang="postcss">
+	.carousel-img-sq {
+		@apply w-[300px] px-1 rounded-lg aspect-square object-cover;
+	}
+</style>
