@@ -3,6 +3,10 @@
 	import TwoImg from './TwoImg.svelte';
 	import Divider from '$components/Divider.svelte';
 	import { Icon } from '$lib/icons';
+	import BottomBanner from '$components/BottomBanner.svelte';
+	import Testimonial from '$components/Testimonial.svelte';
+	import ForMore from '$components/ForMore.svelte';
+	import PageBody from '$components/PageBody.svelte';
 	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?url&w=400&aspect=1:1&imagetools';
 	import TimBear4 from '$imgs/tim_bear4.jpg?url&w=400&aspect=1:1&imagetools';
 	import Wombat1 from '$imgs/wombat1.jpg?url&w=400&aspect=1:1&imagetools';
@@ -15,9 +19,6 @@
 	import Landscape2 from '$imgs/landscape2.jpg?url&w=400&aspect=1:1&imagetools';
 	import Events1 from '$imgs/events1.jpg?url&w=400&aspect=1:1&imagetools';
 	import Events2 from '$imgs/events2.jpg?url&w=400&aspect=1:1&imagetools';
-	import BottomBanner from '$components/BottomBanner.svelte';
-	import Testimonial from '$components/Testimonial.svelte';
-	import ForMore from '$components/ForMore.svelte';
 </script>
 
 <!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
@@ -52,7 +53,7 @@
 	</div>
 {/snippet}
 
-<div class="flex flex-col gap-20 pt-20 mx-auto">
+<PageBody class="gap-20 py-20">
 	<h3 class="text-center text-4xl font-Forum text-primary-500">Browse our Portfolio</h3>
 
 	<div class="grid grid-cols-1 min-[820px]:grid-cols-2 min-[1240px]:grid-cols-3 self-center gap-3">
@@ -168,6 +169,6 @@
 	{@render divider()}
 
 	<ForMore />
+</PageBody>
 
-	<BottomBanner />
-</div>
+<BottomBanner />

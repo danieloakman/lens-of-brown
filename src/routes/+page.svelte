@@ -11,25 +11,26 @@
 	import Landscape2 from '$imgs/landscape2.jpg?w=750&imagetools';
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
 	import ForMore from '$components/ForMore.svelte';
+	import PageBody from '$components/PageBody.svelte';
 </script>
 
 {#snippet divider()}
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 {/snippet}
 
-<div class="flex flex-col gap-20 pt-20">
-	<Carousel class="text-center" loop showButtons autoplay={{ stopOnMouseEnter: true, delay: 5000 }}>
-		<img src={Wombat1} class="carousel-img" alt="A closeup of a Wombat" />
-		<img
-			src={ShannonBrodbeck1}
-			class="carousel-img"
-			alt="A family portrait of 5 smiling in the sun"
-		/>
-		<img src={Events2} class="carousel-img" alt="A woman infront of the Sydney Opera House" />
-		<img src={Landscape2} class="carousel-img" alt="The great ocean road, Australia" />
-		<img src={BiancaCherie4} class="carousel-img" alt="A boy smiling, standing and having fun" />
-	</Carousel>
+<Carousel class="text-center pt-20" loop showButtons autoplay={{ stopOnMouseEnter: true, delay: 5000 }}>
+	<img src={Wombat1} class="carousel-img" alt="A closeup of a Wombat" />
+	<img
+		src={ShannonBrodbeck1}
+		class="carousel-img"
+		alt="A family portrait of 5 smiling in the sun"
+	/>
+	<img src={Events2} class="carousel-img" alt="A woman infront of the Sydney Opera House" />
+	<img src={Landscape2} class="carousel-img" alt="The great ocean road, Australia" />
+	<img src={BiancaCherie4} class="carousel-img" alt="A boy smiling, standing and having fun" />
+</Carousel>
 
+<PageBody class="gap-20 py-20">
 	<div class="w-[90%] mx-auto max-w-[500px]">
 		<div class="flex flex-col gap-6">
 			<h2 class="text-4xl text-primary-500 font-Forum">Creating snaps for keeps.</h2>
@@ -44,7 +45,7 @@
 		{@render divider()}
 	</div>
 
-	<div class="hidden sm:grid grid-cols-3 px-10 gap-10">
+	<div class="hidden sm:grid grid-cols-3 px-5 gap-10">
 		{#each range(6) as i}
 			<div class="card w-full h-[250px] text-center">Pics go here</div>
 		{/each}
@@ -57,9 +58,9 @@
 	{@render divider()}
 
 	<ForMore />
+</PageBody>
 
-	<BottomBanner />
-</div>
+<BottomBanner />
 
 <style lang="postcss">
 	.carousel-img {

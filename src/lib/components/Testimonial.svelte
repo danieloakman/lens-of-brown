@@ -8,7 +8,7 @@
 	}: { text: string; author: string; class?: string } = $props();
 </script>
 
-<div class={'flex flex-col align-middle gap-4 bg-surface-200 mx-10 pb-5 ' + klass}>
+<div class={'flex flex-col align-middle gap-4 bg-surface-200 mx-5 pb-5 ' + klass}>
 	<Icon.Quote
 		class="card mx-auto variant-filled-primary text-5xl rounded-[100%] p-5 w-16 h-16 relative -top-8"
 	/>
