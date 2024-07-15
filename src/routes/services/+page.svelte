@@ -22,12 +22,6 @@
 	type PricePackage = [name: string, amount: number];
 </script>
 
-<!--
-TODO: Mini shoots, just list the packages, no nested dot points underneath. No checkbox. No "book" button.
-Replace "About this service" with "What to expect" 
-Family packages list: Family - starts from $300. Each item is listed like that.
--->
-
 {#snippet ServicePricing({
 	title,
 	img: { src, alt },
@@ -52,9 +46,10 @@ Family packages list: Family - starts from $300. Each item is listed like that.
 			<Divider horizontal class="!border-gray-300" />
 			<h2 class="text-center text-2xl font-Forum">AUD ${_minmax[0]} - ${_minmax[1]}</h2>
 			<Divider horizontal class="!border-gray-300" />
+			<h2 class="text-2xl font-Forum bold">What to expect</h2>
 			<p class="text-lg pb-4">{description}</p>
 			<!-- TODO: if description becomes too long, add a "Read more" button that expands -->
-			<h2 class="text-2xl font-Forum bold">Pricing</h2>
+			<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
 			<ul class="flex flex-col gap-4 px-4">
 				{#each pricing as [name, amount]}
 					<li>
