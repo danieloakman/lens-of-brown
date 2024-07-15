@@ -1,9 +1,9 @@
-<!-- TODO: rename route as /services -->
 <script lang="ts">
 	import Divider from '$components/Divider.svelte';
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import type { BasicImg } from '$types';
+	import PageBody from '$components/PageBody.svelte';
 	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?url&w=400&aspect=1:1&imagetools';
 	import TimBear4 from '$imgs/tim_bear4.jpg?url&w=400&aspect=1:1&imagetools';
 	import Wombat1 from '$imgs/wombat1.jpg?url&w=400&aspect=1:1&imagetools';
@@ -17,23 +17,9 @@
 	import Events1 from '$imgs/events1.jpg?url&w=400&aspect=1:1&imagetools';
 	import Events2 from '$imgs/events2.jpg?url&w=400&aspect=1:1&imagetools';
 	import { minmax, map } from 'iteragain';
+	import { Icon } from '$lib/icons';
 
 	type PricePackage = [name: string, amount: number];
-	const miniShoots: PricePackage[] = [
-		['Family', 150],
-		['Couples', 150],
-		['Engagement', 150],
-		['Solo', 100],
-		['Pets', 100]
-	];
-	// TODO: make the below lower case:
-	const packages: PricePackage[] = [
-		['FAMILY OR SIBLINGS', 300],
-		['COUPLES', 300],
-		['PROPOSAL OR ENGAGEMENT', 300],
-		['WEDDINGS OR ELOPEMENTS', 700],
-		['EVENTS', 450]
-	];
 </script>
 
 <!--
@@ -42,11 +28,11 @@ Replace "About this service" with "What to expect"
 Family packages list: Family - starts from $300. Each item is listed like that.
 -->
 
-{#snippet serviceSection({
+{#snippet ServicePricing({
 	title,
 	img: { src, alt },
-	pricing,
 	description,
+	pricing,
 	minmax: _minmax = minmax(map(pricing, ([, amount]) => amount))
 }: {
 	title: string;
@@ -55,18 +41,19 @@ Family packages list: Family - starts from $300. Each item is listed like that.
 	description: string;
 	minmax?: [min: number, max: number];
 })}
-	<div class="flex flex-col gap-4 rounded-container-token bg-surface-200 h-[800px] py-4">
+	<div class="flex flex-col gap-4 rounded-container-token bg-surface-200 pb-4 w-[400px]">
 		<img
 			class="rounded-tl-container-token rounded-tr-container-token w-[400px] aspect-square object-cover"
 			{src}
 			{alt}
 		/>
-		<div class="flex flex-col gap-4 p-4 h-[400px] overflow-y-scroll">
-			<h1 class="text-center text-3xl text-primary-500 font-Forum pb-4">{title}</h1>
-			<Divider horizontal />
+		<div class="flex flex-col gap-4 px-4">
+			<h1 class="text-center text-3xl text-primary-500 font-Forum">{title}</h1>
+			<Divider horizontal class="!border-gray-300" />
 			<h2 class="text-center text-2xl font-Forum">AUD ${_minmax[0]} - ${_minmax[1]}</h2>
-			<Divider horizontal />
-			<p class="text-lg h-[160px]">{description}</p>
+			<Divider horizontal class="!border-gray-300" />
+			<p class="text-lg pb-4">{description}</p>
+			<!-- TODO: if description becomes too long, add a "Read more" button that expands -->
 			<h2 class="text-2xl font-Forum bold">Pricing</h2>
 			<ul class="flex flex-col gap-4 px-4">
 				{#each pricing as [name, amount]}
@@ -76,73 +63,90 @@ Family packages list: Family - starts from $300. Each item is listed like that.
 				{/each}
 			</ul>
 		</div>
-		<button class="btn variant-filled-primary text-3xl font-Forum w-[70%] self-center">Book</button>
+		<!-- <button class="btn variant-filled-primary text-3xl font-Forum w-[70%] self-center mt-auto">
+			Book
+		</button> -->
 	</div>
 {/snippet}
 
-<div class="flex flex-col gap-20 pt-20 mx-auto">
+<PageBody class="gap-20 py-20">
 	<div class="grid grid-cols-1 min-[820px]:grid-cols-2 min-[1240px]:grid-cols-3 self-center gap-3">
-		{@render serviceSection({
+		{@render ServicePricing({
 			title: 'Mini Shoots',
 			img: { src: ShannonBrodbeck1, alt: 'todo' },
+			description: 'TODO fill in',
 			pricing: [
 				['Family', 150],
 				['Couples', 150],
 				['Engagement', 150],
 				['Solo', 100],
 				['Pets', 100]
-			],
-			description: 'TODO fill in'
+			]
+		})}
+		{@render ServicePricing({
+			title: 'Family Packages',
+			img: { src: TimBear4, alt: 'todo' },
+			description: 'TODO fill in',
+			pricing: [
+				['Family', 300],
+				['Siblings', 150],
+				['Extended family', 50]
+			]
+		})}
+		{@render ServicePricing({
+			title: 'Couples Packages',
+			img: { src: ScottChurchill1, alt: 'todo' },
+			description: 'TODO fill in. TODO: Replace "Couples packages" with something better',
+			pricing: [
+				['Couples', 100],
+				['Proposal/Engagement', 150]
+			]
+		})}
+		{@render ServicePricing({
+			title: 'Weddings',
+			img: { src: '', alt: 'todo' },
+			description: 'TODO fill in',
+			pricing: [
+				['Elopements', 700],
+				['Weddings', 1000]
+			]
+		})}
+		{@render ServicePricing({
+			title: 'Events',
+			img: { src: Events1, alt: 'todo' },
+			description: 'TODO fill in',
+			pricing: [
+				['Something Small', 50],
+				['A Big Group', 200],
+				['A Huge Celebration', 500]
+			]
+		})}
+		{@render ServicePricing({
+			title: 'Animals',
+			img: { src: HoneySantos4, alt: 'todo' },
+			description: 'TODO fill in',
+			pricing: [
+				['Pet/s only', 100],
+				['Pet/s & Owner', 200]
+			]
 		})}
 	</div>
 
-	<ForMore />
+	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
-	<BottomBanner />
-</div>
-
-<!-- <div class="flex flex-col pb-8 gap-10">
-	<h1 class="text-primary-500 dark:text-primary-100 mx-auto pt-10">PRICE LIST*</h1>
-
-	<Divider horizontal />
-
-	<div class="flex flex-col mx-auto gap-6 p-4">
-		<div class="flex flex-col gap-6">
-			<h2>MINI-SHOOTS (10 EDITED IMAGES)</h2>
-
-			<div class="flex flex-col w-full px-6 gap-4">
-				{#each miniShoots as [name, amount]}
-					<div class="flex flex-row justify-between">
-						<span>{name}</span>
-						<span><b>$</b>{amount}</span>
-					</div>
-				{/each}
-			</div>
-		</div>
-
-		<div class="flex flex-col gap-6">
-			<div class="flex flex-row justify-between items-baseline">
-				<h2>PACKAGES</h2>
-				<span>STARTS FROM:</span>
-			</div>
-
-			<div class="flex flex-col w-full px-6 gap-4">
-				{#each packages as [name, amount]}
-					<div class="flex flex-row justify-between">
-						<span>{name}</span>
-						<span><b>$</b>{amount}</span>
-					</div>
-				{/each}
-			</div>
+	<div class="flex flex-col gap-10 mx-5">
+		<h1 class="text-5xl text-primary-500 font-Forum">What to expect when you book with us...</h1>
+		<div class="grid grid-cols-[auto_1fr] gap-6 ps-6">
+			{#each ['Images that you love', 'blah '.repeat(50).trimEnd(), 'something'] as text}
+				<Icon.SquareCheckBig class="w-[44px] h-[44px]" />
+				<span class="text-2xl">{text}</span>
+			{/each}
 		</div>
 	</div>
 
-	<Divider horizontal />
+	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
-	<h3 class="mx-auto">*PRICES SUBJECT TO CHANGE</h3>
-</div> -->
+	<ForMore />
+</PageBody>
 
-<!--
-TODO: make component for the "See more\n follow us on instagram" then some pictures. As well as the bottom banner
-that contains the social icon buttons. These are reused on most pages.
--->
+<BottomBanner />
