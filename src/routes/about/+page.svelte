@@ -3,17 +3,17 @@
 	import Divider from '$components/Divider.svelte';
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import ForMore from '$components/ForMore.svelte';
-	import DanAndTrot from '$imgs/dan_and_trot2.jpg?url&w=400&aspect=1:1&imagetools';
+	import DanAndTrot from '$imgs/dan_and_trot2.jpg?url&w=800&aspect=1:1&imagetools';
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 </script>
 
 <PageBody class="gap-20 py-20">
 	<div class="flex flex-col sm:flex-row gap-10">
-		<img src={DanAndTrot} alt="TODO" class="w-[400px] h-[400px] object-cover rounded-full" />
-		<div class="flex flex-col gap-5">
+		<img src={DanAndTrot} alt="TODO" class="max-w-[300px] sm:max-w-[400px] aspect-square object-cover rounded-full self-center" />
+		<div class="flex flex-col gap-5 max-h-[400px]">
 			<h3 class="text-2xl font-Forum">Hi there!</h3>
 			<h1 class="text-5xl font-Forum text-primary-500">Welcome to Lens of Brown</h1>
-			<p class="text-xl">
+			<p class="text-xl overflow-y-scroll">
 				In the last few years I've learnt that successfully photographing a wedding requires so much
 				more than good technical knowledge. It's about knowing how to be. I build trust quickly and
 				effortlessly with every guest - in every situation - so I can portray them as naturally and
