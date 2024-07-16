@@ -64,7 +64,7 @@
 	</div>
 {/snippet}
 
-<PageBody class="gap-20 py-20">
+<PageBody class="pt-5 sm:pt-20 pb-20">
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		{@render ServicePricing({
 			title: 'Mini Shoots',
@@ -130,11 +130,11 @@
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
 	<div class="flex flex-col gap-10">
-		<h1 class="text-5xl text-primary-500 font-Forum">What to expect when you book with us...</h1>
+		<h1 class="text-4xl text-primary-500 font-Forum">What to expect when you book with us...</h1>
 		<div class="grid grid-cols-[auto_1fr] gap-6 ps-6">
 			{#each ['Images that you love', 'blah '.repeat(50).trimEnd(), 'something'] as text}
 				<Icon.SquareCheckBig class="w-[44px] h-[44px]" />
-				<span class="text-2xl">{text}</span>
+				<span class="text-xl sm:text-2xl">{text}</span>
 			{/each}
 		</div>
 	</div>
