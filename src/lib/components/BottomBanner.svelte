@@ -19,6 +19,6 @@
 	</div>
 
 	<h3 class="text-center sm:text-start ps-2 uppercase font-Forum text-[rgb(255,255,255,0.4)]">
-		All content copyright © 2024 Lens of Brown
+		All content copyright © {new Date().getFullYear()} Lens of Brown
 	</h3>
 </div>
