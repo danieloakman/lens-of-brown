@@ -7,8 +7,8 @@
 </script>
 
 <PageBody class="gap-20 py-20">
-	<div class="flex flex-row gap-10">
-		<img src={DanAndTrot} alt="TODO" class="object-cover rounded-full" />
+	<div class="flex flex-col sm:flex-row gap-10">
+		<img src={DanAndTrot} alt="TODO" class="w-[400px] h-[400px] object-cover rounded-full" />
 		<div class="flex flex-col gap-5">
 			<h3 class="text-2xl font-Forum">Hi there!</h3>
 			<h1 class="text-5xl font-Forum text-primary-500">Welcome to Lens of Brown</h1>
