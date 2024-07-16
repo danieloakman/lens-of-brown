@@ -8,6 +8,7 @@
 	import { dev } from '$app/environment';
 	import DanAndTrot from '$imgs/dan_and_trot1.jpg?w=400&h=400&fit=cover&position=right bottom&imagetools';
 	import Landscape from '$imgs/landscape1.jpg?w=400&h=300&fit=cover&imagetools';
+	import { Icon } from '$lib/icons';
 
 	// let firstName = $state('');
 	// let lastName = $state('');
@@ -101,7 +102,7 @@ Replace map pic with landscape pic.
 			disabled={submitted}
 		/>
 
-		<button class="btn variant-filled-primary text-2xl font-Forum w-96" disabled={submitted}>
+		<button class="btn variant-filled-primary text-2xl font-Forum w-52" disabled={submitted}>
 			Send Message
 		</button>
 	</form>
@@ -119,9 +120,9 @@ Replace map pic with landscape pic.
 			<h2 class="text-2xl uppercase text-primary-500 font-Forum">Locations we service</h2>
 			<ul>TODO: two columns dot points list of locations we shoot at</ul>
 			<h2 class="text-2xl uppercase text-primary-500 font-Forum">Contact us</h2>
-			<a href={INSTAGRAM_URL}>Lens.ofbrown</a>
-			<a href={FACEBOOK_URL}>Facebook</a>
-			<a href={INFO_EMAIL}>EMAIL</a>
+			<a href={INSTAGRAM_URL} class="flex flex-row gap-2 items-center"><Icon.Instagram /> Lens.ofbrown</a>
+			<a href={FACEBOOK_URL} class="flex flex-row gap-2 items-center"><Icon.Facebook /> Facebook</a>
+			<a href={INFO_EMAIL} class="flex flex-row gap-2 items-center"><Icon.Mail /> EMAIL</a>
 		</div>
 	</div>
 
