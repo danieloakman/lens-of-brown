@@ -1,15 +1,14 @@
 <script lang="ts">
 	import type { HTMLInputAttributes } from 'svelte/elements';
 
-	type Props = {
+	interface Props extends HTMLInputAttributes {
 		label: string;
-		name: string;
+		name?: string;
 		placeholder?: string;
 		class?: string;
 		required?: boolean;
 		value?: string;
 		type?: HTMLInputAttributes['type'] | 'textarea';
-		inputmode?: HTMLInputAttributes['inputmode'];
 	};
 	let {
 		value = $bindable(''),
@@ -19,15 +18,18 @@
 		class: klass = '',
 		required,
 		type = 'text',
-		inputmode
+		inputmode,
+		pattern,
+		disabled,
+		...rest
 	}: Props = $props();
 </script>
 
 <label class={'label ' + klass}>
 	<span class="text-2xl font-Forum uppercase">{_label}{required ? ' *' : ''}</span>
 	{#if type === 'textarea'}
-		<textarea {name} class="textarea text-xl" rows={3} bind:value {inputmode} {required}></textarea>
+		<textarea {name} class="textarea text-xl" rows={3} bind:value {inputmode} {required} {disabled}></textarea>
 	{:else}
-		<input {name} class="input text-xl" {placeholder} {required} {inputmode} bind:value />
+		<input {name} class="input text-xl" {placeholder} {required} {inputmode} {pattern} bind:value {disabled} {...rest} />
 	{/if}
 </label>

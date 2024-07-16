@@ -5,7 +5,7 @@
 <script lang="ts">
 	type Props = {
 		label: string;
-		name: string;
+		name?: string;
 		placeholder?: string;
 		class?: string;
 		required?: boolean;
