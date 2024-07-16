@@ -35,19 +35,19 @@
 		<nav class="flex flex-col gap-4 p-4">
 			<a aria-current={isCurrentPage('/')} href="/" onclick={onClickNav}> Home </a>
 			<Divider horizontal />
-			<a aria-current={isCurrentPage('/about')} href="/about" onclick={onClickNav}> About </a>
-			<a aria-current={isCurrentPage('/contact')} href="/contact" onclick={onClickNav}> Contact </a>
 			<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" onclick={onClickNav}>
 				Portfolio
 			</a>
-			<a aria-current={isCurrentPage('/pricing')} href="/pricing" onclick={onClickNav}> Pricing </a>
+			<a aria-current={isCurrentPage('/services')} href="/services" onclick={onClickNav}> Services </a>
+			<a aria-current={isCurrentPage('/about')} href="/about" onclick={onClickNav}> About </a>
+			<a aria-current={isCurrentPage('/contact')} href="/contact" onclick={onClickNav}> Contact </a>
 		</nav>
 	{/if}
 {/if}
 
 <style lang="postcss">
 	a {
-		@apply font-Black-mango mx-auto p-2 text-xl;
+		@apply font-Black-mango py-2 px-6 text-xl;
 	}
 
 	/* Highlights current route the page is on. */
