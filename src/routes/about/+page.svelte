@@ -4,6 +4,7 @@
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import DanAndTrot from '$imgs/dan_and_trot2.jpg?url&w=400&aspect=1:1&imagetools';
+	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 </script>
 
 <PageBody class="gap-20 py-20">
@@ -28,8 +29,28 @@
 
 	<div class="flex flex-col gap-5">
 		<h1 class="text-center text-5xl font-Forum text-primary-500">FAQs</h1>
-		<div class="bg-surface-200 w-full h-[300px]">
-			<span></span>
+		<div class="bg-surface-200 rounded-container-token w-full p-6">
+			{#snippet item(question: string, answer: string)}
+				<AccordionItem>
+					<svelte:fragment slot="summary">
+						<h2 class="font-Forum text-2xl">{question}</h2>
+					</svelte:fragment>
+					<svelte:fragment slot="content">
+						<p class="text-xl">{answer}</p>
+					</svelte:fragment>
+				</AccordionItem>
+			{/snippet}
+			<Accordion spacing="space-y-5">
+				{@render item('What should we expect during our shoot?', 'todo')}
+				<Divider horizontal class="mx-4" />
+				{@render item('Do we get to choose the location for our photo shoot?', 'todo')}
+				<Divider horizontal class="mx-4" />
+				{@render item('What should we wear to our shoot?', 'todo')}
+				<Divider horizontal class="mx-4" />
+				{@render item('How will our photos be delivered?', 'todo')}
+				<Divider horizontal class="mx-4" />
+				{@render item('What happens if it rains?', 'todo')}
+			</Accordion>
 		</div>
 	</div>
 
