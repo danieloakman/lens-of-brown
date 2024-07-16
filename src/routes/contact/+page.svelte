@@ -98,6 +98,7 @@ Replace map pic with landscape pic.
 			label="Message"
 			name="message"
 			type="textarea"
+			placeholder="Your message or comments or what you would like to ask us!"
 			required
 			disabled={submitted}
 		/>
@@ -116,13 +117,15 @@ Replace map pic with landscape pic.
 			alt="Daniel and Sheridan laughing"
 		/>
 		<!-- <img src={Landscape} class=" opacity-60" alt=""/> -->
-		<div class="flex flex-col gap-10">
+		<div class="flex flex-col gap-4">
 			<h2 class="text-2xl uppercase text-primary-500 font-Forum">Locations we service</h2>
 			<ul>TODO: two columns dot points list of locations we shoot at</ul>
-			<h2 class="text-2xl uppercase text-primary-500 font-Forum">Contact us</h2>
-			<a href={INSTAGRAM_URL} class="flex flex-row gap-2 items-center"><Icon.Instagram /> Lens.ofbrown</a>
-			<a href={FACEBOOK_URL} class="flex flex-row gap-2 items-center"><Icon.Facebook /> Facebook</a>
-			<a href={INFO_EMAIL} class="flex flex-row gap-2 items-center"><Icon.Mail /> EMAIL</a>
+			<h2 class="text-2xl uppercase text-primary-500 font-Forum pt-6">Contact us</h2>
+			<div class="flex flex-col gap-2">
+				<a href={INSTAGRAM_URL} class="flex flex-row gap-2 items-center text-xl"><Icon.Instagram /> @Lens.ofbrown</a>
+				<a href={FACEBOOK_URL} class="flex flex-row gap-2 items-center text-xl"><Icon.Facebook /> Facebook</a>
+				<a href={INFO_EMAIL} class="flex flex-row gap-2 items-center text-xl"><Icon.Mail /> Email</a>
+			</div>
 		</div>
 	</div>
 
