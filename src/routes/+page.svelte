@@ -4,21 +4,27 @@
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import Testimonial from '$components/Testimonial.svelte';
 	import { range } from 'iteragain';
+	import ForMore from '$components/ForMore.svelte';
+	import PageBody from '$components/PageBody.svelte';
 
 	import Wombat1 from '$imgs/wombat1.jpg?w=750&imagetools';
 	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?w=750&imagetools';
 	import Events2 from '$imgs/events2.jpg?w=750&imagetools';
 	import Landscape2 from '$imgs/landscape2.jpg?w=750&imagetools';
 	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
-	import ForMore from '$components/ForMore.svelte';
-	import PageBody from '$components/PageBody.svelte';
+	import Landscape1 from '$imgs/landscape1.jpg?w=1000&imagetools';
 </script>
 
 {#snippet divider()}
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 {/snippet}
 
-<Carousel class="text-center pt-20" loop showButtons autoplay={{ stopOnMouseEnter: true, delay: 5000 }}>
+<Carousel
+	class="text-center pt-20"
+	loop
+	showButtons
+	autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
+>
 	<img src={Wombat1} class="carousel-img" alt="A closeup of a Wombat" />
 	<img
 		src={ShannonBrodbeck1}
@@ -45,10 +51,19 @@
 		{@render divider()}
 	</div>
 
-	<div class="hidden sm:grid grid-cols-3 gap-10">
-		{#each range(6) as i}
+	<div class="hidden sm:grid md:grid-cols-4 lg:grid-cols-5 gap-5 self-center h-[1000px] img-grid">
+		<img src={Landscape1} class="col-span-2" />
+		<img src={Landscape1} class="col-span-1" />
+		<img src={Landscape1} class="col-span-1" />
+		<img src={Landscape1} class="col-span-1" />
+		<img src={Landscape1} class="col-span-1" />
+		<img src={Landscape1} class="col-span-2" />
+		<img src={Landscape1} class="col-span-1" />
+		<img src={Landscape1} class="col-span-1" />
+		<img src={Landscape1} class="col-span-1" />
+		<!-- {#each range(6) as i}
 			<div class="card w-full h-[250px] text-center">Pics go here</div>
-		{/each}
+		{/each} -->
 	</div>
 
 	{@render divider()}
@@ -66,5 +81,10 @@
 	.carousel-img {
 		aspect-ratio: 0.8/1;
 		@apply w-[600px] px-1 rounded-lg object-cover;
+	}
+
+	.img-grid > img {
+		height: 300px;
+		object-fit: cover;
 	}
 </style>
