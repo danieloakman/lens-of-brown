@@ -129,7 +129,7 @@
 
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
-	<div class="flex flex-col gap-10 mx-5">
+	<div class="flex flex-col gap-10">
 		<h1 class="text-5xl text-primary-500 font-Forum">What to expect when you book with us...</h1>
 		<div class="grid grid-cols-[auto_1fr] gap-6 ps-6">
 			{#each ['Images that you love', 'blah '.repeat(50).trimEnd(), 'something'] as text}
