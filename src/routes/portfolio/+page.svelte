@@ -1,24 +1,24 @@
 <script lang="ts">
 	import type { BasicImg } from '$types';
-	import TwoImg from './TwoImg.svelte';
+	import TwoImgs from '$components/TwoImgs.svelte';
 	import Divider from '$components/Divider.svelte';
 	import { Icon } from '$lib/icons';
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import Testimonial from '$components/Testimonial.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
-	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?url&w=400&aspect=1:1&imagetools';
-	import TimBear4 from '$imgs/tim_bear4.jpg?url&w=400&aspect=1:1&imagetools';
-	import Wombat1 from '$imgs/wombat1.jpg?url&w=400&aspect=1:1&imagetools';
-	import HoneySantos4 from '$imgs/animals/honey_santos4.jpg?url&w=400&aspect=1:1&imagetools';
-	import ScottChurchill1 from '$imgs/couples/scott_churchill1.jpg?url&w=400&aspect=1:1&imagetools';
-	import DanAndTrot2 from '$imgs/dan_and_trot2.jpg?url&w=400&aspect=1:1&imagetools';
-	import TrotPortrait1 from '$imgs/portraits/trot_portrait1.jpg?url&w=400&aspect=1:1&imagetools';
-	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?url&w=400&aspect=1:1&imagetools';
-	import Landscape1 from '$imgs/landscape1.jpg?url&w=400&aspect=1:1&imagetools';
-	import Landscape2 from '$imgs/landscape2.jpg?url&w=400&aspect=1:1&imagetools';
-	import Events1 from '$imgs/events1.jpg?url&w=400&aspect=1:1&imagetools';
-	import Events2 from '$imgs/events2.jpg?url&w=400&aspect=1:1&imagetools';
+	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?url&w=1000&aspect=1:1&imagetools';
+	import TimBear4 from '$imgs/tim_bear4.jpg?url&w=1000&aspect=1:1&imagetools';
+	import Wombat1 from '$imgs/wombat1.jpg?url&w=1000&aspect=1:1&imagetools';
+	import HoneySantos4 from '$imgs/animals/honey_santos4.jpg?url&w=1000&aspect=1:1&imagetools';
+	import ScottChurchill1 from '$imgs/couples/scott_churchill1.jpg?url&w=1000&aspect=1:1&imagetools';
+	import DanAndTrot2 from '$imgs/dan_and_trot2.jpg?url&w=1000&aspect=1:1&imagetools';
+	import TrotPortrait1 from '$imgs/portraits/trot_portrait1.jpg?url&w=1000&aspect=1:1&imagetools';
+	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?url&w=1000&aspect=1:1&imagetools';
+	import Landscape1 from '$imgs/landscape1.jpg?url&w=1000&aspect=1:1&imagetools';
+	import Landscape2 from '$imgs/landscape2.jpg?url&w=1000&aspect=1:1&imagetools';
+	import Events1 from '$imgs/events1.jpg?url&w=1000&aspect=1:1&imagetools';
+	import Events2 from '$imgs/events2.jpg?url&w=1000&aspect=1:1&imagetools';
 </script>
 
 <!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
@@ -31,19 +31,25 @@
 	title,
 	subheading,
 	href,
-	imgs
+	imgs: [imgA, imgB]
 }: {
 	title: string;
 	subheading: string;
 	href: string;
 	imgs: [BasicImg, BasicImg];
 })}
-	<div class="flex flex-col gap-2 bg-surface-200 rounded-container-token">
+	<div class="flex flex-col gap-2 bg-surface-200 rounded-container-token max-w-[600px]">
 		<a {href}>
-			<TwoImg
-				class="rounded-tl-container-token rounded-tr-container-token w-[400px] aspect-square object-cover"
-				{imgs}
-			/>
+			<TwoImgs
+				class="rounded-tl-container-token rounded-tr-container-token max-h-[600px] max-w-[600px] aspect-square object-cover"
+			>
+				{#snippet img1({ send, receive })}
+					<img in:send={{ key: imgA }} out:receive={{ key: imgA }} {...imgA} />
+				{/snippet}
+				{#snippet img2({ send, receive })}
+					<img in:send={{ key: imgB }} out:receive={{ key: imgB }} {...imgB} />
+				{/snippet}
+			</TwoImgs>
 		</a>
 		<div class="flex flex-col px-6 py-10">
 			<h2 class="text-2xl font-Forum text-primary-500 pb-3">{title}</h2>
@@ -56,7 +62,7 @@
 <PageBody class="gap-20 py-20">
 	<h3 class="text-center text-4xl font-Forum text-primary-500">Browse our Portfolio</h3>
 
-	<div class="grid grid-cols-1 min-[820px]:grid-cols-2 min-[1240px]:grid-cols-3 self-center gap-3">
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		{@render portfolioSection({
 			title: 'Families',
 			href: '/portfolio/families',
