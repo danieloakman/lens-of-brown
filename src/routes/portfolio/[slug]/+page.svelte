@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { iife, propIs } from 'js-utils';
 	import { iter, repeat } from 'iteragain';
-	import type { ImgDir } from './utils';
+	import type { ImgSlug } from './utils';
 
 	const assertImg = (obj: unknown): { default: string } => {
 		if (propIs(obj, 'default', 'object') || propIs(obj, 'default', 'string'))
@@ -10,62 +10,62 @@
 		throw new Error('Expected object with default string property');
 	};
 
-	const imgdir = $page.params.imgdir as ImgDir | unknown;
+	const slug = $page.params.slug as ImgSlug | unknown;
 	let alts: IterableIterator<string> = repeat('todo', 12);
 	const imgs: Record<string, unknown> = iife(() => {
 		// **The following non-dynamic if statements are required for vite to correctly resolve the glob.**
 		// To add more image directories, add more if statements.
-		if (imgdir === 'portraits') {
-			return import.meta.glob('$imgs/portraits/*.{jpg,jpeg,png,webp}', {
+		if (slug === 'portraits') {
+			return import.meta.glob('$imgs/portraits-*.{jpg,jpeg,png,webp}', {
 				eager: true,
 				query: {
 					enhanced: true
 				}
 			});
 		}
-		if (imgdir === 'families')
-			return import.meta.glob('$imgs/families/*.{jpg,jpeg,png,webp}', {
+		if (slug === 'families')
+			return import.meta.glob('$imgs/families-*.{jpg,jpeg,png,webp}', {
 				eager: true,
 				query: {
 					enhanced: true
 				}
 			});
-		if (imgdir === 'couples')
-			return import.meta.glob('$imgs/couples/*.{jpg,jpeg,png,webp}', {
+		if (slug === 'couples')
+			return import.meta.glob('$imgs/couples-*.{jpg,jpeg,png,webp}', {
 				eager: true,
 				query: {
 					enhanced: true
 				}
 			});
-		if (imgdir === 'landscapes')
-			return import.meta.glob('$imgs/landscapes/*.{jpg,jpeg,png,webp}', {
+		if (slug === 'landscapes')
+			return import.meta.glob('$imgs/landscapes-*.{jpg,jpeg,png,webp}', {
 				eager: true,
 				query: {
 					enhanced: true
 				}
 			});
-		if (imgdir === 'weddings')
-			return import.meta.glob('$imgs/weddings/*.{jpg,jpeg,png,webp}', {
+		if (slug === 'weddings')
+			return import.meta.glob('$imgs/weddings-*.{jpg,jpeg,png,webp}', {
 				eager: true,
 				query: {
 					enhanced: true
 				}
 			});
-		if (imgdir === 'events')
-			return import.meta.glob('$imgs/events/*.{jpg,jpeg,png,webp}', {
+		if (slug === 'events')
+			return import.meta.glob('$imgs/events-*.{jpg,jpeg,png,webp}', {
 				eager: true,
 				query: {
 					enhanced: true
 				}
 			});
-		if (imgdir === 'animals')
-			return import.meta.glob('$imgs/animals/*.{jpg,jpeg,png,webp}', {
+		if (slug === 'animals')
+			return import.meta.glob('$imgs/animals-*.{jpg,jpeg,png,webp}', {
 				eager: true,
 				query: {
 					enhanced: true
 				}
 			});
-		throw new Error(`Unknown imgdir: ${imgdir}`);
+		throw new Error(`Unknown img slug: ${slug}`);
 	});
 </script>
 
