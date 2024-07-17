@@ -7,11 +7,11 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
-	declare module "*&imagetools" {
+	declare module "*&any" {
 		/**
-		 * actual types
-		 * - code https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts
-		 * - docs https://github.com/JonasKruckenberg/imagetools/blob/main/docs/guide/getting-started.md#metadata
+		 * @description Replaces the type of the import with `any` to remove type error for using imagetools directives.
+		 * @see {@link https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts} Code
+		 * @see {@link https://github.com/JonasKruckenberg/imagetools/blob/main/docs/guide/getting-started.md#metadata} Docs
 		 */
 		const out;
 		export default out;

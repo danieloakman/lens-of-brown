@@ -7,12 +7,12 @@
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
 
-	import Wombat1 from '$imgs/wombat1.jpg?w=750&imagetools';
-	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?w=750&imagetools';
-	import Events2 from '$imgs/events2.jpg?w=750&imagetools';
-	import Landscape2 from '$imgs/landscape2.jpg?w=750&imagetools';
-	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?w=750&imagetools';
-	import Landscape1 from '$imgs/landscape1.jpg?w=1000&imagetools';
+	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?w=750&any';
+	import ImgShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?w=750&any';
+	import ImgEvents2 from '$imgs/_events-sydney_opera_house1.jpg?w=750&any';
+	import ImgLandscape2 from '$imgs/landscapes-great_ocean_road.jpg?w=750&any';
+	import ImgBiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?w=750&any';
+	import ImgLandscape1 from '$imgs/_landscapes-montague_island.jpg';
 </script>
 
 {#snippet divider()}
@@ -25,15 +25,15 @@
 	showButtons
 	autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
 >
-	<img src={Wombat1} class="carousel-img" alt="A closeup of a Wombat" />
+	<img src={ImgWombat1} class="carousel-img" alt="A closeup of a Wombat" />
 	<img
-		src={ShannonBrodbeck1}
+		src={ImgShannonBrodbeck1}
 		class="carousel-img"
 		alt="A family portrait of 5 smiling in the sun"
 	/>
-	<img src={Events2} class="carousel-img" alt="A woman infront of the Sydney Opera House" />
-	<img src={Landscape2} class="carousel-img" alt="The great ocean road, Australia" />
-	<img src={BiancaCherie4} class="carousel-img" alt="A boy smiling, standing and having fun" />
+	<img src={ImgEvents2} class="carousel-img" alt="A woman infront of the Sydney Opera House" />
+	<img src={ImgLandscape2} class="carousel-img" alt="The great ocean road, Australia" />
+	<img src={ImgBiancaCherie4} class="carousel-img" alt="A boy smiling, standing and having fun" />
 </Carousel>
 
 <PageBody class="gap-20 py-20">
@@ -52,15 +52,15 @@
 	</div>
 
 	<div class="hidden sm:grid md:grid-cols-4 lg:grid-cols-5 gap-5 self-center h-[1000px] img-grid">
-		<img src={Landscape1} class="col-span-2" />
-		<img src={Landscape1} class="col-span-1" />
-		<img src={Landscape1} class="col-span-1" />
-		<img src={Landscape1} class="col-span-1" />
-		<img src={Landscape1} class="col-span-1" />
-		<img src={Landscape1} class="col-span-2" />
-		<img src={Landscape1} class="col-span-1" />
-		<img src={Landscape1} class="col-span-1" />
-		<img src={Landscape1} class="col-span-1" />
+		<img src={ImgLandscape1} class="col-span-2" />
+		<img src={ImgLandscape1} class="col-span-1" />
+		<img src={ImgLandscape1} class="col-span-1" />
+		<img src={ImgLandscape1} class="col-span-1" />
+		<img src={ImgLandscape1} class="col-span-1" />
+		<img src={ImgLandscape1} class="col-span-2" />
+		<img src={ImgLandscape1} class="col-span-1" />
+		<img src={ImgLandscape1} class="col-span-1" />
+		<img src={ImgLandscape1} class="col-span-1" />
 		<!-- {#each range(6) as i}
 			<div class="card w-full h-[250px] text-center">Pics go here</div>
 		{/each} -->

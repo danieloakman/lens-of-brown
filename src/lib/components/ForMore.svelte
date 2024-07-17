@@ -6,7 +6,7 @@
 	import { INSTAGRAM_URL } from '$constants';
 	import Carousel from './Carousel.svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import Wombat1 from '$imgs/wombat1.jpg?url&w=400&aspect=1:1&imagetools';
+	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?url&w=400&aspect=1:1&any';
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 	const { ...rest }: Props = $props();
@@ -20,14 +20,14 @@
 	<Carousel class="pt-4" showButtons>
 		<!-- {@render imgs()} -->
 		<!-- TODO: fill with imgs that trotty wants -->
-		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={Wombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 	</Carousel>
 </div>
 

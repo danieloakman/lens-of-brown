@@ -6,9 +6,8 @@
 	import Divider from '$components/Divider.svelte';
 	import { INSTAGRAM_URL, FACEBOOK_URL, INFO_EMAIL } from '$constants';
 	import { dev } from '$app/environment';
-	import DanAndTrot from '$imgs/dan_and_trot1.jpg?w=400&h=400&fit=cover&position=right bottom&imagetools';
-	import Landscape from '$imgs/landscape1.jpg?w=400&h=300&fit=cover&imagetools';
 	import { Icon } from '$lib/icons';
+	import ImgDanTrot from '$imgs/couples-dan_trot1.jpg?w=400&h=400&fit=cover&position=right bottom&any';
 
 	// let firstName = $state('');
 	// let lastName = $state('');
@@ -112,7 +111,7 @@ Replace map pic with landscape pic.
 
 	<div class="bg-surface-200 py-10 ps-10 me-32">
 		<img
-			src={DanAndTrot}
+			src={ImgDanTrot}
 			class="float-right w-[400px] h-[400px] opacity-60 relative -right-32"
 			alt="Daniel and Sheridan laughing"
 		/>

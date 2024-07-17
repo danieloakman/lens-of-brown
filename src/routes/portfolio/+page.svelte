@@ -7,18 +7,18 @@
 	import Testimonial from '$components/Testimonial.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
-	import ShannonBrodbeck1 from '$imgs/shannon_brodbeck1.jpg?url&w=1000&aspect=1:1&imagetools';
-	import TimBear4 from '$imgs/tim_bear4.jpg?url&w=1000&aspect=1:1&imagetools';
-	import Wombat1 from '$imgs/wombat1.jpg?url&w=1000&aspect=1:1&imagetools';
-	import HoneySantos4 from '$imgs/animals/honey_santos4.jpg?url&w=1000&aspect=1:1&imagetools';
-	import ScottChurchill1 from '$imgs/couples/scott_churchill1.jpg?url&w=1000&aspect=1:1&imagetools';
-	import DanAndTrot2 from '$imgs/dan_and_trot2.jpg?url&w=1000&aspect=1:1&imagetools';
-	import TrotPortrait1 from '$imgs/portraits/trot_portrait1.jpg?url&w=1000&aspect=1:1&imagetools';
-	import BiancaCherie4 from '$imgs/bianca_cherie4.jpg?url&w=1000&aspect=1:1&imagetools';
-	import Landscape1 from '$imgs/landscape1.jpg?url&w=1000&aspect=1:1&imagetools';
-	import Landscape2 from '$imgs/landscape2.jpg?url&w=1000&aspect=1:1&imagetools';
-	import Events1 from '$imgs/events1.jpg?url&w=1000&aspect=1:1&imagetools';
-	import Events2 from '$imgs/events2.jpg?url&w=1000&aspect=1:1&imagetools';
+	import ShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?url&w=1000&aspect=1:1&any';
+	import TimBear4 from '$imgs/_families-tim_bear6.jpg?url&w=1000&aspect=1:1&any';
+	import Wombat1 from '$imgs/_animals-wombat1.jpg?url&w=1000&aspect=1:1&any';
+	import HoneySantos4 from '$imgs/_animals-honey_santos5.jpg?url&w=1000&aspect=1:1&any';
+	import ScottChurchill1 from '$imgs/couples-scott_churchill1.jpg?url&w=1000&aspect=1:1&any';
+	import DanAndTrot2 from '$imgs/_couples-dan_trot6.jpg?url&w=1000&aspect=1:1&any';
+	import TrotPortrait1 from '$imgs/portraits-trot1.jpg?url&w=1000&aspect=1:1&any';
+	import BiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?url&w=1000&aspect=1:1&any';
+	import Landscape1 from '$imgs/landscapes-great_ocean_road.jpg?url&w=1000&aspect=1:1&any';
+	import Landscape2 from '$imgs/_landscapes-montague_island.jpg?url&w=1000&aspect=1:1&any';
+	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?url&w=1000&aspect=1:1&any';
+	import Events2 from '$imgs/events-canberra_balloons.jpg?url&w=1000&aspect=1:1&any';
 </script>
 
 <!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
