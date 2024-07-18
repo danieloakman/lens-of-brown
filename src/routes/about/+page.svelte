@@ -9,11 +9,13 @@
 
 <PageBody class="gap-20 py-20">
 	<div class="flex flex-col sm:flex-row gap-10">
-		<enhanced:img
-			src={ImgDanTrot}
-			alt="Daniel and Sheridan standing together infront of pine trees"
-			class="max-w-[300px] sm:max-w-[400px] aspect-square object-cover rounded-full self-center"
-		></enhanced:img>
+		<div class="self-center">
+			<enhanced:img
+				src={ImgDanTrot}
+				alt="Daniel and Sheridan standing together infront of pine trees"
+				class="max-w-[300px] sm:max-w-[400px] aspect-square object-cover rounded-full self-center"
+			></enhanced:img>
+		</div>
 		<div class="flex flex-col gap-5 max-h-[400px]">
 			<!-- <h3 class="text-2xl font-Forum">Hi there!</h3> -->
 			<h1 class="text-5xl font-Forum text-primary-500 text-center">
