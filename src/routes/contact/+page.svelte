@@ -41,7 +41,7 @@ Replace map pic with landscape pic.
 		}}
 	>
 		<TextInput
-			label="Full name"
+			label="Your name"
 			name="name"
 			placeholder="First & last name"
 			required
@@ -97,7 +97,7 @@ Replace map pic with landscape pic.
 			label="Message"
 			name="message"
 			type="textarea"
-			placeholder="Your message or comments or what you would like to ask us!"
+			placeholder="Your message or inquiry. We'll be in touch soon."
 			required
 			disabled={submitted}
 		/>
@@ -120,7 +120,23 @@ Replace map pic with landscape pic.
 			<h2 class="text-xl sm:text-2xl uppercase text-primary-500 font-Forum">
 				Locations we service
 			</h2>
-			<ul>TODO: two columns dot points list of locations we shoot at</ul>
+			<ul>
+				<li>
+					- Wollongong
+				</li>
+				<li>
+					- Greater Sydney
+				</li>
+				<li>
+					- Southern Highlands
+				</li>
+				<li>
+					- Shoalhaven & South Coast 
+				</li>
+				<li>
+					- Other locations on request
+				</li>
+			</ul>
 			<h2 class="text-xl sm:text-2xl uppercase text-primary-500 font-Forum pt-6">Contact us</h2>
 			<div class="flex flex-col gap-2">
 				<a href={INSTAGRAM_URL} class="icon-link"><Icon.Instagram /> @lens.ofbrown</a>
@@ -138,6 +154,10 @@ Replace map pic with landscape pic.
 <BottomBanner />
 
 <style lang="postcss">
+	ul > li {
+		@apply text-xl;
+	}
+
 	.locations-container {
 		@apply py-4 px-4;
 	}
