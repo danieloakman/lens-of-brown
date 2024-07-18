@@ -121,9 +121,9 @@ Replace map pic with landscape pic.
 			<ul>TODO: two columns dot points list of locations we shoot at</ul>
 			<h2 class="text-2xl uppercase text-primary-500 font-Forum pt-6">Contact us</h2>
 			<div class="flex flex-col gap-2">
-				<a href={INSTAGRAM_URL} class="flex flex-row gap-2 items-center text-xl"><Icon.Instagram /> @Lens.ofbrown</a>
-				<a href={FACEBOOK_URL} class="flex flex-row gap-2 items-center text-xl"><Icon.Facebook /> Facebook</a>
-				<a href={INFO_EMAIL} class="flex flex-row gap-2 items-center text-xl"><Icon.Mail /> Email</a>
+				<a href={INSTAGRAM_URL} class="icon-link"><Icon.Instagram /> @lens.ofbrown</a>
+				<a href={FACEBOOK_URL} class="icon-link"><Icon.Facebook /> Facebook</a>
+				<a href={INFO_EMAIL} class="icon-link"><Icon.Mail /> Email</a>
 			</div>
 		</div>
 	</div>
@@ -134,3 +134,9 @@ Replace map pic with landscape pic.
 </PageBody>
 
 <BottomBanner />
+
+<style lang="postcss">
+	.icon-link {
+		@apply flex flex-row gap-2 items-center text-xl;
+	}
+</style>
