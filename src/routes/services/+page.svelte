@@ -7,7 +7,6 @@
 	import ShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?url&w=1000&aspect=1:1&any';
 	import TimBear4 from '$imgs/_families-tim_bear6.jpg?url&w=1000&aspect=1:1&any';
 	import Wombat1 from '$imgs/_animals-wombat1.jpg?url&w=1000&aspect=1:1&any';
-	import HoneySantos4 from '$imgs/_animals-honey_santos5.jpg?url&w=1000&aspect=1:1&any';
 	import ScottChurchill1 from '$imgs/couples-scott_churchill1.jpg?url&w=1000&aspect=1:1&any';
 	import DanAndTrot2 from '$imgs/_couples-dan_trot6.jpg?url&w=1000&aspect=1:1&any';
 	import TrotPortrait1 from '$imgs/portraits-trot1.jpg?url&w=1000&aspect=1:1&any';
@@ -16,6 +15,12 @@
 	import Landscape2 from '$imgs/_landscapes-montague_island.jpg?url&w=1000&aspect=1:1&any';
 	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?url&w=1000&aspect=1:1&any';
 	import Events2 from '$imgs/events-canberra_balloons.jpg?url&w=1000&aspect=1:1&any';
+	import Trot1 from '$imgs/weddings-trot3.jpg?url&w=1000&aspect=1:1&any';
+	import AmandaMartin4 from '$imgs/_families_amanda-martin4.jpg?url&w=1000&aspect=1:1&any';
+	import TimBear7 from '$imgs/_families-tim_bear7.jpg?url&w=1000&aspect=1:1&position=bottom&any';
+	import HoneySantos from '$imgs/animals-honey_santos4.jpg?url&w=1000&aspect=1:1&position=bottom&any';
+	import ImgCouples from '$imgs/_couples-dan_trot7.jpg?url&w=1000&aspect=1:1&position=bottom&any';
+	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?url&w=1000&aspect=1:1&position=bottom&any';
 	import { minmax, map } from 'iteragain';
 	import { Icon } from '$lib/icons';
 
@@ -68,7 +73,7 @@
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		{@render ServicePricing({
 			title: 'Mini Shoots',
-			img: { src: ShannonBrodbeck1, alt: 'todo' },
+			img: { src: ImgMiniShoots, alt: 'todo' },
 			description: 'TODO fill in',
 			pricing: [
 				['Family', 150],
@@ -80,7 +85,7 @@
 		})}
 		{@render ServicePricing({
 			title: 'Family Packages',
-			img: { src: TimBear4, alt: 'todo' },
+			img: { src: TimBear7, alt: 'todo' },
 			description: 'TODO fill in',
 			pricing: [
 				['Family', 300],
@@ -90,7 +95,7 @@
 		})}
 		{@render ServicePricing({
 			title: 'Couples Packages',
-			img: { src: ScottChurchill1, alt: 'todo' },
+			img: { src: ImgCouples, alt: 'todo' },
 			description: 'TODO fill in. TODO: Replace "Couples packages" with something better',
 			pricing: [
 				['Couples', 100],
@@ -99,7 +104,7 @@
 		})}
 		{@render ServicePricing({
 			title: 'Weddings',
-			img: { src: '', alt: 'todo' },
+			img: { src: Trot1, alt: 'todo' },
 			description: 'TODO fill in',
 			pricing: [
 				['Elopements', 700],
@@ -118,7 +123,7 @@
 		})}
 		{@render ServicePricing({
 			title: 'Animals',
-			img: { src: HoneySantos4, alt: 'todo' },
+			img: { src: HoneySantos, alt: 'todo' },
 			description: 'TODO fill in',
 			pricing: [
 				['Pet/s only', 100],
