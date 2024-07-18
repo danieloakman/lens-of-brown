@@ -170,7 +170,7 @@
 
 	{@render divider()}
 
-	<Testimonial author="Somebody" quote="todo" />
+	<Testimonial author="Jill - Client" quote="We absolutely loved our photos from Lens of Brown! Their use of creative prompts gave us such fun, natural photos of our family. The photoshoot was so easy and we didn’t have to worry about a thing." />
 
 	{@render divider()}
 
