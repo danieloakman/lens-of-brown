@@ -9,10 +9,9 @@
 		href === $page.url.pathname ? 'page' : undefined;
 </script>
 
-<!-- TODO: fix padding for mobile -->
-<div class="flex flex-row gap-2 justify-between px-16 py-4">
+<div class="flex flex-row gap-2 justify-between px-4 lg:px-16 sm:py-4">
 	<button
-		class="min-[910px]:hidden btn-icon w-16"
+		class="lg:hidden btn-icon w-16"
 		on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 	>
 		<Icon.Menu class="text-2xl text-primary-500" />
@@ -22,12 +21,12 @@
 		<enhanced:img
 			src={SidewaysLogo}
 			alt="Lens of Brown logo - header"
-			class="w-[280px] px-6"
+			class="max-w-[240px] max-h-[100px]"
 		></enhanced:img>
 	</a>
 
-	<div class="w-16 min-[910px]:hidden"></div>
-	<nav class="hidden min-[910px]:flex flex-row items-center gap-12 px-8">
+	<div class="w-16 lg:hidden"></div>
+	<nav class="hidden lg:flex flex-row items-center gap-12 px-8">
 		<a href="/" class="header" aria-current={isCurrentPage('/')}>home</a>
 		<a href="/portfolio" class="header" aria-current={isCurrentPage('/portfolio')}>portfolio</a>
 		<a href="/services" class="header" aria-current={isCurrentPage('/services')}>services</a>
@@ -58,13 +57,13 @@
 	</svelte:fragment>
 
 	<nav class="flex flex-row gap-5 items-center">
-		<a aria-current={isCurrentPage('/about')} href="/about" class="header hidden min-[910px]:flex"
+		<a aria-current={isCurrentPage('/about')} href="/about" class="header hidden lg:flex"
 			>ABOUT</a
 		>
 		<a
 			aria-current={isCurrentPage('/contact')}
 			href="/contact"
-			class="header hidden min-[910px]:flex">CONTACT</a
+			class="header hidden lg:flex">CONTACT</a
 		>
 		<a href="/" aria-current={isCurrentPage('/')}>
 			{#if windowSize.w < 410}
@@ -84,24 +83,24 @@
 		<a
 			aria-current={isCurrentPage('/portfolio')}
 			href="/portfolio"
-			class="header hidden min-[910px]:flex">PORTFOLIO</a
+			class="header hidden lg:flex">PORTFOLIO</a
 		>
 		<a
 			aria-current={isCurrentPage('/pricing')}
 			href="/pricing"
-			class="header hidden min-[910px]:flex">PRICING</a
+			class="header hidden lg:flex">PRICING</a
 		>
 	</nav>
 
 	<svelte:fragment slot="trail">
 		<button
-			class="min-[910px]:hidden btn-icon w-16"
+			class="lg:hidden btn-icon w-16"
 			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
 		>
 			<Icon.Menu class="text-2xl text-primary-500" />
 		</button>
 
-		<div class="hidden min-[910px]:flex w-16">
+		<div class="hidden lg:flex w-16">
 			// <LightSwitch />
 		</div>
 	</svelte:fragment>
