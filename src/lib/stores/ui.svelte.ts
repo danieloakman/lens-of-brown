@@ -1,15 +1,15 @@
 import { type Nullish } from 'js-utils';
-import type { ComponentType } from 'svelte';
+import type { Component } from 'svelte';
 // import { screenOrientation as screenOrientationStore, windowSizeStore } from 'svelte-legos';
 import { writable } from 'svelte/store';
 
 /** A store for dynamically inserting a component into the header (next to the top right drawer button). */
-export const headerStore = writable<Nullish<ComponentType>>();
+export const headerStore = writable<Nullish<Component>>();
 
 /**
  * A store for dynamically inserting/adding a component into the drawer
  */
-export const drawerContentStore = writable<Nullish<ComponentType>>();
+export const drawerContentStore = writable<Nullish<Component>>();
 
 export const windowSize = $state({ w: 0, h: 0 });
 
