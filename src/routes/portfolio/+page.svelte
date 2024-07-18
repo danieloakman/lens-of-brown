@@ -54,7 +54,7 @@
 		<div class="flex flex-col px-6 py-10">
 			<h2 class="text-2xl font-Forum text-primary-500 pb-3">{title}</h2>
 			<h3 class="text-xl pb-12">{subheading}</h3>
-			<a class="flex flex-row" {href}>See More <Icon.ArrowUpRight class="w-2" /></a>
+			<a class="flex flex-row" {href}>See More... <!-- <Icon.ArrowUpRight class="w-2" /> --></a>
 		</div>
 	</div>
 {/snippet}

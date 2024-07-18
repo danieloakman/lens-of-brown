@@ -1,8 +1,15 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { iife, propIs } from 'js-utils';
+	import { iife, propIs, raise } from 'js-utils';
 	import { iter, repeat } from 'iteragain';
 	import type { ImgSlug } from './utils';
+
+	// TODO: make this fn pipeable and use it to swap the images and alts arrays.
+	function swapIndices<T>(arr: T[], i: number, j: number): void {
+		const temp = arr[i] ?? raise('Index out of bounds: ' + i);
+		arr[i] = arr[j] ?? raise('Index out of bounds: ' + j);
+		arr[j] = temp;
+	}
 
 	const assertImg = (obj: unknown): { default: string } => {
 		if (propIs(obj, 'default', 'object') || propIs(obj, 'default', 'string'))
@@ -69,18 +76,21 @@
 	});
 </script>
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
-	{#each iter(Object.values(imgs)).zip(alts) as [src, alt]}
-		<!-- {#await pSrc() then src} -->
+<div class="flex flex-col mx-auto">
+	<!-- TODO: resize this for proper grid cols, like in the main portfolio page -->
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 py-4 pt-20 self-center">
+		{#each iter(Object.values(imgs)).zip(alts) as [src, alt]}
+			<!-- {#await pSrc() then src} -->
 			<enhanced:img
 				src={assertImg(src).default}
 				{alt}
-				class="rounded-container-token w-[400px] md:w-[700px] object-cover"
+				class="rounded-container-token max-w-[400px] md:max-w-[500px] object-cover"
 				style="aspect-ratio: 0.67/1;"
 				sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
 			></enhanced:img>
-		<!-- {/await} -->
-	{/each}
+			<!-- {/await} -->
+		{/each}
+	</div>
 </div>
 
 <!-- All PORTRAITS, no aspect-ratio 1/1, keep it portrait orientation. -->
