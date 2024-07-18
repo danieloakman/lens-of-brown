@@ -170,7 +170,7 @@
 
 	{@render divider()}
 
-	<Testimonial author="Somebody" text="todo" />
+	<Testimonial author="Somebody" quote="todo" />
 
 	{@render divider()}
 

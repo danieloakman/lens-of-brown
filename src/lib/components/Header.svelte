@@ -2,14 +2,15 @@
 	import { page } from '$app/stores';
 	import { Icon } from '$lib';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
-	import SidewaysLogo from '$imgs/transparent-logo-sideways.png?enhanced&imagetools';
+	import SidewaysLogo from '$imgs/transparent-logo-sideways.png?enhanced&any';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
 		href === $page.url.pathname ? 'page' : undefined;
 </script>
 
-<div class="flex flex-row gap-2 justify-between">
+<!-- TODO: fix padding for mobile -->
+<div class="flex flex-row gap-2 justify-between px-16">
 	<button
 		class="min-[910px]:hidden btn-icon w-16"
 		on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
@@ -26,7 +27,7 @@
 	</a>
 
 	<div class="w-16 min-[910px]:hidden"></div>
-	<nav class="hidden min-[910px]:flex flex-row items-center gap-12 px-6">
+	<nav class="hidden min-[910px]:flex flex-row items-center gap-12 px-8">
 		<a href="/" class="header" aria-current={isCurrentPage('/')}>home</a>
 		<a href="/portfolio" class="header" aria-current={isCurrentPage('/portfolio')}>portfolio</a>
 		<a href="/services" class="header" aria-current={isCurrentPage('/services')}>services</a>
