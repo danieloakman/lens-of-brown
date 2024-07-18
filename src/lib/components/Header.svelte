@@ -10,7 +10,7 @@
 </script>
 
 <!-- TODO: fix padding for mobile -->
-<div class="flex flex-row gap-2 justify-between px-16">
+<div class="flex flex-row gap-2 justify-between px-16 py-4">
 	<button
 		class="min-[910px]:hidden btn-icon w-16"
 		on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
