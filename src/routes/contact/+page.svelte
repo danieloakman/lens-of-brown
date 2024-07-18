@@ -109,17 +109,19 @@ Replace map pic with landscape pic.
 
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 
-	<div class="bg-surface-200 py-10 ps-10 me-32">
+	<div class="bg-surface-200 locations-container">
 		<img
 			src={ImgDanTrot}
-			class="float-right w-[400px] h-[400px] opacity-60 relative -right-32"
+			class="w-[400px] max-h-[400px] opacity-60 relative offset-img"
 			alt="Daniel and Sheridan laughing"
 		/>
 		<!-- <img src={Landscape} class=" opacity-60" alt=""/> -->
 		<div class="flex flex-col gap-4">
-			<h2 class="text-2xl uppercase text-primary-500 font-Forum">Locations we service</h2>
+			<h2 class="text-xl sm:text-2xl uppercase text-primary-500 font-Forum">
+				Locations we service
+			</h2>
 			<ul>TODO: two columns dot points list of locations we shoot at</ul>
-			<h2 class="text-2xl uppercase text-primary-500 font-Forum pt-6">Contact us</h2>
+			<h2 class="text-xl sm:text-2xl uppercase text-primary-500 font-Forum pt-6">Contact us</h2>
 			<div class="flex flex-col gap-2">
 				<a href={INSTAGRAM_URL} class="icon-link"><Icon.Instagram /> @lens.ofbrown</a>
 				<a href={FACEBOOK_URL} class="icon-link"><Icon.Facebook /> Facebook</a>
@@ -136,6 +138,21 @@ Replace map pic with landscape pic.
 <BottomBanner />
 
 <style lang="postcss">
+	.locations-container {
+		@apply py-4 px-4;
+	}
+	.offset-img {
+		@apply float-none -right-0 -top-16;
+	}
+	@media (min-width: 640px) {
+		.locations-container {
+			@apply py-10 ps-10 me-32;
+		}
+		.offset-img {
+			@apply float-right -right-32;
+		}
+	}
+
 	.icon-link {
 		@apply flex flex-row gap-2 items-center text-xl;
 	}
