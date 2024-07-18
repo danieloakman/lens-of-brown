@@ -4,15 +4,21 @@
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
-	import ImgDanTrot from '$imgs/_couples-dan_trot6.jpg?url&w=800&aspect=1:1&any';
+	import ImgDanTrot from '$imgs/_couples-dan_trot6.jpg?enhanced&aspect=1:1&any';
 </script>
 
 <PageBody class="gap-20 py-20">
 	<div class="flex flex-col sm:flex-row gap-10">
-		<img src={ImgDanTrot} alt="TODO" class="max-w-[300px] sm:max-w-[400px] aspect-square object-cover rounded-full self-center" />
+		<enhanced:img
+			src={ImgDanTrot}
+			alt="Daniel and Sheridan standing together infront of pine trees"
+			class="max-w-[300px] sm:max-w-[400px] aspect-square object-cover rounded-full self-center"
+		></enhanced:img>
 		<div class="flex flex-col gap-5 max-h-[400px]">
 			<!-- <h3 class="text-2xl font-Forum">Hi there!</h3> -->
-			<h1 class="text-5xl font-Forum text-primary-500 text-center">Welcome to <br> Lens of Brown</h1>
+			<h1 class="text-5xl font-Forum text-primary-500 text-center">
+				Welcome to <br /> Lens of Brown
+			</h1>
 			<p class="text-xl overflow-y-scroll">
 				In the last few years I've learnt that successfully photographing a wedding requires so much
 				more than good technical knowledge. It's about knowing how to be. I build trust quickly and

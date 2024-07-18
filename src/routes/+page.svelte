@@ -3,7 +3,6 @@
 	import Divider from '$components/Divider.svelte';
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import Testimonial from '$components/Testimonial.svelte';
-	import { range } from 'iteragain';
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
 
@@ -51,6 +50,7 @@
 		{@render divider()}
 	</div>
 
+	<!-- TODO: try to closely copy what zenfolio is doing here with the grid. -->
 	<div class="hidden sm:grid md:grid-cols-4 lg:grid-cols-5 gap-5 self-center h-[1000px] img-grid">
 		<img src={ImgLandscape1} class="col-span-2" />
 		<img src={ImgLandscape1} class="col-span-1" />
@@ -61,9 +61,6 @@
 		<img src={ImgLandscape1} class="col-span-1" />
 		<img src={ImgLandscape1} class="col-span-1" />
 		<img src={ImgLandscape1} class="col-span-1" />
-		<!-- {#each range(6) as i}
-			<div class="card w-full h-[250px] text-center">Pics go here</div>
-		{/each} -->
 	</div>
 
 	{@render divider()}

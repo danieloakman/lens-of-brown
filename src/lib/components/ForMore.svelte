@@ -6,7 +6,7 @@
 	import { INSTAGRAM_URL } from '$constants';
 	import Carousel from './Carousel.svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?url&w=400&aspect=1:1&any';
+	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?w=500&aspect=1:1&format=webp&any';
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 	const { ...rest }: Props = $props();
