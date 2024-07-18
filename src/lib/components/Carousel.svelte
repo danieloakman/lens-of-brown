@@ -1,3 +1,9 @@
+<!--
+@component Carousel
+@description A carousel component that uses Embla Carousel and Embla Carousel Svelte.
+@note Do not use `<enhanced:img>` here. Use `<img>` instead. Enhanced imgs create a picture element wrapping the img,
+which we cannot assign attributes to and breaks the css required for the carousel.
+-->
 <script lang="ts">
 	import type { EmblaCarouselType } from 'embla-carousel';
 	import emblaCarouselSvelte, { type EmblaCarouselSvelteType } from 'embla-carousel-svelte';
