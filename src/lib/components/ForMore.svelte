@@ -19,7 +19,11 @@
 	</h3>
 	<Carousel class="pt-4" showButtons>
 		<!-- {@render imgs()} -->
-		<!-- TODO: fill with imgs that trotty wants -->
+		<!--
+		TODO: fill with imgs that trotty wants.
+		Just get 10 most recent and NON-PINNED images and put them here.
+		Eventually do this in a script and/or build step.
+		-->
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
