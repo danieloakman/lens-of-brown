@@ -23,10 +23,6 @@
 	let submitted = $state(false);
 </script>
 
-<!--
-TODO: Copy over as is from zenfolio. But:
-Replace map pic with landscape pic.
--->
 
 <PageBody>
 	<h1 class="text-5xl text-primary-500">Contact us</h1>
@@ -61,7 +57,7 @@ Replace map pic with landscape pic.
 			disabled={submitted}
 			bind:value={email}
 		/>
-		<!-- TODO: Create a PhoneInput -->
+		<!-- If this is ever needed again, make a phone input component -->
 		<!-- <TextInput class="col-span-2" name="phone_no" label="Phone number" type="tel" required /> -->
 		<!-- <SelectInput
 			class="col-span-2"
