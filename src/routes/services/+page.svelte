@@ -137,7 +137,7 @@
 	<div class="flex flex-col gap-10">
 		<h1 class="text-4xl text-primary-500 font-Forum">What to expect when you book with us...</h1>
 		<div class="grid grid-cols-[auto_1fr] gap-6 ps-6">
-			{#each ['Images that you love', 'blah '.repeat(50).trimEnd(), 'something'] as text}
+			{#each ['Authentic and candid images that capture your unique story.', 'Support, direction and guidance at every stage, allowing for the photoshoot to flow seamlessly.', 'Prompt delivery of your best images via secure online gallery.', 'A photography team who is understanding and accomodating of any accessiblity requirements'] as text}
 				<Icon.SquareCheckBig class="w-[44px] h-[44px]" />
 				<span class="text-xl sm:text-2xl">{text}</span>
 			{/each}
