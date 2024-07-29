@@ -4,7 +4,7 @@
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
-	import ImgDanTrot from '$imgs/_couples-dan_trot6.jpg?enhanced&aspect=1:1&any';
+	import ImgDanTrot from '$imgs/_couples-dan_trot8.jpg?enhanced&aspect=1:1&any';
 </script>
 
 <PageBody class="gap-20 py-20">
