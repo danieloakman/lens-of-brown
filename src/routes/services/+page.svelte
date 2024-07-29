@@ -14,8 +14,8 @@
 	import Landscape1 from '$imgs/landscapes-great_ocean_road.jpg?url&w=1000&aspect=1:1&any';
 	import Landscape2 from '$imgs/_landscapes-montague_island.jpg?url&w=1000&aspect=1:1&any';
 	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?url&w=1000&aspect=1:1&any';
-	import Events2 from '$imgs/events-canberra_balloons.jpg?url&w=1000&aspect=1:1&any';
 	import Trot1 from '$imgs/weddings-trot3.jpg?url&w=1000&aspect=1:1&any';
+	import Events2 from '$imgs/events-canberra_balloons.jpg?url&w=1000&aspect=1:1&any';
 	import AmandaMartin4 from '$imgs/_families_amanda-martin4.jpg?url&w=1000&aspect=1:1&any';
 	import TimBear7 from '$imgs/_families-tim_bear7.jpg?url&w=1000&aspect=1:1&position=bottom&any';
 	import HoneySantos from '$imgs/animals-honey_santos4.jpg?url&w=1000&aspect=1:1&position=bottom&any';
@@ -24,6 +24,7 @@
 	import { minmax, map } from 'iteragain';
 	import { Icon } from '$lib/icons';
 
+	// TODO: Add optional list underneath price package
 	type PricePackage = [name: string, amount: number];
 </script>
 
@@ -37,7 +38,7 @@
 	title: string;
 	img: BasicImg;
 	pricing: PricePackage[];
-	description: string;
+	description?: string;
 	minmax?: [min: number, max: number];
 })}
 	<div class="flex flex-col gap-4 rounded-container-token bg-surface-200 max-w-[600px] pb-4">
@@ -51,9 +52,16 @@
 			<Divider horizontal class="!border-gray-300" />
 			<h2 class="text-center text-2xl font-Forum">AUD ${_minmax[0]} - ${_minmax[1]}</h2>
 			<Divider horizontal class="!border-gray-300" />
-			<h2 class="text-2xl font-Forum bold">What to expect</h2>
-			<p class="text-lg pb-4">{description}</p>
-			<!-- TODO: if description becomes too long, add a "Read more" button that expands -->
+			{#if description}
+				<h2 class="text-2xl font-Forum bold">Inclusions</h2>
+				<!-- TODO: if description becomes too long, add a "Read more" button that expands -->
+				<!-- TODO: make this a <li> -->
+				<ul class="text-lg pb-4">
+					{#each description.split('\n') as part}
+						<li>{part}</li>
+					{/each}
+				</ul>
+			{/if}
 			<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
 			<ul class="flex flex-col gap-4 px-4">
 				{#each pricing as [name, amount]}
@@ -74,7 +82,8 @@
 		{@render ServicePricing({
 			title: 'Mini Shoots',
 			img: { src: ImgMiniShoots, alt: 'todo' },
-			description: 'TODO fill in',
+			description:
+				'- Up to 30 mins to capture your best shots\n- 10 edited images\n- Your images delivered within a week via your online gallery',
 			pricing: [
 				['Family', 150],
 				['Couples', 150],
@@ -86,27 +95,34 @@
 		{@render ServicePricing({
 			title: 'Family Packages',
 			img: { src: TimBear7, alt: 'todo' },
-			description: 'TODO fill in',
+			// TODO: put these as a nested list
+			description:
+				'Family Package 1: 25 edited images, suitable for families of up to 6\nFamily Package 2: 35 edited images, suitable for families of up to 8\nFamily Package 3: 50 edited images, suitable for extended and large families',
 			pricing: [
-				['Family', 300],
-				['Siblings', 150],
-				['Extended family', 50]
+				['Family Package 1', 300],
+				['Family Package 2', 400],
+				['Family Package 3', 500]
 			]
 		})}
 		{@render ServicePricing({
 			title: 'Couples Packages',
 			img: { src: ImgCouples, alt: 'todo' },
-			description: 'TODO fill in. TODO: Replace "Couples packages" with something better',
+			description:
+				'- Packages available with 25-50+ edited images\n- Secret/hidden proposal photography services available\n- Pre-wedding services or on-location shoots',
+			// description: 'Couples: 25 edited images\nPropasal: 30-40 edited images, secret/hidden photography services available\nEngagement: 50 edited images',
 			pricing: [
-				['Couples', 100],
-				['Proposal/Engagement', 150]
+				['Couples', 300],
+				['Proposal', 500],
+				['Engagement', 500]
 			]
 		})}
 		{@render ServicePricing({
 			title: 'Weddings',
 			img: { src: Trot1, alt: 'todo' },
-			description: 'TODO fill in',
+			description:
+				'- Packages availabe from 2 - 12 hours of photography coverage \n- Small elopement packages available, flexible to your budget\n- Sneak peek images delivered within 24 hours',
 			pricing: [
+				// TODO: Replace with heading, "Starts from $min*"
 				['Elopements', 700],
 				['Weddings', 1000]
 			]
@@ -114,20 +130,21 @@
 		{@render ServicePricing({
 			title: 'Events',
 			img: { src: Events1, alt: 'todo' },
-			description: 'TODO fill in',
+			description:
+				'- Packages suitable for parties, corporate bookings and celebrations\n- Packages starting from 1 hour of coverage',
 			pricing: [
-				['Something Small', 50],
-				['A Big Group', 200],
-				['A Huge Celebration', 500]
+				['Private Event', 450],
+				['Corporate Event', 600]
 			]
 		})}
 		{@render ServicePricing({
 			title: 'Animals',
 			img: { src: HoneySantos, alt: 'todo' },
-			description: 'TODO fill in',
+			// TODO: Put these as a nested list
+			description: 'Pet Package: 20 edited images of pet(s) only\nPet Family Package: 25 edited images of pet(s) and family',
 			pricing: [
-				['Pet/s only', 100],
-				['Pet/s & Owner', 200]
+				['Pet Package', 200],
+				['Pet Family Package', 300]
 			]
 		})}
 	</div>
@@ -137,7 +154,7 @@
 	<div class="flex flex-col gap-10">
 		<h1 class="text-4xl text-primary-500 font-Forum">What to expect when you book with us...</h1>
 		<div class="grid grid-cols-[auto_1fr] gap-6 ps-6">
-			{#each ['Authentic and candid images that capture your unique story.', 'Support, direction and guidance at every stage, allowing for the photoshoot to flow seamlessly.', 'Prompt delivery of your best images via secure online gallery.', 'A photography team who is understanding and accomodating of any accessiblity requirements'] as text}
+			{#each ['Authentic and candid images that capture your unique story.', 'Support, direction and guidance at every stage, allowing for the photoshoot to flow seamlessly.', 'Prompt delivery of your best images via secure online gallery.', 'A photography team who is understanding and accomodating of any accessiblity requirements.'] as text}
 				<Icon.SquareCheckBig class="w-[44px] h-[44px]" />
 				<span class="text-xl sm:text-2xl">{text}</span>
 			{/each}
