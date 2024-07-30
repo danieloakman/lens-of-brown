@@ -26,6 +26,7 @@
 
 	// TODO: Add optional list underneath price package
 	type PricePackage = [name: string, amount: number];
+	type NestedStringList = (string | string[])[];
 </script>
 
 {#snippet ServicePricing({
@@ -38,7 +39,7 @@
 	title: string;
 	img: BasicImg;
 	pricing: PricePackage[];
-	description?: string;
+	description?: NestedStringList;
 	minmax?: [min: number, max: number];
 })}
 	<div class="flex flex-col gap-4 rounded-container-token bg-surface-200 max-w-[600px] pb-4">
@@ -55,10 +56,17 @@
 			{#if description}
 				<h2 class="text-2xl font-Forum bold">Inclusions</h2>
 				<!-- TODO: if description becomes too long, add a "Read more" button that expands -->
-				<!-- TODO: make this a <li> -->
 				<ul class="text-lg pb-4">
-					{#each description.split('\n') as part}
-						<li>{part}</li>
+					{#each description as item}
+						{#if typeof item === 'string'}
+							<li>{item}</li>
+						{:else}
+							<ul class="ps-4">
+								{#each item as nestedItem}
+									<li>{nestedItem}</li>
+								{/each}
+							</ul>
+						{/if}
 					{/each}
 				</ul>
 			{/if}
@@ -82,8 +90,11 @@
 		{@render ServicePricing({
 			title: 'Mini Shoots',
 			img: { src: ImgMiniShoots, alt: 'todo' },
-			description:
-				'- Up to 30 mins to capture your best shots\n- 10 edited images\n- Your images delivered within a week via your online gallery',
+			description: [
+				'- Up to 30 mins to capture your best shots',
+				'- 10 edited images',
+				'- Your images delivered within a week via your online gallery'
+			],
 			pricing: [
 				['Family', 150],
 				['Couples', 150],
@@ -95,9 +106,14 @@
 		{@render ServicePricing({
 			title: 'Family Packages',
 			img: { src: TimBear7, alt: 'todo' },
-			// TODO: put these as a nested list
-			description:
-				'Family Package 1: 25 edited images, suitable for families of up to 6\nFamily Package 2: 35 edited images, suitable for families of up to 8\nFamily Package 3: 50 edited images, suitable for extended and large families',
+			description: [
+				'Family Package 1:',
+				['- 25 edited images', '- Suitable for families of up to 6'],
+				'Family Package 2:',
+				['- 35 edited images', '- Suitable for families of up to 8'],
+				'Family Package 3:',
+				['- 50 edited images', '- Suitable for extended and large families']
+			],
 			pricing: [
 				['Family Package 1', 300],
 				['Family Package 2', 400],
@@ -107,9 +123,11 @@
 		{@render ServicePricing({
 			title: 'Couples Packages',
 			img: { src: ImgCouples, alt: 'todo' },
-			description:
-				'- Packages available with 25-50+ edited images\n- Secret/hidden proposal photography services available\n- Pre-wedding services or on-location shoots',
-			// description: 'Couples: 25 edited images\nPropasal: 30-40 edited images, secret/hidden photography services available\nEngagement: 50 edited images',
+			description: [
+				'- Packages available with 25-50+ edited images',
+				'- Secret/hidden proposal photography services available',
+				'- Pre-wedding services or on-location shoots'
+			],
 			pricing: [
 				['Couples', 300],
 				['Proposal', 500],
@@ -119,8 +137,11 @@
 		{@render ServicePricing({
 			title: 'Weddings',
 			img: { src: Trot1, alt: 'todo' },
-			description:
-				'- Packages availabe from 2 - 12 hours of photography coverage \n- Small elopement packages available, flexible to your budget\n- Sneak peek images delivered within 24 hours',
+			description: [
+				'- Packages availabe from 2 - 12 hours of photography coverage',
+				'- Small elopement packages available, flexible to your budget',
+				'- Sneak peek images delivered within 24 hours'
+			],
 			pricing: [
 				// TODO: Replace with heading, "Starts from $min*"
 				['Elopements', 700],
@@ -130,8 +151,10 @@
 		{@render ServicePricing({
 			title: 'Events',
 			img: { src: Events1, alt: 'todo' },
-			description:
-				'- Packages suitable for parties, corporate bookings and celebrations\n- Packages starting from 1 hour of coverage',
+			description: [
+				'- Packages suitable for parties, corporate bookings and celebrations',
+				'- Packages starting from 1 hour of coverage'
+			],
 			pricing: [
 				['Private Event', 450],
 				['Corporate Event', 600]
@@ -140,8 +163,12 @@
 		{@render ServicePricing({
 			title: 'Animals',
 			img: { src: HoneySantos, alt: 'todo' },
-			// TODO: Put these as a nested list
-			description: 'Pet Package: 20 edited images of pet(s) only\nPet Family Package: 25 edited images of pet(s) and family',
+			description: [
+				'Pet Package:',
+				['- 20 edited images of pet(s) only'],
+				'Pet Family Package:',
+				['- 25 edited images of pet(s) and family']
+			],
 			pricing: [
 				['Pet Package', 200],
 				['Pet Family Package', 300]
