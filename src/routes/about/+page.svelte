@@ -22,13 +22,8 @@
 				Welcome to <br /> Lens of Brown
 			</h1>
 			<p class="text-xl overflow-y-scroll">
-				In the last few years I've learnt that successfully photographing a wedding requires so much
-				more than good technical knowledge. It's about knowing how to be. I build trust quickly and
-				effortlessly with every guest - in every situation - so I can portray them as naturally and
-				authentically as possible. I can never quite decide if I'm an energetic person or a clam
-				one. I hide ini the shadows to capture the gentles of moments and I'm right up there with
-				the craziest on the dance floor, sucking up the energy and vibrance. These are the images
-				that will keep the memories and feelings fresh fo generations to come.
+				TODO
+				<!-- In the last few years I've learnt that successfully photographing a wedding requires so much more than good technical knowledge. It's about knowing how to be. I build trust quickly and effortlessly with every guest - in every situation - so I can portray them as naturally and authentically as possible. I can never quite decide if I'm an energetic person or a clam one. I hide ini the shadows to capture the gentles of moments and I'm right up there with the craziest on the dance floor, sucking up the energy and vibrance. These are the images that will keep the memories and feelings fresh fo generations to come. -->
 			</p>
 		</div>
 	</div>
@@ -38,27 +33,55 @@
 	<div class="flex flex-col gap-5">
 		<h1 class="text-center text-5xl font-Forum text-primary-500">FAQs</h1>
 		<div class="bg-surface-200 rounded-container-token w-full p-6">
-			{#snippet item(question: string, answer: string)}
+			{#snippet item(question: string, answer: Array<string | string[]>)}
 				<AccordionItem>
 					<svelte:fragment slot="summary">
 						<h2 class="font-Forum text-2xl">{question}</h2>
 					</svelte:fragment>
 					<svelte:fragment slot="content">
-						<p class="text-xl">{answer}</p>
+						<ul class="text-xl">
+							{#each answer as item}
+								{#if typeof item === 'string'}
+									<li>{item}</li>
+								{:else}
+									<ul class="ps-4">
+										{#each item as subItem}
+											<li>{subItem}</li>
+										{/each}
+									</ul>
+								{/if}
+							{/each}
+						</ul>
 					</svelte:fragment>
 				</AccordionItem>
 			{/snippet}
-			<!-- TODO: add in some of these from the insta -->
 			<Accordion spacing="space-y-5">
-				{@render item('What should we expect during our shoot?', 'todo')}
+				{@render item('What should we expect during our shoot?', [
+					'- We will provide guidance on where to stand and how to pose',
+					'- We will incorporate some prompts and activities to get more natural and candid expressions',
+					'- Within a week following your shoot, you will receive a link to download your edited images'
+				])}
 				<Divider horizontal class="mx-4" />
-				{@render item('Do we get to choose the location for our photo shoot?', 'todo')}
+				{@render item('Do we get to choose the location for our photo shoot?', ['todo'])}
 				<Divider horizontal class="mx-4" />
-				{@render item('What should we wear to our shoot?', 'todo')}
+				{@render item('What should we wear to our shoot?', [
+					'We suggest:',
+					[
+						'- Neutrals or plain coloured clothing',
+						'- Choose a family colour scheme of a few colours, but avoid outfits that are too "matchy matchy"',
+						'- Minimise bold or conflicting patterns',
+						'- Avoid large logos, especially on tops',
+						'- Different textures look great on camera!',
+						'- Wear something comfy that allows for movement',
+						'- If in doubt, reach out to us for personalised recommendations prior to your shoot'
+					]
+				])}
 				<Divider horizontal class="mx-4" />
-				{@render item('How will our photos be delivered?', 'todo')}
+				{@render item('How will our photos be delivered?', [
+					'Your photos will be delivered within a week via your own personal and secure online gallery. We will also provide a sneak peek within a couple of days of completing your shoot.'
+				])}
 				<Divider horizontal class="mx-4" />
-				{@render item('What happens if it rains?', 'todo')}
+				{@render item('What happens if it rains?', ['todo'])}
 			</Accordion>
 		</div>
 	</div>
