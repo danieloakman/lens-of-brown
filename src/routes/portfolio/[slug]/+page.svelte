@@ -119,13 +119,13 @@
 </script>
 
 <div class="flex flex-col mx-auto">
-	<!-- TODO: resize this for proper grid cols, like in the main portfolio page -->
-	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 py-4 pt-20 self-center"> 
+	<!-- TODO: these pictures don't resize dynamically like in /portfolio. So might just remove the enhanced part and just import a set width for all images -->
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		{#each imgs as [src, alt]}
 			<enhanced:img
 				{src}
 				{alt}
-				class="rounded-container-token max-w-[400px] md:max-w-[500px] object-cover"
+				class="rounded-container-token max-w-[310px] object-cover"
 				style="aspect-ratio: 0.67/1;"
 				sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
 			></enhanced:img>
