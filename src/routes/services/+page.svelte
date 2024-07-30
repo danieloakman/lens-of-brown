@@ -139,7 +139,7 @@
 		{@render ServicePricing({
 			title: 'Weddings',
 			img: { src: Trot1, alt: 'todo' },
-			pricing: ([min, max]) => `Starts from AUD $${min}*`,
+			pricing: ([min]) => `Starts from AUD $${min}*`,
 			description: [
 				'- Packages availabe from 2 - 12 hours of photography coverage',
 				'- Small elopement packages available, flexible to your budget',
@@ -153,6 +153,7 @@
 		{@render ServicePricing({
 			title: 'Events',
 			img: { src: Events1, alt: 'todo' },
+			pricing: ([min]) => `Starts from AUD $${min}*`,
 			description: [
 				'- Packages suitable for parties, corporate bookings and celebrations',
 				'- Packages starting from 1 hour of coverage'
