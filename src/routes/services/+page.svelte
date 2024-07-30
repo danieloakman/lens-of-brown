@@ -24,7 +24,6 @@
 	import { minmax, map } from 'iteragain';
 	import { Icon } from '$lib/icons';
 
-	// TODO: Add optional list underneath price package
 	type PricePackage = [name: string, amount: number];
 	type NestedStringList = (string | string[])[];
 </script>
@@ -32,15 +31,15 @@
 {#snippet ServicePricing({
 	title,
 	img: { src, alt },
+	pricing = ([min, max]) => `AUD $${min} - ${max}`,
 	description,
-	pricing,
-	minmax: _minmax = minmax(map(pricing, ([, amount]) => amount))
+	packages,
 }: {
 	title: string;
 	img: BasicImg;
-	pricing: PricePackage[];
+	packages: PricePackage[];
+	pricing?: (minmax: [min: number, max: number]) => string;
 	description?: NestedStringList;
-	minmax?: [min: number, max: number];
 })}
 	<div class="flex flex-col gap-4 rounded-container-token bg-surface-200 max-w-[600px] pb-4">
 		<img
@@ -51,7 +50,10 @@
 		<div class="flex flex-col gap-4 px-4">
 			<h1 class="text-center text-3xl text-primary-500 font-Forum">{title}</h1>
 			<Divider horizontal class="!border-gray-300" />
-			<h2 class="text-center text-2xl font-Forum">AUD ${_minmax[0]} - ${_minmax[1]}</h2>
+			<h2 class="text-center text-2xl font-Forum">
+				<!-- AUD ${_minmax[0]} - ${_minmax[1]} -->
+				 {pricing(minmax(map(packages, ([, amount]) => amount)))}
+			</h2>
 			<Divider horizontal class="!border-gray-300" />
 			{#if description}
 				<h2 class="text-2xl font-Forum bold">Inclusions</h2>
@@ -72,7 +74,7 @@
 			{/if}
 			<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
 			<ul class="flex flex-col gap-4 px-4">
-				{#each pricing as [name, amount]}
+				{#each packages as [name, amount]}
 					<li>
 						<span class="text-xl font-Forum">{name} - ${amount}</span>
 					</li>
@@ -95,7 +97,7 @@
 				'- 10 edited images',
 				'- Your images delivered within a week via your online gallery'
 			],
-			pricing: [
+			packages: [
 				['Family', 150],
 				['Couples', 150],
 				['Engagement', 150],
@@ -114,7 +116,7 @@
 				'Family Package 3:',
 				['- 50 edited images', '- Suitable for extended and large families']
 			],
-			pricing: [
+			packages: [
 				['Family Package 1', 300],
 				['Family Package 2', 400],
 				['Family Package 3', 500]
@@ -128,7 +130,7 @@
 				'- Secret/hidden proposal photography services available',
 				'- Pre-wedding services or on-location shoots'
 			],
-			pricing: [
+			packages: [
 				['Couples', 300],
 				['Proposal', 500],
 				['Engagement', 500]
@@ -137,13 +139,13 @@
 		{@render ServicePricing({
 			title: 'Weddings',
 			img: { src: Trot1, alt: 'todo' },
+			pricing: ([min, max]) => `Starts from AUD $${min}*`,
 			description: [
 				'- Packages availabe from 2 - 12 hours of photography coverage',
 				'- Small elopement packages available, flexible to your budget',
 				'- Sneak peek images delivered within 24 hours'
 			],
-			pricing: [
-				// TODO: Replace with heading, "Starts from $min*"
+			packages: [
 				['Elopements', 700],
 				['Weddings', 1000]
 			]
@@ -155,7 +157,7 @@
 				'- Packages suitable for parties, corporate bookings and celebrations',
 				'- Packages starting from 1 hour of coverage'
 			],
-			pricing: [
+			packages: [
 				['Private Event', 450],
 				['Corporate Event', 600]
 			]
@@ -169,7 +171,7 @@
 				'Pet Family Package:',
 				['- 25 edited images of pet(s) and family']
 			],
-			pricing: [
+			packages: [
 				['Pet Package', 200],
 				['Pet Family Package', 300]
 			]
