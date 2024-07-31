@@ -1,3 +1,7 @@
+<!-- 
+@component OverlayChildren
+@description A div/container that overlays all its children over each other. As if each child is the only child.
+-->
 <script lang="ts">
 	import type { HTMLAttributes } from 'svelte/elements';
 
