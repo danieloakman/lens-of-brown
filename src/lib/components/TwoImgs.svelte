@@ -1,40 +1,41 @@
 <!-- Displays one image, then on hover or click, display another. -->
 <script lang="ts">
-	import { noop, omit } from 'js-utils';
-	import type { Snippet } from 'svelte';
+	import type { BasicImg } from '$types';
+	import { coerceHash, noop, raise } from 'js-utils';
 	import { quintOut } from 'svelte/easing';
-	import type { HTMLImgAttributes } from 'svelte/elements';
-	import { crossfade, type TransitionConfig } from 'svelte/transition';
-
-	type ImgSnippet = Snippet<
-		[{ send: ReturnType<typeof crossfade>[0]; receive: ReturnType<typeof crossfade>[0] }]
-	>;
+	import type { HTMLAttributes } from 'svelte/elements';
+	import { crossfade } from 'svelte/transition';
+	import OverlayChildren from './OverlayChildren.svelte';
 
 	const {
-		img1,
-		img2,
-		containerClass,
+		imgs,
+		class: klass = '',
+		imgClass = '',
 		transitionOn = 'hover',
 		fadeDurationMs = 500,
+		delayMs = 0,
 		...rest
-	}: Omit<HTMLImgAttributes, 'src' | 'alt'> & {
-		img1: ImgSnippet;
-		img2: ImgSnippet;
-		containerClass?: string;
+	}: HTMLAttributes<HTMLDivElement> & {
+		imgs: [BasicImg, BasicImg];
+		imgClass?: string;
 		transitionOn?: 'hover';
 		fadeDurationMs?: number;
+		delayMs?: number;
 	} = $props();
 
 	let i = $state(0);
+	const img = $derived(imgs.at(i % imgs.length) ?? raise(`No image at index ${i}`));
+	const key = coerceHash(imgs);
 
 	const [send, receive] = crossfade({
 		duration: fadeDurationMs,
-		easing: quintOut
+		easing: quintOut,
+		delay: delayMs,
 	});
 </script>
 
-<div
-	class={'container ' + containerClass}
+<OverlayChildren
+	class={klass}
 	role="img"
 	onfocus={noop}
 	onmouseover={() => {
@@ -43,24 +44,11 @@
 	onmouseleave={() => {
 		if (transitionOn === 'hover') i = 0;
 	}}
+	{...rest}
 >
-	<div class={'inner ' + rest.class}>
-		{#if i === 0}
-			{@render img1({ send, receive })}
-		{:else}
-			{@render img2({ send, receive })}
-		{/if}
-	</div>
-</div>
-
-<style lang="postcss">
-	.container {
-		display: grid;
-		place-items: center;
-		grid-template-areas: 'inner-div';
-	}
-
-	.inner {
-		grid-area: inner-div;
-	}
-</style>
+	{#if i === 0}
+		<img in:send={{ key }} out:receive={{ key }} {...img} class={imgClass} />
+	{:else}
+		<img in:send={{ key }} out:receive={{ key }} {...img} class={imgClass} />
+	{/if}
+</OverlayChildren>

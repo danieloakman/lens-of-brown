@@ -31,7 +31,7 @@
 	title,
 	subheading,
 	href,
-	imgs: [imgA, imgB]
+	imgs
 }: {
 	title: string;
 	subheading: string;
@@ -41,15 +41,10 @@
 	<div class="flex flex-col gap-2 bg-surface-200 rounded-container-token max-w-[600px]">
 		<a {href}>
 			<TwoImgs
-				class="rounded-tl-container-token rounded-tr-container-token max-h-[600px] max-w-[600px] aspect-square object-cover"
-			>
-				{#snippet img1({ send, receive })}
-					<img in:send={{ key: imgA }} out:receive={{ key: imgA }} {...imgA} />
-				{/snippet}
-				{#snippet img2({ send, receive })}
-					<img in:send={{ key: imgB }} out:receive={{ key: imgB }} {...imgB} />
-				{/snippet}
-			</TwoImgs>
+				class="max-h-[600px] max-w-[600px] "
+				imgClass="rounded-tl-container-token rounded-tr-container-token aspect-square object-cover"
+				{imgs}
+			/>
 		</a>
 		<div class="flex flex-col px-6 py-10">
 			<h2 class="text-2xl font-Forum text-primary-500 pb-3">{title}</h2>
@@ -170,7 +165,10 @@
 
 	{@render divider()}
 
-	<Testimonial author="Jill - Client" quote="We absolutely loved our photos from Lens of Brown! Their use of creative prompts gave us such fun, natural photos of our family. The photoshoot was so easy and we didn’t have to worry about a thing." />
+	<Testimonial
+		author="Jill - Client"
+		quote="We absolutely loved our photos from Lens of Brown! Their use of creative prompts gave us such fun, natural photos of our family. The photoshoot was so easy and we didn’t have to worry about a thing."
+	/>
 
 	{@render divider()}
 
