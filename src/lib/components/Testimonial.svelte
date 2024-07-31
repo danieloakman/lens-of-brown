@@ -21,7 +21,7 @@
 		class="card mx-auto variant-filled-primary text-5xl rounded-[100%] p-5 w-16 h-16 relative -top-8"
 	/>
 	<blockquote class="flex flex-col gap-10">
-		<p class={'italic text-center text-2xl px-2 ' + quoteClass}>" {quote} "</p>
+		<p class={'italic text-center text-xl sm:text-2xl px-2 ' + quoteClass}>" {quote} "</p>
 		<footer class={'text-center text-2xl text-primary-500 font-Black-Mango ' + authorClass}>
 			{author}
 		</footer>
