@@ -6,7 +6,12 @@
 	import { INSTAGRAM_URL } from '$constants';
 	import Carousel from './Carousel.svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?w=500&aspect=1:1&format=webp&any';
+	// import ImgWombat1 from '$imgs/_animals-wombat1.jpg?w=500&aspect=1:1&format=webp&any';
+	const imgs = import.meta.glob('$imgs/lens.ofbrown/*.jpg', {
+		eager: true,
+		query: { w: 500, aspect: '1:1', format: 'webp' }
+	});
+	import alts from '$imgs/lens.ofbrown/alts.json';
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 	const { ...rest }: Props = $props();
@@ -18,20 +23,23 @@
 		Follow us on Instagram <a href={INSTAGRAM_URL} target="_blank">@lens.ofbrown</a>
 	</h3>
 	<Carousel class="pt-4" showButtons>
+		{#each Object.values(imgs) as img}
+			<img src={img as any} class="carousel-img-sq" alt="todo" />
+		{/each}
 		<!-- {@render imgs()} -->
 		<!--
 		TODO: fill with imgs that trotty wants.
 		Just get 10 most recent and NON-PINNED images and put them here.
 		Eventually do this in a script and/or build step.
 		-->
+		<!-- <img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
 		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
+		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" /> -->
 	</Carousel>
 </div>
 
