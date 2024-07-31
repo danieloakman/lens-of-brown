@@ -15,25 +15,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+
+      - uses: oven-sh/setup-bun@v2
         with:
-          version: 8
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'pnpm'
+          bun-version: latest
 
       - name: Install dependencies 🛠️
-        run: pnpm install
+        run: bun i
 
       - name: Build 🏗️
-        run: pnpm run build
+        run: bun run build
 
       - name: Deploy 🚀
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-          pnpm run deploy
+          bun run deploy
 
       - uses: actions/upload-artifact@v3
         if: failure()
