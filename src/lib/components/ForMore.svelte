@@ -6,12 +6,31 @@
 	import { INSTAGRAM_URL } from '$constants';
 	import Carousel from './Carousel.svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	// import ImgWombat1 from '$imgs/_animals-wombat1.jpg?w=500&aspect=1:1&format=webp&any';
-	const imgs = import.meta.glob('$imgs/lens.ofbrown/*.jpg', {
-		eager: true,
-		query: { w: 500, aspect: '1:1', format: 'webp' }
-	});
+	import { iter } from 'iteragain';
+	import { memoize } from 'js-utils';
 	import alts from '$imgs/lens.ofbrown/alts.json';
+
+	const basename = memoize((path: string): string => path.split('/').pop() ?? '');
+	const parseDate = memoize((path: string): Date => {
+		const file = basename(path);
+		const [date, time] = file.split('_');
+		return new Date(`${date!} ${time!.replace('-', ':')}`);
+	});
+
+	const imgs = iter(
+		Object.entries(
+			import.meta.glob('$imgs/lens.ofbrown/*.jpg', {
+				eager: true,
+				query: { w: 500, aspect: '1:1', format: 'webp' }
+			})
+		) as [string, { default: any }][]
+	)
+		.sort((a, b) => {
+			const aDate = parseDate(a[0]);
+			const bDate = parseDate(b[0]);
+			return aDate > bDate ? -1 : aDate < bDate ? 1 : 0;
+		})
+		.map(([path, img]) => [img.default, (alts as any)[basename(path)]]);
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {}
 	const { ...rest }: Props = $props();
@@ -23,23 +42,9 @@
 		Follow us on Instagram <a href={INSTAGRAM_URL} target="_blank">@lens.ofbrown</a>
 	</h3>
 	<Carousel class="pt-4" showButtons>
-		{#each Object.values(imgs) as img}
-			<img src={img as any} class="carousel-img-sq" alt="todo" />
+		{#each imgs as [img, alt]}
+			<img src={img} class="carousel-img-sq" {alt} />
 		{/each}
-		<!-- {@render imgs()} -->
-		<!--
-		TODO: fill with imgs that trotty wants.
-		Just get 10 most recent and NON-PINNED images and put them here.
-		Eventually do this in a script and/or build step.
-		-->
-		<!-- <img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" />
-		<img src={ImgWombat1} class="carousel-img-sq" loading="lazy" alt="todo" /> -->
 	</Carousel>
 </div>
 
