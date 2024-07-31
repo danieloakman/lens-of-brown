@@ -3,6 +3,8 @@
 	import { iife, raise, propIs } from 'js-utils';
 	import { iter, repeat } from 'iteragain';
 	import type { ImgSlug } from './utils';
+	import PageBody from '$components/PageBody.svelte';
+	import BottomBanner from '$components/BottomBanner.svelte';
 
 	const swapIndices = <T,>(arr: T[], swaps: [i: number, j: number][]): T[] => {
 		const result = arr.slice();
@@ -118,7 +120,7 @@
 	});
 </script>
 
-<div class="flex flex-col mx-auto">
+<PageBody>
 	<!-- TODO: these pictures don't resize dynamically like in /portfolio. So might just remove the enhanced part and just import a set width for all images -->
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		{#each imgs as [src, alt]}
@@ -131,7 +133,9 @@
 			></enhanced:img>
 		{/each}
 	</div>
-</div>
+</PageBody>
+
+<BottomBanner />
 
 <!-- All PORTRAITS, no aspect-ratio 1/1, keep it portrait orientation. -->
 <!-- On desktop: 3x3 pictures, slightly smaller gap than /portfolio between pics -->
