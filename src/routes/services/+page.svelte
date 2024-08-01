@@ -67,7 +67,7 @@
 			img={{ src: Trot1, alt: 'todo' }}
 			pricing={([min]) => `Starts from AUD $${min}*`}
 			description={[
-				'- Packages availabe from 2 - 12 hours of photography coverage',
+				'- Packages available from 2 - 12 hours of photography coverage',
 				'- Small elopement packages available, flexible to your budget',
 				'- Sneak peek images delivered within 24 hours'
 			]}
