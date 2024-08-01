@@ -11,7 +11,6 @@
 	import ImgEvents2 from '$imgs/_events-sydney_opera_house1.jpg?w=750&any';
 	import ImgLandscape2 from '$imgs/landscapes-great_ocean_road.jpg?w=750&any';
 	import ImgBiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?w=750&any';
-	import ImgLandscape1 from '$imgs/_landscapes-montague_island.jpg';
 </script>
 
 {#snippet divider()}
