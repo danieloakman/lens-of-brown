@@ -2,7 +2,6 @@
 	import type { BasicImg } from '$types';
 	import { map, minmax } from 'iteragain';
 	import Divider from './Divider.svelte';
-	// import ReadMore from './ReadMore.svelte';
 
 	type PricePackage = [name: string, amount: number];
 	type NestedStringList = Array<string | string[]>;
@@ -16,13 +15,20 @@
 		title: string;
 		img: BasicImg;
 		packages: PricePackage[];
+		description: NestedStringList;
 		pricing?: (minmax: [min: number, max: number]) => string;
-		description?: NestedStringList;
 	} = $props();
 
+	// const countChars = (list: NestedStringList): number =>
+	// 	list.reduce((acc, v) => {
+	// 		if (typeof v === 'string') return acc + v.length;
+	// 		return acc + countChars(v);
+	// 	}, 0);
+
 	const { src, alt } = img;
-  // TODO: add a ReadMore component to expand the description
-	const expanded = $state(false);
+	let expanded = $state(false);
+	const showExpandBtn = true; // TODO:
+	// const showExpandBtn = $derived(countChars(description) > 150);
 </script>
 
 <div class="flex flex-col gap-4 rounded-container-token bg-surface-200 max-w-[600px] pb-4">
@@ -38,33 +44,44 @@
 			{pricing(minmax(map(packages, ([, amount]) => amount)))}
 		</h2>
 		<Divider horizontal class="!border-gray-300" />
-		{#if description}
-			<div class="">
-				<h2 class="text-2xl font-Forum bold">Inclusions</h2>
-				<!-- TODO: if description becomes too long, add a "Read more" button that expands -->
-				<ul class="text-lg pb-4">
-					{#each description as item}
-						{#if typeof item === 'string'}
-							<li>{item}</li>
-						{:else}
-							<ul class="ps-4">
-								{#each item as nestedItem}
-									<li>{nestedItem}</li>
-								{/each}
-							</ul>
-						{/if}
-					{/each}
-				</ul>
-			</div>
-		{/if}
-		<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
-		<ul class="flex flex-col gap-4 px-4">
-			{#each packages as [name, amount]}
-				<li>
-					<span class="text-xl font-Forum">{name} - ${amount}</span>
-				</li>
-			{/each}
-		</ul>
+		<div class="flex flex-col gap-4 overflow-scroll max-h-[300px]">
+			<!-- style:max-height={expanded ? '200px' : '125px'} -->
+			<h2 class="text-2xl font-Forum bold">Inclusions</h2>
+			<ul
+				class={'text-lg pb-4 ' +
+					(expanded
+						? ''
+						: 'overflow-hidden text-ellipsi min-h-[90px] bg-gradient-to-b from-black text-transparent bg-clip-text')}
+			>
+				{#each description as item}
+					{#if typeof item === 'string'}
+						<li>{item}</li>
+					{:else}
+						<ul class="ps-4">
+							{#each item as nestedItem}
+								<li>{nestedItem}</li>
+							{/each}
+						</ul>
+					{/if}
+				{/each}
+			</ul>
+			{#if showExpandBtn}
+				<button
+					class="btn mx-auto text-primary-400 underline mt-0 pt-0"
+					onclick={() => (expanded = !expanded)}
+				>
+					{expanded ? 'Read less' : 'Read more'}
+				</button>
+			{/if}
+			<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
+			<ul class="flex flex-col gap-4 px-4">
+				{#each packages as [name, amount]}
+					<li>
+						<span class="text-xl font-Forum">{name} - ${amount}</span>
+					</li>
+				{/each}
+			</ul>
+		</div>
 	</div>
 	<!-- <button class="btn variant-filled-primary text-3xl font-Forum w-[70%] self-center mt-auto">
     Book
