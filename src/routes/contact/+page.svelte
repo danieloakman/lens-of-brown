@@ -8,6 +8,7 @@
 	import { dev } from '$app/environment';
 	import { Icon } from '$lib/icons';
 	import ImgLandscape from '$imgs/_landscapes-great_ocean_road2.jpg?w=400&h=400&fit=cover&any';
+	import { goto } from '$app/navigation';
 
 	// let firstName = $state('');
 	// let lastName = $state('');
@@ -20,7 +21,6 @@
 	$effect(() => {
 		if (email.length) email = email.trim();
 	});
-	let submitted = $state(false);
 </script>
 
 <PageBody>
@@ -29,11 +29,8 @@
 	<form
 		class="flex flex-col gap-10"
 		method="POST"
-		action={dev ? '/post-test' : 'https://formspree.io/f/mkgwgqer'}
 		target="_blank"
-		onsubmit={() => {
-			submitted = true;
-		}}
+		action={dev ? 'https://formspree.io/f/movadnjd' : 'https://formspree.io/f/mkgwgqer'}
 	>
 		<TextInput
 			label="Your name"
@@ -42,7 +39,6 @@
 			required
 			type="text"
 			pattern="^[a-zA-Z]+ [a-zA-Z]+$"
-			disabled={submitted}
 		/>
 		<TextInput
 			class="col-span-2"
@@ -53,7 +49,6 @@
 			type="email"
 			inputmode="email"
 			pattern={'^[a-z0-9+%_\\-]+@[a-z0-9.\\-]+.[a-z]{2,4}'}
-			disabled={submitted}
 			bind:value={email}
 		/>
 		<!-- If this is ever needed again, make a phone input component -->
@@ -94,10 +89,9 @@
 			type="textarea"
 			placeholder="Your message or inquiry. We'll be in touch soon."
 			required
-			disabled={submitted}
 		/>
 
-		<button class="btn variant-filled-primary text-2xl font-Forum w-52" disabled={submitted}>
+		<button type="submit" class="btn variant-filled-primary text-2xl font-Forum w-52">
 			Send Message
 		</button>
 	</form>

@@ -3,7 +3,7 @@
 
 	interface Props extends HTMLInputAttributes {
 		label: string;
-		name?: string;
+		name: string;
 		placeholder?: string;
 		class?: string;
 		required?: boolean;
