@@ -7,7 +7,7 @@
 	import { INSTAGRAM_URL, FACEBOOK_URL, INFO_EMAIL } from '$constants';
 	import { dev } from '$app/environment';
 	import { Icon } from '$lib/icons';
-	import ImgDanTrot from '$imgs/couples-dan_trot1.jpg?w=400&h=400&fit=cover&position=right bottom&any';
+	import ImgLandscape from '$imgs/_landscapes-great_ocean_road2.jpg?w=400&h=400&fit=cover&any';
 
 	// let firstName = $state('');
 	// let lastName = $state('');
@@ -107,7 +107,7 @@
 
 	<div class="bg-surface-200 locations-container">
 		<img
-			src={ImgDanTrot}
+			src={ImgLandscape}
 			class="w-[400px] max-h-[400px] opacity-60 relative offset-img"
 			alt="Daniel and Sheridan laughing"
 		/>

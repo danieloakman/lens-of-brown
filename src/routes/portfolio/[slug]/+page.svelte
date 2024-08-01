@@ -46,7 +46,14 @@
 						}
 					}),
 					repeat('todo', 12),
-					[]
+					[
+						[1, 3],
+						[2, 5],
+						[3, 8],
+						[4, 6],
+						[5, 11],
+						[7, 8]
+					]
 				);
 			case 'families':
 				return process(
@@ -57,7 +64,14 @@
 						}
 					}),
 					repeat('todo', 12),
-					[]
+					[
+						[1, 5],
+						[3, 6],
+						[4, 5],
+						[4, 8],
+						[8, 11],
+						[10, 11]
+					]
 				);
 			case 'couples':
 				return process(
@@ -68,7 +82,13 @@
 						}
 					}),
 					repeat('todo', 12),
-					[]
+					[
+						[1, 4],
+						[2, 5],
+						[3, 8],
+						[4, 7],
+						[8, 10]
+					]
 				);
 			case 'landscapes':
 				return process(
@@ -101,7 +121,7 @@
 						}
 					}),
 					repeat('todo', 12),
-					[]
+					[[0,4],[1,3],[2,3],[3,6],[4,6],[9,11]]
 				);
 			case 'animals':
 				return process(
@@ -112,7 +132,13 @@
 						}
 					}),
 					repeat('todo', 12),
-					[]
+					[
+						[0, 5],
+						[1, 5],
+						[2, 7],
+						[3, 6],
+						[7, 8]
+					]
 				);
 			default:
 				throw new Error(`Unknown img slug: ${slug}`);
