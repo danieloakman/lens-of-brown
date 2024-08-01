@@ -19,16 +19,8 @@
 		pricing?: (minmax: [min: number, max: number]) => string;
 	} = $props();
 
-	// const countChars = (list: NestedStringList): number =>
-	// 	list.reduce((acc, v) => {
-	// 		if (typeof v === 'string') return acc + v.length;
-	// 		return acc + countChars(v);
-	// 	}, 0);
-
 	const { src, alt } = img;
 	let expanded = $state(false);
-	const showExpandBtn = true; // TODO:
-	// const showExpandBtn = $derived(countChars(description) > 150);
 </script>
 
 <div class="flex flex-col gap-4 rounded-container-token bg-surface-200 max-w-[600px] pb-4">
@@ -45,7 +37,6 @@
 		</h2>
 		<Divider horizontal class="!border-gray-300" />
 		<div class="flex flex-col gap-4 overflow-scroll max-h-[300px]">
-			<!-- style:max-height={expanded ? '200px' : '125px'} -->
 			<h2 class="text-2xl font-Forum bold">Inclusions</h2>
 			<ul
 				class={'text-lg pb-4 ' +
@@ -65,14 +56,14 @@
 					{/if}
 				{/each}
 			</ul>
-			{#if showExpandBtn}
-				<button
-					class="btn mx-auto text-primary-400 underline mt-0 pt-0"
-					onclick={() => (expanded = !expanded)}
-				>
-					{expanded ? 'Read less' : 'Read more'}
-				</button>
-			{/if}
+
+			<button
+				class="btn mx-auto text-primary-400 underline mt-0 pt-0"
+				onclick={() => (expanded = !expanded)}
+			>
+				{expanded ? 'Read less' : 'Read more'}
+			</button>
+
 			<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
 			<ul class="flex flex-col gap-4 px-4">
 				{#each packages as [name, amount]}
