@@ -23,160 +23,102 @@
 	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?url&w=1000&aspect=1:1&position=bottom&any';
 	import { minmax, map } from 'iteragain';
 	import { Icon } from '$lib/icons';
+	import ServiceCard from '$components/ServiceCard.svelte';
 
 	type PricePackage = [name: string, amount: number];
-	type NestedStringList = (string | string[])[];
+	type NestedStringList = Array<string | string[]>;
 </script>
-
-{#snippet ServicePricing({
-	title,
-	img: { src, alt },
-	pricing = ([min, max]) => `AUD $${min} - ${max}`,
-	description,
-	packages,
-}: {
-	title: string;
-	img: BasicImg;
-	packages: PricePackage[];
-	pricing?: (minmax: [min: number, max: number]) => string;
-	description?: NestedStringList;
-})}
-	<div class="flex flex-col gap-4 rounded-container-token bg-surface-200 max-w-[600px] pb-4">
-		<img
-			class="rounded-tl-container-token rounded-tr-container-token max-h-[600px] max-w-[600px] aspect-square object-cover"
-			{src}
-			{alt}
-		/>
-		<div class="flex flex-col gap-4 px-4">
-			<h1 class="text-center text-3xl text-primary-500 font-Forum">{title}</h1>
-			<Divider horizontal class="!border-gray-300" />
-			<h2 class="text-center text-2xl font-Forum">
-				<!-- AUD ${_minmax[0]} - ${_minmax[1]} -->
-				 {pricing(minmax(map(packages, ([, amount]) => amount)))}
-			</h2>
-			<Divider horizontal class="!border-gray-300" />
-			{#if description}
-				<h2 class="text-2xl font-Forum bold">Inclusions</h2>
-				<!-- TODO: if description becomes too long, add a "Read more" button that expands -->
-				<ul class="text-lg pb-4">
-					{#each description as item}
-						{#if typeof item === 'string'}
-							<li>{item}</li>
-						{:else}
-							<ul class="ps-4">
-								{#each item as nestedItem}
-									<li>{nestedItem}</li>
-								{/each}
-							</ul>
-						{/if}
-					{/each}
-				</ul>
-			{/if}
-			<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
-			<ul class="flex flex-col gap-4 px-4">
-				{#each packages as [name, amount]}
-					<li>
-						<span class="text-xl font-Forum">{name} - ${amount}</span>
-					</li>
-				{/each}
-			</ul>
-		</div>
-		<!-- <button class="btn variant-filled-primary text-3xl font-Forum w-[70%] self-center mt-auto">
-			Book
-		</button> -->
-	</div>
-{/snippet}
 
 <PageBody class="pt-5 sm:pt-20 pb-20">
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
-		{@render ServicePricing({
-			title: 'Mini Shoots',
-			img: { src: ImgMiniShoots, alt: 'todo' },
-			description: [
+		<ServiceCard
+			title="Mini Shoots"
+			img={{ src: ImgMiniShoots, alt: 'todo' }}
+			description={[
 				'- Up to 30 mins to capture your best shots',
 				'- 10 edited images',
 				'- Your images delivered within a week via your online gallery'
-			],
-			packages: [
+			]}
+			packages={[
 				['Family', 150],
 				['Couples', 150],
 				['Engagement', 150],
 				['Solo', 100],
 				['Pets', 100]
-			]
-		})}
-		{@render ServicePricing({
-			title: 'Family Packages',
-			img: { src: TimBear7, alt: 'todo' },
-			description: [
+			]}
+		/>
+		<ServiceCard
+			title="Family Packages"
+			img={{ src: TimBear7, alt: 'todo' }}
+			description={[
 				'Family Package 1:',
 				['- 25 edited images', '- Suitable for families of up to 6'],
 				'Family Package 2:',
 				['- 35 edited images', '- Suitable for families of up to 8'],
 				'Family Package 3:',
 				['- 50 edited images', '- Suitable for extended and large families']
-			],
-			packages: [
+			]}
+			packages={[
 				['Family Package 1', 300],
 				['Family Package 2', 400],
 				['Family Package 3', 500]
-			]
-		})}
-		{@render ServicePricing({
-			title: 'Couples Packages',
-			img: { src: ImgCouples, alt: 'todo' },
-			description: [
+			]}
+		/>
+		<ServiceCard
+			title="Couples Packages"
+			img={{ src: ImgCouples, alt: 'todo' }}
+			description={[
 				'- Packages available with 25-50+ edited images',
 				'- Secret/hidden proposal photography services available',
 				'- Pre-wedding services or on-location shoots'
-			],
-			packages: [
+			]}
+			packages={[
 				['Couples', 300],
 				['Proposal', 500],
 				['Engagement', 500]
-			]
-		})}
-		{@render ServicePricing({
-			title: 'Weddings',
-			img: { src: Trot1, alt: 'todo' },
-			pricing: ([min]) => `Starts from AUD $${min}*`,
-			description: [
+			]}
+		/>
+		<ServiceCard
+			title="Weddings"
+			img={{ src: Trot1, alt: 'todo' }}
+			pricing={([min]) => `Starts from AUD $${min}*`}
+			description={[
 				'- Packages availabe from 2 - 12 hours of photography coverage',
 				'- Small elopement packages available, flexible to your budget',
 				'- Sneak peek images delivered within 24 hours'
-			],
-			packages: [
+			]}
+			packages={[
 				['Elopements', 700],
 				['Weddings', 1000]
-			]
-		})}
-		{@render ServicePricing({
-			title: 'Events',
-			img: { src: Events1, alt: 'todo' },
-			pricing: ([min]) => `Starts from AUD $${min}*`,
-			description: [
+			]}
+		/>
+		<ServiceCard
+			title="Events"
+			img={{ src: Events1, alt: 'todo' }}
+			pricing={([min]) => `Starts from AUD $${min}*`}
+			description={[
 				'- Packages suitable for parties, corporate bookings and celebrations',
 				'- Packages starting from 1 hour of coverage'
-			],
-			packages: [
+			]}
+			packages={[
 				['Private Event', 450],
 				['Corporate Event', 600]
-			]
-		})}
-		{@render ServicePricing({
-			title: 'Animals',
-			img: { src: HoneySantos, alt: 'todo' },
-			description: [
+			]}
+		/>
+		<ServiceCard
+			title="Animals"
+			img={{ src: HoneySantos, alt: 'todo' }}
+			description={[
 				'Pet Package:',
 				['- 20 edited images of pet(s) only'],
 				'Pet Family Package:',
 				['- 25 edited images of pet(s) and family']
-			],
-			packages: [
+			]}
+			packages={[
 				['Pet Package', 200],
 				['Pet Family Package', 300]
-			]
-		})}
+			]}
+		/>
 	</div>
 
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
