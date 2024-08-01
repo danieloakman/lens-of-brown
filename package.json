@@ -62,6 +62,9 @@
 	},
 	"type": "module",
 	"trustedDependencies": [
+		"@sveltejs/kit",
+		"esbuild",
+		"sharp",
 		"svelte-preprocess"
 	]
 }
