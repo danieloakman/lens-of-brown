@@ -1,1 +1,0 @@
-import{h as c,a as e,t,$ as r}from"../chunks/disclose-version.CHT5gD68.js";var i=t('<meta name="description" content="Lens of Brown Photography">'),m=t('<section class="svelte-19xx0bt"><h1 class="welcome svelte-19xx0bt">Launching soon...</h1></section>');function h(o){var a=m();c(n=>{var s=i();r.title="Lens of Brown",e(n,s)}),e(o,a)}export{h as component};
