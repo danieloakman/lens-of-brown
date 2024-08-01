@@ -51,7 +51,7 @@
 	</div>
 
 	<!-- TODO: try to closely copy what zenfolio is doing here with the grid. -->
-	<div class="hidden sm:grid md:grid-cols-4 lg:grid-cols-5 gap-5 self-center h-[1000px] img-grid">
+	<!-- <div class="hidden sm:grid md:grid-cols-4 lg:grid-cols-5 gap-5 self-center h-[1000px] img-grid">
 		<img src={ImgLandscape1} class="col-span-2" />
 		<img src={ImgLandscape1} class="col-span-1" />
 		<img src={ImgLandscape1} class="col-span-1" />
@@ -61,9 +61,9 @@
 		<img src={ImgLandscape1} class="col-span-1" />
 		<img src={ImgLandscape1} class="col-span-1" />
 		<img src={ImgLandscape1} class="col-span-1" />
-	</div>
+	</div> -->
 
-	{@render divider()}
+	<!-- {@render divider()} -->
 
 	<Testimonial
 		quote={'Sheridan and Daniel from Lens of Brown were fantastic to work with. We organised a family shoot with them and were a bit worried about it due to having no previous experiences of family shoots and the kids being a bit younger. We shouldn’t have worried as both Sheridan and Daniel were great in explaining what they were trying to get in each photo, setting up environments that worked well for the kids and getting creative with prompts and distractions to help make them smile. Their choice of location and use of natural lighting and environment was also perfect. We got some amazing photos that we will cherish forever and couldn’t have made it work without them! Highly recommend to anyone looking to get a family shoot!'}

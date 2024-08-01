@@ -2,31 +2,15 @@
 	import Divider from '$components/Divider.svelte';
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import ForMore from '$components/ForMore.svelte';
-	import type { BasicImg } from '$types';
 	import PageBody from '$components/PageBody.svelte';
-	import ShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?url&w=1000&aspect=1:1&any';
-	import TimBear4 from '$imgs/_families-tim_bear6.jpg?url&w=1000&aspect=1:1&any';
-	import Wombat1 from '$imgs/_animals-wombat1.jpg?url&w=1000&aspect=1:1&any';
-	import ScottChurchill1 from '$imgs/couples-scott_churchill1.jpg?url&w=1000&aspect=1:1&any';
-	import DanAndTrot2 from '$imgs/_couples-dan_trot6.jpg?url&w=1000&aspect=1:1&any';
-	import TrotPortrait1 from '$imgs/portraits-trot1.jpg?url&w=1000&aspect=1:1&any';
-	import BiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?url&w=1000&aspect=1:1&any';
-	import Landscape1 from '$imgs/landscapes-great_ocean_road.jpg?url&w=1000&aspect=1:1&any';
-	import Landscape2 from '$imgs/_landscapes-montague_island.jpg?url&w=1000&aspect=1:1&any';
 	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?url&w=1000&aspect=1:1&any';
-	import Trot1 from '$imgs/weddings-trot3.jpg?url&w=1000&aspect=1:1&any';
-	import Events2 from '$imgs/events-canberra_balloons.jpg?url&w=1000&aspect=1:1&any';
-	import AmandaMartin4 from '$imgs/_families_amanda-martin4.jpg?url&w=1000&aspect=1:1&any';
+	import Trot1 from '$imgs/couples-weddings_trot3.jpg?url&w=1000&aspect=1:1&any';
 	import TimBear7 from '$imgs/_families-tim_bear7.jpg?url&w=1000&aspect=1:1&position=bottom&any';
 	import HoneySantos from '$imgs/animals-honey_santos4.jpg?url&w=1000&aspect=1:1&position=bottom&any';
 	import ImgCouples from '$imgs/_couples-dan_trot7.jpg?url&w=1000&aspect=1:1&position=bottom&any';
 	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?url&w=1000&aspect=1:1&position=bottom&any';
-	import { minmax, map } from 'iteragain';
 	import { Icon } from '$lib/icons';
 	import ServiceCard from '$components/ServiceCard.svelte';
-
-	type PricePackage = [name: string, amount: number];
-	type NestedStringList = Array<string | string[]>;
 </script>
 
 <PageBody class="pt-5 sm:pt-20 pb-20">
