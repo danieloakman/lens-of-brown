@@ -43,7 +43,7 @@
 	</h3>
 	<Carousel class="pt-4" showButtons>
 		{#each imgs as [img, alt]}
-			<img src={img} class="carousel-img-sq" {alt} />
+			<img src={img} class="carousel-img-sq" {alt} loading="lazy" />
 		{/each}
 	</Carousel>
 </div>
