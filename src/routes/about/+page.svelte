@@ -22,7 +22,7 @@
 				Welcome to <br /> Lens of Brown
 			</h1>
 			<p class="text-xl overflow-y-scroll mx-0 sm:mx-6 md:mx-10 lg:mx-20">
-				We’re Daniel and Sheridan, the team behind Lens of Brown. We have a mutual passion for
+				We're Daniel and Sheridan, the team behind Lens of Brown. We have a mutual passion for
 				photography, animals and nature. Candid and natural photographs are always our goal, and we
 				aim to capture authentic expression and connection. One of our favourite offerings is the
 				mini-shoots, providing an affordable way to capture family memories. We hope you enjoy
@@ -38,6 +38,13 @@
 	<div class="flex flex-col gap-5">
 		<h1 class="text-center text-5xl font-Forum text-primary-500">FAQs</h1>
 		<div class="bg-surface-200 rounded-container-token w-full p-6">
+			{#snippet escape(str: string)}
+				{#if str.startsWith('<br')}
+					<br />
+				{:else}
+					{str}
+				{/if}
+			{/snippet}
 			{#snippet item(question: string, answer: Array<string | string[]>)}
 				<AccordionItem>
 					<svelte:fragment slot="summary">
@@ -47,7 +54,7 @@
 						<ul class="text-xl">
 							{#each answer as item}
 								{#if typeof item === 'string'}
-									<li>{item}</li>
+									<li>{@render escape(item)}</li>
 								{:else}
 									<ul class="ps-4">
 										{#each item as subItem}
@@ -67,7 +74,7 @@
 				<Divider horizontal class="mx-4" />
 				{@render item('Do we get to choose the location for our photo shoot?', [
 					'Yes! Please discuss your location preferences with us at the time of booking. We will always do our best to accomodate. A travel fee may be applicable depending on your chosen location.',
-					'', // TODO: add special char for a br
+					'<br>',
 					'We also have an extensive list of recommended locations, if you would like suggestions.'
 				])}
 				<Divider horizontal class="mx-4" />
