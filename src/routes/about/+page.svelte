@@ -66,7 +66,8 @@
 				])}
 				<Divider horizontal class="mx-4" />
 				{@render item('Do we get to choose the location for our photo shoot?', [
-					'Yes! Please discuss your location preferences with us at the time of booking. We will always do our best to accomodate. A travel fee may be applicable depending on your chosen location.', '', // TODO: add special char for a br
+					'Yes! Please discuss your location preferences with us at the time of booking. We will always do our best to accomodate. A travel fee may be applicable depending on your chosen location.',
+					'', // TODO: add special char for a br
 					'We also have an extensive list of recommended locations, if you would like suggestions.'
 				])}
 				<Divider horizontal class="mx-4" />

@@ -10,7 +10,7 @@ const config = {
 		vitePreprocess(),
 		sveltePreprocess({
 			postcss: true
-		}),
+		})
 	],
 
 	kit: {

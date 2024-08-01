@@ -7,7 +7,7 @@
 		Drawer,
 		Modal,
 		Toast,
-		initializeStores,
+		initializeStores
 		// setInitialClassState
 	} from '@skeletonlabs/skeleton';
 	initializeStores();

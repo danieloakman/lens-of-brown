@@ -19,8 +19,8 @@ const config = {
 		extend: {},
 		fontFamily: {
 			'Black-mango': 'Black-mango',
-			'Forum': 'Forum',
-			'Cormorant': 'Cormorant',
+			Forum: 'Forum',
+			Cormorant: 'Cormorant'
 			// LongTime: 'LongTime'
 		}
 	},

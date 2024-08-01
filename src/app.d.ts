@@ -7,7 +7,7 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
-	declare module "*&any" {
+	declare module '*&any' {
 		/**
 		 * @description Replaces the type of the import with `any` to remove type error for using imagetools directives.
 		 * @see {@link https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts} Code
@@ -17,7 +17,6 @@ declare global {
 		export default out;
 	}
 }
-
 
 /// <reference types="@sveltejs/kit" />
 /// <reference types="unplugin-icons/types/svelte" />

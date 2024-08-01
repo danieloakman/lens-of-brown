@@ -56,12 +56,7 @@ which we cannot assign attributes to and breaks the css required for the carouse
 <div class={'embla ' + klass} {...rest}>
 	{#if showButtons && canScrollPrev}
 		<div class="inner me-auto z-10 ps-2">
-			<button
-				in:fade
-				out:fade
-				class="btn-side"
-				on:click={() => emblaApi?.scrollPrev()}
-			>
+			<button in:fade out:fade class="btn-side" on:click={() => emblaApi?.scrollPrev()}>
 				<Icon.ArrowLeft />
 			</button>
 		</div>
@@ -83,12 +78,7 @@ which we cannot assign attributes to and breaks the css required for the carouse
 
 	{#if showButtons && canScrollNext}
 		<div class="inner ms-auto z-10 pe-2">
-			<button
-				in:fade
-				out:fade
-				class="btn-side"
-				on:click={() => emblaApi?.scrollNext()}
-			>
+			<button in:fade out:fade class="btn-side" on:click={() => emblaApi?.scrollNext()}>
 				<Icon.ArrowRight />
 			</button>
 		</div>
@@ -113,6 +103,6 @@ which we cannot assign attributes to and breaks the css required for the carouse
 	}
 
 	.btn-side {
-		@apply btn btn-icon variant-filled-primary text-xl w-12 opacity-75
+		@apply btn btn-icon variant-filled-primary text-xl w-12 opacity-75;
 	}
 </style>

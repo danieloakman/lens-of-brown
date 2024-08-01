@@ -22,14 +22,14 @@
 </script>
 
 <div class={'container ' + containerClass} {...rest}>
-	<div class={"inner z-1 " + backdropClass}>
+	<div class={'inner z-1 ' + backdropClass}>
 		{#if backdrop}
 			{@render backdrop()}
 		{/if}
 	</div>
 
 	<!-- TODO: Put some of this class stuff as a component prop -->
-	<div class={"inner z-2 " + childrenClass}>
+	<div class={'inner z-2 ' + childrenClass}>
 		{#if children}
 			{@render children()}
 		{/if}

@@ -23,7 +23,6 @@
 	let submitted = $state(false);
 </script>
 
-
 <PageBody>
 	<h1 class="text-5xl text-primary-500">Contact us</h1>
 
@@ -117,21 +116,11 @@
 				Locations we service
 			</h2>
 			<ul>
-				<li>
-					- Wollongong
-				</li>
-				<li>
-					- Greater Sydney
-				</li>
-				<li>
-					- Southern Highlands
-				</li>
-				<li>
-					- Shoalhaven & South Coast 
-				</li>
-				<li>
-					- Other locations on request
-				</li>
+				<li>- Wollongong</li>
+				<li>- Greater Sydney</li>
+				<li>- Southern Highlands</li>
+				<li>- Shoalhaven & South Coast</li>
+				<li>- Other locations on request</li>
 			</ul>
 			<h2 class="text-xl sm:text-2xl uppercase text-primary-500 font-Forum pt-6">Contact us</h2>
 			<div class="flex flex-col gap-2">

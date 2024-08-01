@@ -30,7 +30,7 @@
 	const [send, receive] = crossfade({
 		duration: fadeDurationMs,
 		easing: quintOut,
-		delay: delayMs,
+		delay: delayMs
 	});
 </script>
 

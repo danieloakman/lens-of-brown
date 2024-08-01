@@ -66,11 +66,11 @@ async function downloadRecentPosts({ count = 10 }: { count?: number } = {}) {
 				break;
 			}
 		}
-  }
+	}
 
-  const altPath = join(saveDir, 'alts.json');
-  await writeFile(altPath, JSON.stringify(alts, null, 2));
-  console.log(`Wrote ${altPath}`);
+	const altPath = join(saveDir, 'alts.json');
+	await writeFile(altPath, JSON.stringify(alts, null, 2));
+	console.log(`Wrote ${altPath}`);
 }
 
 if (import.meta.main) {

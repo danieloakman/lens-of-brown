@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { drawerContentStore, windowSize, Icon } from '$lib';
+	import { drawerContentStore, Icon } from '$lib';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import Divider from './Divider.svelte';
 
@@ -38,7 +38,9 @@
 			<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" onclick={onClickNav}>
 				Portfolio
 			</a>
-			<a aria-current={isCurrentPage('/services')} href="/services" onclick={onClickNav}> Services </a>
+			<a aria-current={isCurrentPage('/services')} href="/services" onclick={onClickNav}>
+				Services
+			</a>
 			<a aria-current={isCurrentPage('/about')} href="/about" onclick={onClickNav}> About </a>
 			<a aria-current={isCurrentPage('/contact')} href="/contact" onclick={onClickNav}> Contact </a>
 		</nav>

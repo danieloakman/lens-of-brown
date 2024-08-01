@@ -4,7 +4,9 @@
 </script>
 
 <div class="flex flex-col gap-6 w-full bg-[#333333] justify-between">
-	<h2 class="text-2xl text-center text-[rgb(255,255,255,0.4)] pt-8 font-Black-mango">Lens of Brown</h2>
+	<h2 class="text-2xl text-center text-[rgb(255,255,255,0.4)] pt-8 font-Black-mango">
+		Lens of Brown
+	</h2>
 
 	<div class="flex flex-row gap-6 ms-auto me-6">
 		<a href={FACEBOOK_URL} target="_blank" class="hover-lg">
