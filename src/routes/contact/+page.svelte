@@ -8,7 +8,6 @@
 	import { dev } from '$app/environment';
 	import { Icon } from '$lib/icons';
 	import ImgLandscape from '$imgs/_landscapes-great_ocean_road2.jpg?w=400&h=400&fit=cover&any';
-	import { goto } from '$app/navigation';
 
 	// let firstName = $state('');
 	// let lastName = $state('');

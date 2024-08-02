@@ -16,19 +16,10 @@
 	// import Footer from '$components/Footer.svelte';
 	import DrawerContents from '$components/DrawerContents.svelte';
 
-	// TOOD: remove toast
-	import { toast } from '$utils';
-	toast.init();
-
-	// TODO: remove floating ui
-	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
-
-	import { storePopup } from '@skeletonlabs/skeleton';
 	import { windowSize } from '$stores';
 	import { page } from '$app/stores';
-	import { browser } from '$app/environment';
-	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
+	// import { browser } from '$app/environment';
 	// TODO: get this working
 	// page.subscribe(() => {
 	// 	if (browser) {

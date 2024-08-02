@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { omit } from 'js-utils';
 	const {
 		horizontal = false,
 		vertical = false,

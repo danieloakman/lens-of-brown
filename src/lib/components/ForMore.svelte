@@ -32,8 +32,7 @@
 		})
 		.map(([path, img]) => [img.default, (alts as any)[basename(path)]]);
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {}
-	const { ...rest }: Props = $props();
+	const { ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
 <div {...rest}>
