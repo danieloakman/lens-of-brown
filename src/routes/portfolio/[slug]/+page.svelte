@@ -49,7 +49,9 @@
 							aspect: '0.67:1'
 						}
 					}),
-					repeat('todo', 12),
+					// TODO: add alt texts for all images.
+					// TODO: can probably make a component that has a skeleton loading state for images.
+					repeat('', 12),
 					[
 						[1, 3],
 						[2, 5],
@@ -69,7 +71,7 @@
 							aspect: '0.67:1'
 						}
 					}),
-					repeat('todo', 12),
+					repeat('', 12),
 					[
 						[1, 5],
 						[3, 6],
@@ -89,7 +91,7 @@
 							aspect: '0.67:1'
 						}
 					}),
-					repeat('todo', 12),
+					repeat('', 12),
 					[
 						[0, 11],
 						[1, 4],
@@ -112,7 +114,7 @@
 							aspect: '0.67:1'
 						}
 					}),
-					repeat('todo', 12),
+					repeat('', 12),
 					[]
 				);
 			case 'weddings':
@@ -125,7 +127,7 @@
 							aspect: '0.67:1'
 						}
 					}),
-					repeat('todo', 12),
+					repeat('', 12),
 					[]
 				);
 			case 'events':
@@ -138,7 +140,7 @@
 							aspect: '0.67:1'
 						}
 					}),
-					repeat('todo', 12),
+					repeat('', 12),
 					[
 						[0, 4],
 						[1, 3],
@@ -158,7 +160,7 @@
 							aspect: '0.67:1'
 						}
 					}),
-					repeat('todo', 12),
+					repeat('', 12),
 					[
 						[0, 5],
 						[1, 5],
