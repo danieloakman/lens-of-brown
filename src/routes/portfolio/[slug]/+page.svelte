@@ -39,6 +39,7 @@
 		switch (slug) {
 			case 'portraits':
 				return process(
+					// TODO: look into whether we could do '$imgs/*&portraits*.{jpg,jpeg,png,webp}' instead. This would mean we could have multiple `&tag` in the filename.
 					import.meta.glob('$imgs/portraits-*.{jpg,jpeg,png,webp}', {
 						eager: true,
 						query: {
