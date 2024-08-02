@@ -2,6 +2,7 @@
 	import type { BasicImg } from '$types';
 	import { map, minmax } from 'iteragain';
 	import Divider from './Divider.svelte';
+	import { onMount } from 'svelte';
 
 	type PricePackage = [name: string, amount: number];
 	type NestedStringList = Array<string | string[]>;
@@ -21,6 +22,18 @@
 
 	const { src, alt } = img;
 	let expanded = $state(false);
+	let showExpandBtn = $state(false);
+	let descriptionEl: HTMLUListElement;
+	onMount(() => {
+		// Only show the expand button if the description overflows:
+		if (descriptionEl.scrollHeight > descriptionEl.clientHeight) {
+			showExpandBtn = true;
+			expanded = false;
+		} else {
+			showExpandBtn = false;
+			expanded = true;
+		}
+	});
 </script>
 
 <div class="flex flex-col gap-4 rounded-container-token bg-surface-200 max-w-[600px] pb-4">
@@ -39,6 +52,7 @@
 		<div class="flex flex-col gap-4 overflow-scroll max-h-[300px]">
 			<h2 class="text-2xl font-Forum bold">Inclusions</h2>
 			<ul
+				bind:this={descriptionEl}
 				class={'text-lg pb-4 ' +
 					(expanded
 						? ''
@@ -57,12 +71,14 @@
 				{/each}
 			</ul>
 
-			<button
-				class="btn mx-auto text-primary-400 underline mt-0 pt-0"
-				onclick={() => (expanded = !expanded)}
-			>
-				{expanded ? 'Read less' : 'Read more'}
-			</button>
+			{#if showExpandBtn}
+				<button
+					class="btn mx-auto text-primary-400 underline mt-0 pt-0"
+					onclick={() => (expanded = !expanded)}
+				>
+					{expanded ? 'Read less' : 'Read more'}
+				</button>
+			{/if}
 
 			<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
 			<ul class="flex flex-col gap-4 px-4">
