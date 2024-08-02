@@ -67,11 +67,11 @@
 			imgs: [
 				{
 					src: ShannonBrodbeck1,
-					alt: 'Family of 5 ...' // tODO: edit this
+					alt: 'Family of 5 standing in the sun, smiling. Parents are behind the kids. The kids are in front, with the oldest in the middle.'
 				},
 				{
 					src: TimBear4,
-					alt: 'todo'
+					alt: 'Family of 4 standing in the sun infront of an autumn tree. The younger boy is smiling and having fun being cheeky.'
 				}
 			]
 		})}
@@ -82,9 +82,9 @@
 			imgs: [
 				{
 					src: TrotPortrait1,
-					alt: ''
+					alt: "A lovely portrait of a beautiful blonde woman wearing glasses. She's wearing a black top infront of a sunny and forested background."
 				},
-				{ src: BiancaCherie4, alt: 'todo' }
+				{ src: BiancaCherie4, alt: 'A toddler boy smiling in a green grassy scene.' }
 			]
 		})}
 		{@render portfolioSection({
@@ -94,11 +94,11 @@
 			imgs: [
 				{
 					src: Landscape2,
-					alt: 'todo'
+					alt: 'Montague island, with grassy hills and the ocean in the background.'
 				},
 				{
 					src: Landscape1,
-					alt: 'todo'
+					alt: 'The Great Ocean Road, with the ocean on the left and a cliff on the right.'
 				}
 			]
 		})}
@@ -110,11 +110,11 @@
 				// TODO: Swap wombat1 and honey_santos4 in here:
 				{
 					src: Wombat1,
-					alt: 'todo'
+					alt: 'A closeup portrait of a wombat, looking off the left. Extremely cute.'
 				},
 				{
 					src: HoneySantos4,
-					alt: 'todo'
+					alt: 'A golden fluffy dog about to leap and start playing and runnign around.'
 				}
 			]
 		})}
@@ -125,7 +125,7 @@
 			imgs: [
 				{
 					src: DanAndTrot2,
-					alt: 'todo'
+					alt: 'A couple standing in front of a grassy scene of pine trees. A golden shining sun on the right. Both are very happy and in love.'
 				},
 				{
 					src: ScottChurchill1,
@@ -140,11 +140,11 @@
 			imgs: [
 				{
 					src: Events2,
-					alt: 'todo'
+					alt: '4 hot air balloons in the sky, with the moon rising in the background.'
 				},
 				{
 					src: Events1,
-					alt: 'todo'
+					alt: 'The Sydney Opera House, with a woman standing infront of it.'
 				}
 			]
 		})}
