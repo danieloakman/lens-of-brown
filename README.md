@@ -1,6 +1,6 @@
 # Lens of Brown website
 
-Svelte-kit static site for [www.lensofbrown.com.au](www.lensofbrown.com.au).
+Svelte-kit static site for [lensofbrown.com.au](https://www.lensofbrown.com.au).
 
 Built using svelte-kit static adaptor.
 
