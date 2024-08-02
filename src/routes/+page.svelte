@@ -6,6 +6,7 @@
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
 
+	// TODO: should use webp and avif formats here
 	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?w=750&any';
 	import ImgShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?w=750&any';
 	import ImgEvents2 from '$imgs/_events-sydney_opera_house1.jpg?w=750&any';
@@ -23,15 +24,31 @@
 	showButtons
 	autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
 >
-	<img src={ImgWombat1} class="carousel-img" alt="A closeup of a Wombat" />
+	<img src={ImgWombat1} class="carousel-img" alt="A closeup of a Wombat" loading="lazy" />
 	<img
 		src={ImgShannonBrodbeck1}
 		class="carousel-img"
 		alt="A family portrait of 5 smiling in the sun"
+		loading="lazy"
 	/>
-	<img src={ImgEvents2} class="carousel-img" alt="A woman infront of the Sydney Opera House" />
-	<img src={ImgLandscape2} class="carousel-img" alt="The great ocean road, Australia" />
-	<img src={ImgBiancaCherie4} class="carousel-img" alt="A boy smiling, standing and having fun" />
+	<img
+		src={ImgEvents2}
+		class="carousel-img"
+		alt="A woman infront of the Sydney Opera House"
+		loading="lazy"
+	/>
+	<img
+		src={ImgLandscape2}
+		class="carousel-img"
+		alt="The great ocean road, Australia"
+		loading="lazy"
+	/>
+	<img
+		src={ImgBiancaCherie4}
+		class="carousel-img"
+		alt="A boy smiling, standing and having fun"
+		loading="lazy"
+	/>
 </Carousel>
 
 <PageBody class="gap-20 py-20">
