@@ -99,8 +99,8 @@
 		@apply w-[600px] px-1 rounded-lg object-cover;
 	}
 
-	.img-grid > img {
+	/* .img-grid > img {
 		height: 300px;
 		object-fit: cover;
-	}
+	} */
 </style>
