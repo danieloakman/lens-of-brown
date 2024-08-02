@@ -2,7 +2,6 @@
 	import type { BasicImg } from '$types';
 	import TwoImgs from '$components/TwoImgs.svelte';
 	import Divider from '$components/Divider.svelte';
-	import { Icon } from '$lib/icons';
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import Testimonial from '$components/Testimonial.svelte';
 	import ForMore from '$components/ForMore.svelte';

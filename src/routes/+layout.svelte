@@ -16,23 +16,25 @@
 	// import Footer from '$components/Footer.svelte';
 	import DrawerContents from '$components/DrawerContents.svelte';
 
+	// TOOD: remove toast
 	import { toast } from '$utils';
 	toast.init();
 
+	// TODO: remove floating ui
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { windowSize } from '$stores';
 	import { page } from '$app/stores';
-	import { capitalize } from 'js-utils';
-	import { derived } from 'svelte/store';
+	import { browser } from '$app/environment';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
-	const title = derived([page], ([{ route }]) => {
-		if (!route.id || route.id === '/') return 'Lens of Brown';
-		const firstRoute = route.id.split('/').filter(Boolean)[0];
-		return `${capitalize(firstRoute)} - Lens of Brown`;
-	});
+	// TODO: get this working
+	// page.subscribe(() => {
+	// 	if (browser) {
+	// 		window?.scrollTo(0, 0);
+	// 	}
+	// });
 </script>
 
 <svelte:window bind:innerWidth={windowSize.w} bind:innerHeight={windowSize.h} />
@@ -53,7 +55,8 @@
 <!-- <svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head> -->
 
 <svelte:head>
-	<title>{$title}</title>
+	<title>{$page.data.title}</title>
+	<meta name="description" content={$page.data.description} />
 </svelte:head>
 
 <AppShell>
