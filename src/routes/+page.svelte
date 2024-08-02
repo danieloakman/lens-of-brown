@@ -61,7 +61,7 @@
 <PageBody class="gap-20 py-20">
 	<div class="w-[90%] mx-auto max-w-[500px]">
 		<div class="flex flex-col gap-6">
-			<h2 class="text-4xl text-primary-500 font-Forum">Creating snaps for keeps.</h2>
+			<h1 class="text-4xl text-primary-500 font-Forum">Creating snaps for keeps.</h1>
 			<p class="text-lg font-Forum">
 				Wollongong based photography, servicing Greater Sydney and beyond. Candid, timeless images
 				to capture your unique story.
