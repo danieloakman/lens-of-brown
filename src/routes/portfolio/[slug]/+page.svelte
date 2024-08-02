@@ -5,6 +5,7 @@
 	import type { ImgSlug } from './utils';
 	import PageBody from '$components/PageBody.svelte';
 	import BottomBanner from '$components/BottomBanner.svelte';
+	import { scrollIntoView } from '$utils';
 
 	const swapIndices = <T,>(arr: T[], swaps: [i: number, j: number][]): T[] => {
 		const result = arr.slice();
@@ -174,7 +175,7 @@
 
 <PageBody>
 	<!-- TODO: these pictures don't resize dynamically like in /portfolio. So might just remove the enhanced part and just import a set width for all images -->
-	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
+	<div use:scrollIntoView class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		{#each imgs as [src, alt]}
 			<enhanced:img
 				{src}

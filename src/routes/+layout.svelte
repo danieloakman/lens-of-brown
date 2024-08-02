@@ -18,6 +18,7 @@
 
 	import { windowSize } from '$stores';
 	import { page } from '$app/stores';
+	import type { Action } from 'svelte/action';
 
 	// import { browser } from '$app/environment';
 	// TODO: get this working
@@ -30,7 +31,7 @@
 
 <svelte:window bind:innerWidth={windowSize.w} bind:innerHeight={windowSize.h} />
 
-<Toast />
+<!-- <Toast /> -->
 <Drawer
 	position="left"
 	width="w-[200px] sm:w-[33%]"
@@ -40,7 +41,7 @@
 >
 	<DrawerContents />
 </Drawer>
-<Modal />
+<!-- <Modal /> -->
 
 <!-- eslint-disable-next-line -->
 <!-- <svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head> -->

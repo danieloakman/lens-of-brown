@@ -9,12 +9,12 @@
 	import HoneySantos from '$imgs/animals-honey_santos4.jpg?url&w=1000&aspect=1:1&position=bottom&any';
 	import ImgCouples from '$imgs/_couples-dan_trot7.jpg?url&w=1000&aspect=1:1&position=bottom&any';
 	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?url&w=1000&aspect=1:1&position=bottom&any';
-	import { Icon } from '$lib/icons';
+	import { Icon, scrollIntoView } from '$lib';
 	import ServiceCard from '$components/ServiceCard.svelte';
 </script>
 
 <PageBody class="pt-5 sm:pt-20 pb-20">
-	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
+	<div use:scrollIntoView class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		<ServiceCard
 			title="Mini Shoots"
 			img={{ src: ImgMiniShoots, alt: 'todo' }}

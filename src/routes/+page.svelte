@@ -12,6 +12,7 @@
 	import ImgEvents2 from '$imgs/_events-sydney_opera_house1.jpg?w=750&any';
 	import ImgLandscape2 from '$imgs/landscapes-great_ocean_road.jpg?w=750&any';
 	import ImgBiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?w=750&any';
+	import { scrollIntoView } from '$utils';
 </script>
 
 {#snippet divider()}
@@ -24,7 +25,13 @@
 	showButtons
 	autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
 >
-	<img src={ImgWombat1} class="carousel-img" alt="A closeup of a Wombat" loading="lazy" />
+	<img
+		use:scrollIntoView
+		src={ImgWombat1}
+		class="carousel-img"
+		alt="A closeup of a Wombat"
+		loading="lazy"
+	/>
 	<img
 		src={ImgShannonBrodbeck1}
 		class="carousel-img"

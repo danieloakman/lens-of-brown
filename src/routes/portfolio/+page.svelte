@@ -18,6 +18,7 @@
 	import Landscape2 from '$imgs/_landscapes-montague_island.jpg?url&w=1000&aspect=1:1&any';
 	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?url&w=1000&aspect=1:1&any';
 	import Events2 from '$imgs/events-canberra_balloons.jpg?url&w=1000&aspect=1:1&any';
+	import { scrollIntoView } from '$lib';
 </script>
 
 <!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
@@ -54,7 +55,9 @@
 {/snippet}
 
 <PageBody class="gap-20 py-20">
-	<h3 class="text-center text-4xl font-Forum text-primary-500">Browse our Portfolio</h3>
+	<h3 use:scrollIntoView class="text-center text-4xl font-Forum text-primary-500">
+		Browse our Portfolio
+	</h3>
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		{@render portfolioSection({

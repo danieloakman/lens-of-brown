@@ -5,10 +5,11 @@
 	import ForMore from '$components/ForMore.svelte';
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	import ImgDanTrot from '$imgs/_couples-dan_trot8.jpg?enhanced&aspect=1:1&any';
+	import { scrollIntoView } from '$utils';
 </script>
 
 <PageBody class="gap-20 py-20">
-	<div class="flex flex-col sm:flex-row gap-10">
+	<div use:scrollIntoView class="flex flex-col sm:flex-row gap-10">
 		<div class="self-center">
 			<enhanced:img
 				src={ImgDanTrot}
