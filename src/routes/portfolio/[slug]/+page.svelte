@@ -42,7 +42,9 @@
 					import.meta.glob('$imgs/portraits-*.{jpg,jpeg,png,webp}', {
 						eager: true,
 						query: {
-							enhanced: true
+							enhanced: true,
+							w: 600,
+							aspect: '0.67:1'
 						}
 					}),
 					repeat('todo', 12),
@@ -60,7 +62,9 @@
 					import.meta.glob('$imgs/families-*.{jpg,jpeg,png,webp}', {
 						eager: true,
 						query: {
-							enhanced: true
+							enhanced: true,
+							w: 600,
+							aspect: '0.67:1'
 						}
 					}),
 					repeat('todo', 12),
@@ -78,7 +82,9 @@
 					import.meta.glob('$imgs/couples-*.{jpg,jpeg,png,webp}', {
 						eager: true,
 						query: {
-							enhanced: true
+							enhanced: true,
+							w: 600,
+							aspect: '0.67:1'
 						}
 					}),
 					repeat('todo', 12),
@@ -99,7 +105,9 @@
 					import.meta.glob('$imgs/landscapes-*.{jpg,jpeg,png,webp}', {
 						eager: true,
 						query: {
-							enhanced: true
+							enhanced: true,
+							w: 600,
+							aspect: '0.67:1'
 						}
 					}),
 					repeat('todo', 12),
@@ -110,7 +118,9 @@
 					import.meta.glob('$imgs/weddings-*.{jpg,jpeg,png,webp}', {
 						eager: true,
 						query: {
-							enhanced: true
+							enhanced: true,
+							w: 600,
+							aspect: '0.67:1'
 						}
 					}),
 					repeat('todo', 12),
@@ -121,7 +131,9 @@
 					import.meta.glob('$imgs/events-*.{jpg,jpeg,png,webp}', {
 						eager: true,
 						query: {
-							enhanced: true
+							enhanced: true,
+							w: 600,
+							aspect: '0.67:1'
 						}
 					}),
 					repeat('todo', 12),
@@ -139,7 +151,9 @@
 					import.meta.glob('$imgs/animals-*.{jpg,jpeg,png,webp}', {
 						eager: true,
 						query: {
-							enhanced: true
+							enhanced: true,
+							w: 600,
+							aspect: '0.67:1'
 						}
 					}),
 					repeat('todo', 12),
@@ -166,6 +180,7 @@
 				{alt}
 				class="rounded-container-token max-w-[310px] object-cover"
 				style="aspect-ratio: 0.67/1;"
+				loading="lazy"
 				sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
 			></enhanced:img>
 		{/each}
