@@ -21,8 +21,6 @@
 	import { scrollIntoView } from '$lib';
 </script>
 
-<!-- TODO: make sure all light colored titles use the primary darker brown instead. -->
-
 {#snippet divider()}
 	<Divider horizontal class="w-[95%] max-w-[750px] mx-auto" />
 {/snippet}
