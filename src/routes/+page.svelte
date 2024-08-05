@@ -7,12 +7,13 @@
 	import PageBody from '$components/PageBody.svelte';
 
 	// TODO: should use webp and avif formats here
-	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?w=750&any';
+	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?url&w=750&any';
 	import ImgShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?w=750&any';
 	import ImgEvents2 from '$imgs/_events-sydney_opera_house1.jpg?w=750&any';
 	import ImgLandscape2 from '$imgs/landscapes-great_ocean_road.jpg?w=750&any';
 	import ImgBiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?w=750&any';
-	import { scrollIntoView } from '$utils';
+	import { scrollIntoView, sleep } from '$utils';
+	import LazyImg from '$components/LazyImg.svelte';
 </script>
 
 {#snippet divider()}
@@ -25,12 +26,10 @@
 	showButtons
 	autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
 >
-	<img
-		use:scrollIntoView
+	<LazyImg
 		src={ImgWombat1}
-		class="carousel-img"
+		class="w-[600px] px-1 rounded-lg object-cover"
 		alt="A closeup of a Wombat"
-		loading="lazy"
 	/>
 	<img
 		src={ImgShannonBrodbeck1}
@@ -59,6 +58,11 @@
 </Carousel>
 
 <PageBody class="gap-20 py-20">
+	<LazyImg
+		src="$imgs/_animals-wombat1.jpg?w=750&any"
+		class="w-[600px] px-1 rounded-lg object-cover"
+		alt="A closeup of a Wombat"
+	/>
 	<div class="w-[90%] mx-auto max-w-[500px]">
 		<div class="flex flex-col gap-6">
 			<h1 class="text-4xl text-primary-500 font-Forum">Creating snaps for keeps.</h1>
