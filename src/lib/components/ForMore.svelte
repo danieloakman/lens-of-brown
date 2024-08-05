@@ -23,7 +23,7 @@
 				eager: false,
 				query: { w: 500, aspect: '1:1', format: 'webp' }
 			})
-		) as [string, () => Promise<any>][]
+		) as [string, () => Promise<{ default: any }>][]
 	)
 		.sort((a, b) => {
 			const aDate = parseDate(a[0]);
@@ -43,7 +43,7 @@
 	<Carousel class="pt-4 h-[300px]" showButtons>
 		{#each imgs as [img, alt]}
 			{#await img() then src}
-				<img src={src.default} class="carousel-img-sq" {alt} loading="lazy" />
+				<img src={src.default} class="carousel-img-sq" {alt} />
 			{/await}
 		{/each}
 	</Carousel>
