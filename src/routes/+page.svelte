@@ -59,7 +59,7 @@
 
 <PageBody class="gap-20 py-20">
 	<LazyImg
-		src="$imgs/_animals-wombat1.jpg?w=750&any"
+		src={ImgWombat1}
 		class="w-[600px] px-1 rounded-lg object-cover"
 		alt="A closeup of a Wombat"
 	/>
