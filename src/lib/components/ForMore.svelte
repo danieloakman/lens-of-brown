@@ -40,9 +40,11 @@
 	<h3 class="text-center text-xl">
 		Follow us on Instagram <a href={INSTAGRAM_URL} target="_blank">@lens.ofbrown</a>
 	</h3>
-	<Carousel class="pt-4" showButtons>
+	<Carousel class="pt-4 h-[300px]" showButtons>
 		{#each imgs as [img, alt]}
-			<img src={img} class="carousel-img-sq" {alt} loading="lazy" />
+			{#await img() then src}
+				<img src={src.default} class="carousel-img-sq" {alt} loading="lazy" />
+			{/await}
 		{/each}
 	</Carousel>
 </div>
