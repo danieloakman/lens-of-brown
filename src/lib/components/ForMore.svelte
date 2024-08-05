@@ -20,17 +20,17 @@
 	const imgs = iter(
 		Object.entries(
 			import.meta.glob('$imgs/lens.ofbrown/*.jpg', {
-				eager: true,
+				eager: false,
 				query: { w: 500, aspect: '1:1', format: 'webp' }
 			})
-		) as [string, { default: any }][]
+		) as [string, () => Promise<{ default: any }>][]
 	)
 		.sort((a, b) => {
 			const aDate = parseDate(a[0]);
 			const bDate = parseDate(b[0]);
 			return aDate > bDate ? -1 : aDate < bDate ? 1 : 0;
 		})
-		.map(([path, img]) => [img.default, (alts as any)[basename(path)]]);
+		.map(([path, img]) => [img, (alts as any)[basename(path)]] as const);
 
 	const { ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
@@ -43,7 +43,7 @@
 	<Carousel class="pt-4 h-[300px]" showButtons>
 		{#each imgs as [img, alt]}
 			{#await img() then src}
-				<img src={src.default} class="carousel-img-sq" {alt} loading="lazy" />
+				<img src={src.default} class="carousel-img-sq" {alt} />
 			{/await}
 		{/each}
 	</Carousel>
