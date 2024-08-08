@@ -19,7 +19,7 @@
 {/snippet}
 
 <Carousel
-	class="text-center pt-20"
+	class="text-center pt-20 h-min-[720px]"
 	loop
 	showButtons
 	autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
