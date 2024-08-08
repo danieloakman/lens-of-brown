@@ -31,7 +31,7 @@ const config = {
 			$static: './static',
 			$imgs: './src/lib/imgs'
 		},
-		inlineStyleThreshold: 1024,
+		inlineStyleThreshold: 1024
 	}
 };
 
