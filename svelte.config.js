@@ -30,7 +30,8 @@ const config = {
 			$constants: './src/lib/constants',
 			$static: './static',
 			$imgs: './src/lib/imgs'
-		}
+		},
+		inlineStyleThreshold: 1024,
 	}
 };
 
