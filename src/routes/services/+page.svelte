@@ -3,12 +3,12 @@
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
-	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?url&w=1000&aspect=1:1&any';
-	import Trot1 from '$imgs/couples-weddings_trot3.jpg?url&w=1000&aspect=1:1&any';
-	import TimBear7 from '$imgs/_families-tim_bear7.jpg?url&w=1000&aspect=1:1&position=bottom&any';
-	import HoneySantos from '$imgs/animals-honey_santos4.jpg?url&w=1000&aspect=1:1&position=bottom&any';
-	import ImgCouples from '$imgs/_couples-dan_trot7.jpg?url&w=1000&aspect=1:1&position=bottom&any';
-	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?url&w=1000&aspect=1:1&position=bottom&any';
+	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?format=webp&w=1000&aspect=1:1&any';
+	import Trot1 from '$imgs/couples-weddings_trot3.jpg?format=webp&w=1000&aspect=1:1&any';
+	import TimBear7 from '$imgs/_families-tim_bear7.jpg?format=webp&w=1000&aspect=1:1&position=bottom&any';
+	import HoneySantos from '$imgs/animals-honey_santos4.jpg?format=webp&w=1000&aspect=1:1&position=bottom&any';
+	import ImgCouples from '$imgs/_couples-dan_trot7.jpg?format=webp&w=1000&aspect=1:1&position=bottom&any';
+	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?format=webp&w=1000&aspect=1:1&position=bottom&any';
 	import { Icon, scrollIntoView } from '$lib';
 	import ServiceCard from '$components/ServiceCard.svelte';
 </script>

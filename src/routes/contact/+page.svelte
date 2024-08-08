@@ -7,7 +7,7 @@
 	import { INSTAGRAM_URL, FACEBOOK_URL, INFO_EMAIL } from '$constants';
 	import { dev } from '$app/environment';
 	import { Icon, scrollIntoView } from '$lib';
-	import ImgLandscape from '$imgs/_landscapes-great_ocean_road2.jpg?w=400&h=400&fit=cover&any';
+	import ImgLandscape from '$imgs/_landscapes-great_ocean_road2.jpg?format=webp&w=400&h=400&fit=cover&any';
 
 	// let firstName = $state('');
 	// let lastName = $state('');

@@ -6,12 +6,11 @@
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
 
-	// TODO: should use webp and avif formats here
-	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?w=750&any';
-	import ImgShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?w=750&any';
-	import ImgEvents2 from '$imgs/_events-sydney_opera_house1.jpg?w=750&any';
-	import ImgLandscape2 from '$imgs/landscapes-great_ocean_road.jpg?w=750&any';
-	import ImgBiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?w=750&any';
+	import ImgWombat1 from '$imgs/_animals-wombat1.jpg?format=webp&w=750&any';
+	import ImgShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?format=webp&w=750&any';
+	import ImgEvents2 from '$imgs/_events-sydney_opera_house1.jpg?format=webp&w=750&any';
+	import ImgLandscape2 from '$imgs/landscapes-great_ocean_road.jpg?format=webp&w=750&any';
+	import ImgBiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?format=webp&w=750&any';
 	import { scrollIntoView } from '$utils';
 </script>
 
