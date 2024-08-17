@@ -60,9 +60,9 @@ async function downloadRecentPosts({ count = 10 }: { count?: number } = {}) {
 				console.log(`Copied ${dest}`);
 
 				// Add alt text
-				alts[basename(src)] = json.node?.accessibility_caption ?? 'Lens of Brown Instagram post';
-				if (alts[basename(src)] === 'Lens of Brown Instagram post')
-					console.warn(`No alt text found for ${src}`);
+				alts[basename(src)] =
+					json.node?.accessibility_caption ??
+					raise(`No caption/alt text found for post ${basename(src)}`);
 				break;
 			}
 		}

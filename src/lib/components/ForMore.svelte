@@ -30,7 +30,7 @@
 			const bDate = parseDate(b[0]);
 			return aDate > bDate ? -1 : aDate < bDate ? 1 : 0;
 		})
-		.map(([path, img]) => [img, (alts as any)[basename(path)] ?? 'Lens of Brown Instagram post'] as const);
+		.map(([path, img]) => [img, (alts as any)[basename(path)]] as const);
 
 	const { ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
