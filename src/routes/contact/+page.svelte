@@ -86,7 +86,7 @@
 			label="Message"
 			name="message"
 			type="textarea"
-			placeholder="Your message or inquiry. We'll be in touch soon."
+			placeholder="Your message or inquiry. We'll be in touch soon (please keep an eye on your junk folder)."
 			required
 		/>
 
