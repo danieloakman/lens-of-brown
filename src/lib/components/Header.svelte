@@ -13,6 +13,7 @@
 	<button
 		class="lg:hidden btn-icon w-16"
 		on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
+		aria-label="Open the navigation menu"
 	>
 		<Icon.Menu class="text-2xl text-primary-500" />
 	</button>
@@ -34,77 +35,6 @@
 		<a href="/contact" class="header" aria-current={isCurrentPage('/contact')}>contact</a>
 	</nav>
 </div>
-
-<!-- <AppBar
-	padding=""
-	gap="gap-0"
-	background=""
-	slotDefault="place-self-center"
-	slotTrail="place-content-end"
->
-	<svelte:fragment slot="lead">
-		<div class="w-16 flex flex-row ps-2 gap-1">
-			<a href={INSTAGRAM_URL} target="_blank" class="btn-icon hover-lg">
-				<Icon.Instagram class="text-xl min-[430px]:text-2xl text-primary-500" />
-			</a>
-			<a href={FACEBOOK_URL} target="_blank" class="btn-icon hover-lg">
-				<Icon.Facebook class="text-xl min-[430px]:text-2xl text-primary-500" />
-			</a>
-			<a href={INFO_EMAIL} target="_blank" class="btn-icon hover-lg">
-				<Icon.Mail class="text-xl min-[430px]:text-2xl text-primary-500" />
-			</a>
-		</div>
-	</svelte:fragment>
-
-	<nav class="flex flex-row gap-5 items-center">
-		<a aria-current={isCurrentPage('/about')} href="/about" class="header hidden lg:flex"
-			>ABOUT</a
-		>
-		<a
-			aria-current={isCurrentPage('/contact')}
-			href="/contact"
-			class="header hidden lg:flex">CONTACT</a
-		>
-		<a href="/" aria-current={isCurrentPage('/')}>
-			{#if windowSize.w < 410}
-				<enhanced:img
-					src={SidewaysLogo}
-					alt="Lens of Brown logo - header"
-					class="h-[70px] w-auto"
-				></enhanced:img>
-			{:else}
-				<enhanced:img
-					src={SidewaysLogo}
-					alt="Lens of Brown logo - header"
-					class="h-[100px] w-auto"
-				></enhanced:img>
-			{/if}
-		</a>
-		<a
-			aria-current={isCurrentPage('/portfolio')}
-			href="/portfolio"
-			class="header hidden lg:flex">PORTFOLIO</a
-		>
-		<a
-			aria-current={isCurrentPage('/pricing')}
-			href="/pricing"
-			class="header hidden lg:flex">PRICING</a
-		>
-	</nav>
-
-	<svelte:fragment slot="trail">
-		<button
-			class="lg:hidden btn-icon w-16"
-			on:click={() => ($drawerStore.open ? drawerStore.close() : drawerStore.open())}
-		>
-			<Icon.Menu class="text-2xl text-primary-500" />
-		</button>
-
-		<div class="hidden lg:flex w-16">
-			// <LightSwitch />
-		</div>
-	</svelte:fragment>
-</AppBar> -->
 
 <style lang="postcss">
 	/* Highlights current route the page is on. */

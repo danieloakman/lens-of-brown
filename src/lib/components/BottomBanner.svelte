@@ -9,13 +9,13 @@
 	</h2>
 
 	<div class="flex flex-row gap-6 ms-auto me-6">
-		<a href={FACEBOOK_URL} target="_blank" class="hover-lg">
+		<a href={FACEBOOK_URL} target="_blank" class="hover-lg" aria-label="Lens of Brown Facebook link">
 			<Icon.Facebook class="text-[rgb(255,255,255,0.4)] text-xl m-1" />
 		</a>
-		<a href={INSTAGRAM_URL} target="_blank" class="hover-lg">
+		<a href={INSTAGRAM_URL} target="_blank" class="hover-lg" aria-label="Lens of Brown Instagram link">
 			<Icon.Instagram class="text-[rgb(255,255,255,0.4)] text-xl m-1" />
 		</a>
-		<a href={INFO_EMAIL} target="_blank" class="hover-lg">
+		<a href={INFO_EMAIL} target="_blank" class="hover-lg" aria-label="Lens of Brown Email link">
 			<Icon.Mail class="text-[rgb(255,255,255,0.4)] text-xl m-1" />
 		</a>
 	</div>
