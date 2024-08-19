@@ -56,7 +56,13 @@ which we cannot assign attributes to and breaks the css required for the carouse
 <div class={'embla ' + klass} {...rest}>
 	{#if showButtons && canScrollPrev}
 		<div class="inner me-auto z-10 ps-2">
-			<button in:fade out:fade class="btn-side" on:click={() => emblaApi?.scrollPrev()}>
+			<button
+				in:fade
+				out:fade
+				class="btn-side"
+				on:click={() => emblaApi?.scrollPrev()}
+				aria-label="Carousel left button"
+			>
 				<Icon.ArrowLeft />
 			</button>
 		</div>
@@ -78,7 +84,13 @@ which we cannot assign attributes to and breaks the css required for the carouse
 
 	{#if showButtons && canScrollNext}
 		<div class="inner ms-auto z-10 pe-2">
-			<button in:fade out:fade class="btn-side" on:click={() => emblaApi?.scrollNext()}>
+			<button
+				in:fade
+				out:fade
+				class="btn-side"
+				on:click={() => emblaApi?.scrollNext()}
+				aria-label="Carousel right button"
+			>
 				<Icon.ArrowRight />
 			</button>
 		</div>
