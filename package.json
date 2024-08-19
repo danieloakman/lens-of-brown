@@ -45,6 +45,7 @@
 		"glob": "^11.0.0",
 		"iteragain": "^4.1.0",
 		"js-utils": "https://github.com/danieloakman/js-utils/releases/download/v0.11.1/package.tgz",
+		"lighthouse": "^12.2.0",
 		"postcss": "^8.4.40",
 		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.2.6",
