@@ -5,7 +5,8 @@ import { copyFile } from 'fs/promises';
 import { readFile } from 'fs/promises';
 import { writeFile } from 'fs/promises';
 import { stat } from 'fs/promises';
-import { globIterate } from 'glob';
+import { globIterateSync } from 'glob';
+import { iter } from 'iteragain';
 import { once, raise } from 'js-utils';
 import { tmpdir } from 'os';
 import { basename, join, sep } from 'path';
@@ -20,6 +21,11 @@ const checkInstaloader = once(() =>
 	})
 );
 
+function parseDate(path: string) {
+	const [date, time] = basename(path).split('_');
+	return new Date(`${date!}T${time!.replaceAll('-', ':')}`);
+}
+
 async function downloadRecentPosts({ count = 10 }: { count?: number } = {}) {
 	if (process.env.CI) {
 		console.log('Skipping download of recent Instagram posts in CI');
@@ -32,16 +38,29 @@ async function downloadRecentPosts({ count = 10 }: { count?: number } = {}) {
 	await $`rm -rf ${saveDir} && mkdir -p ${saveDir}`;
 	const tmpDir = join(tmpdir(), 'lens.ofbrown');
 
-	// Download + 4 to account for pinned posts, which we don't want.
-	await $`instaloader lens.ofbrown --no-profile-pic --count ${count + 5} --no-compress-json --no-videos --dirname-pattern "${tmpDir}"`;
+	// Download + 5 to account for pinned posts, which we don't want.
+	await $`instaloader --no-profile-pic --count ${count + 5} --no-compress-json --no-videos --fast-update --dirname-pattern "${tmpDir}" lens.ofbrown`;
+
+	const jsonPaths = iter(globIterateSync(`${tmpDir}${sep}*UTC.json`))
+		.map((path) => ({
+			path,
+			date: parseDate(path)
+		}))
+		.sort((a, b) => b.date.getTime() - a.date.getTime())
+		.slice(0, count)
+		.map((v) => v.path);
 
 	const alts: Record<string, string> = {};
-	for await (const path of globIterate(`${tmpDir}${sep}*UTC.json`)) {
+	for (const path of jsonPaths) {
 		const stats = await stat(path);
 		if (!stats.isFile()) continue;
 		if (path.endsWith('.json')) {
 			const json: {
-				node?: { pinned_for_users?: { username: string }[]; accessibility_caption?: string };
+				node?: {
+					pinned_for_users?: { username: string }[];
+					accessibility_caption?: string;
+					caption?: string;
+				};
 			} = await readFile(path, 'utf-8').then(JSON.parse);
 
 			// Don't copy pinned posts
@@ -62,7 +81,9 @@ async function downloadRecentPosts({ count = 10 }: { count?: number } = {}) {
 				// Add alt text
 				alts[basename(src)] =
 					json.node?.accessibility_caption ??
-					raise(`No caption/alt text found for post ${basename(src)}`);
+					(json.node?.caption
+						? 'Lens of Brown Instagram post: ' + json.node?.caption
+						: raise(`No caption/alt text found for post ${basename(src)}`));
 				break;
 			}
 		}
