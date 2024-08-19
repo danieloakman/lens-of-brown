@@ -62,6 +62,7 @@
 					{#if typeof item === 'string'}
 						<li>{item}</li>
 					{:else}
+					<!-- TODO: Lighthouse complains that <ul> elements should only have <li> within them. So perhaps think of a nother nested list solution here. -->
 						<ul class="ps-4">
 							{#each item as nestedItem}
 								<li>{nestedItem}</li>
