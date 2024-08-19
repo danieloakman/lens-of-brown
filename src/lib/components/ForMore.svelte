@@ -21,7 +21,7 @@
 		Object.entries(
 			import.meta.glob('$imgs/lens.ofbrown/*.jpg', {
 				eager: false,
-				query: { w: 500, aspect: '1:1', format: 'webp' }
+				query: { w: 300, aspect: '1:1', format: 'webp' }
 			})
 		) as [string, () => Promise<{ default: any }>][]
 	)
