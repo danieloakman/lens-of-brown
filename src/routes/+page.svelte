@@ -29,31 +29,26 @@
 		src={ImgWombat1}
 		class="carousel-img"
 		alt="A closeup of a Wombat"
-		loading="lazy"
 	/>
 	<img
 		src={ImgShannonBrodbeck1}
 		class="carousel-img"
 		alt="A family portrait of 5 smiling in the sun"
-		loading="lazy"
 	/>
 	<img
 		src={ImgEvents2}
 		class="carousel-img"
 		alt="A woman infront of the Sydney Opera House"
-		loading="lazy"
 	/>
 	<img
 		src={ImgLandscape2}
 		class="carousel-img"
 		alt="The great ocean road, Australia"
-		loading="lazy"
 	/>
 	<img
 		src={ImgBiancaCherie4}
 		class="carousel-img"
 		alt="A boy smiling, standing and having fun"
-		loading="lazy"
 	/>
 </Carousel>
 
