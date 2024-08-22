@@ -24,32 +24,15 @@
 	showButtons
 	autoplay={{ stopOnMouseEnter: true, delay: 5000 }}
 >
-	<img
-		use:scrollIntoView
-		src={ImgWombat1}
-		class="carousel-img"
-		alt="A closeup of a Wombat"
-	/>
+	<img use:scrollIntoView src={ImgWombat1} class="carousel-img" alt="A closeup of a Wombat" />
 	<img
 		src={ImgShannonBrodbeck1}
 		class="carousel-img"
 		alt="A family portrait of 5 smiling in the sun"
 	/>
-	<img
-		src={ImgEvents2}
-		class="carousel-img"
-		alt="A woman infront of the Sydney Opera House"
-	/>
-	<img
-		src={ImgLandscape2}
-		class="carousel-img"
-		alt="The great ocean road, Australia"
-	/>
-	<img
-		src={ImgBiancaCherie4}
-		class="carousel-img"
-		alt="A boy smiling, standing and having fun"
-	/>
+	<img src={ImgEvents2} class="carousel-img" alt="A woman infront of the Sydney Opera House" />
+	<img src={ImgLandscape2} class="carousel-img" alt="The great ocean road, Australia" />
+	<img src={ImgBiancaCherie4} class="carousel-img" alt="A boy smiling, standing and having fun" />
 </Carousel>
 
 <PageBody class="gap-20 py-20">
