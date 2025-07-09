@@ -44,7 +44,7 @@
 		"gh-pages": "^6.1.1",
 		"glob": "^11.0.0",
 		"iteragain": "^4.1.0",
-		"js-utils": "https://github.com/danieloakman/js-utils/releases/download/v0.11.1/package.tgz",
+		"js-utils": "npm:@danoaky/js-utils@0.28.0",
 		"lighthouse": "^12.2.0",
 		"postcss": "^8.4.40",
 		"prettier": "^3.3.3",
