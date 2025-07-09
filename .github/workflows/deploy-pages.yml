@@ -33,10 +33,3 @@ jobs:
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           bun run deploy
-
-      - uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: update-docs-report
-          path: update-docs-report
-          retention-days: 30
