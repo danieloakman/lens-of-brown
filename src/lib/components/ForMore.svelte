@@ -10,11 +10,15 @@
 	import { memoize } from 'js-utils';
 	import alts from '$imgs/lens.ofbrown/alts.json';
 
+	const numRegex = /^\d+$/;
 	const basename = memoize((path: string): string => path.split('/').pop() ?? '');
-	const parseDate = memoize((path: string): Date => {
+	const filename = memoize((path: string): string => basename(path).split('.')[0] ?? '');
+	const parseDateNum = memoize((path: string): number => {
+		if (numRegex.test(filename(path))) return parseInt(filename(path));
 		const file = basename(path);
 		const [date, time] = file.split('_');
-		return new Date(`${date!} ${time!.replace('-', ':')}`);
+		if (!time) throw new Error(`No time found in ${path}`);
+		return new Date(`${date!} ${time.replace('-', ':')}`).getTime();
 	});
 
 	const imgs = iter(
@@ -26,8 +30,8 @@
 		) as [string, () => Promise<{ default: any }>][]
 	)
 		.sort((a, b) => {
-			const aDate = parseDate(a[0]);
-			const bDate = parseDate(b[0]);
+			const aDate = parseDateNum(a[0]);
+			const bDate = parseDateNum(b[0]);
 			return aDate > bDate ? -1 : aDate < bDate ? 1 : 0;
 		})
 		.map(([path, img]) => [img, (alts as any)[basename(path)]] as const);
