@@ -24,7 +24,8 @@
     librsvg
     pkg-config
 
-    instaloader # Needed for downloading recent posts for lens.ofbrown
+    # instaloader # Needed for downloading recent posts for lens.ofbrown
+    gallery-dl
   ]) ++ (with pkgs.xorg; [
     libX11
     libXext

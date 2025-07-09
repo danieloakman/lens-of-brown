@@ -13,9 +13,9 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"upgrade-interactive": "bunx npm-check-updates -i",
+		"update-insta-posts": "bun run ./scripts/update-insta-posts.ts",
 		"test:integration": "playwright test",
-		"test:unit": "vitest",
-		"postinstall": "bun run ./scripts/postinstall.ts"
+		"test:unit": "vitest"
 	},
 	"devDependencies": {
 		"@iconify-json/lucide": "^1.1.204",
