@@ -45,7 +45,12 @@
 
 <div {...rest}>
 	{#if buttons}
-		<button type="button" class="btn-icon variant-filled" onclick={() => i--}>
+		<button
+			type="button"
+			class="btn-icon variant-filled"
+			aria-label="Previous image"
+			onclick={() => i--}
+		>
 			<i class="fa-solid fa-arrow-left"></i>
 		</button>
 	{/if}
@@ -73,7 +78,12 @@
 	</div>
 
 	{#if buttons}
-		<button type="button" class="btn-icon variant-filled" onclick={() => i++}>
+		<button
+			type="button"
+			class="btn-icon variant-filled"
+			aria-label="Next image"
+			onclick={() => i++}
+		>
 			<i class="fa-solid fa-arrow-right"></i>
 		</button>
 	{/if}
