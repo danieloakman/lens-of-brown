@@ -20,9 +20,9 @@ function parseDate(path: string) {
 async function instaloaderDownload({ dest, count = 10 }: { count?: number; dest: string }) {
 	const tmpDir = join(tmpdir(), 'instaloader-lens.ofbrown');
 
-	// No longer works after instagram api changes:
 	const password = (await $`pass instagram.com | head -n1`.text()).trim();
 
+	// No longer works after instagram api changes:
 	// Download + 5 to account for pinned posts, which we don't want.
 	await $`instaloader --no-profile-pic --count ${count + 5} --no-compress-json --no-videos --fast-update --dirname-pattern "${tmpDir}" --login danoaky -password ${password} lens.ofbrown`;
 
