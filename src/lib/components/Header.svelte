@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { Icon } from '$lib';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import SidewaysLogo from '$imgs/transparent-logo-sideways.png?enhanced&any';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
-		href === $page.url.pathname ? 'page' : undefined;
+		href === page.url.pathname ? 'page' : undefined;
 </script>
 
 <div class="flex flex-row gap-2 justify-between px-4 lg:px-16 sm:py-4">
