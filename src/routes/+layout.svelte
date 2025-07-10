@@ -16,7 +16,7 @@
 	import DrawerContents from '$components/DrawerContents.svelte';
 
 	import { windowSize } from '$stores';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 </script>
 
 <svelte:window bind:innerWidth={windowSize.w} bind:innerHeight={windowSize.h} />
@@ -37,8 +37,8 @@
 <!-- <svelte:head>{@html '<script>(' + setInitialClassState.toString() + ')();</script>'}</svelte:head> -->
 
 <svelte:head>
-	<title>{$page.data.title}</title>
-	<meta name="description" content={$page.data.description} />
+	<title>{page.data.title}</title>
+	<meta name="description" content={page.data.description} />
 </svelte:head>
 
 <AppShell>

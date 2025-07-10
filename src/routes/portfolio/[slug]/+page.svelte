@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { iife, raise, propIs } from 'js-utils';
 	import { iter, repeat } from 'iteragain';
 	import type { ImgSlug } from './utils';
@@ -33,7 +33,7 @@
 			swaps
 		);
 
-	const slug = $page.params.slug as ImgSlug;
+	const slug = page.params.slug as ImgSlug;
 	const imgs: [src: string, alt: string][] = iife(() => {
 		// **The following non-dynamic if statements are required for vite to correctly resolve the glob.**
 		// To add more image directories, add more if statements.

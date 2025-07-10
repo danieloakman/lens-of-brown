@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { drawerContentStore, Icon } from '$lib';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import Divider from './Divider.svelte';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
-		href === $page.url.pathname ? 'page' : undefined;
+		href === page.url.pathname ? 'page' : undefined;
 
 	const onClickNav = () => {
 		drawerStore.close();
