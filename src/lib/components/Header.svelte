@@ -18,7 +18,7 @@
 		<Icon.Menu class="text-2xl text-primary-500" />
 	</button>
 
-	<a href="/">
+	<a href="/" aria-label="Home">
 		<enhanced:img
 			src={SidewaysLogo}
 			alt="Lens of Brown logo - header"
