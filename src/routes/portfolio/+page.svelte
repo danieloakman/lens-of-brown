@@ -105,14 +105,13 @@
 			subheading: '+ pets & natives',
 			href: '/portfolio/animals',
 			imgs: [
-				// TODO: Swap wombat1 and honey_santos4 in here:
+				{
+					src: HoneySantos4,
+					alt: 'A golden fluffy dog about to leap and start playing and running around.'
+				},
 				{
 					src: Wombat1,
 					alt: 'A closeup portrait of a wombat, looking off the left. Extremely cute.'
-				},
-				{
-					src: HoneySantos4,
-					alt: 'A golden fluffy dog about to leap and start playing and runnign around.'
 				}
 			]
 		})}

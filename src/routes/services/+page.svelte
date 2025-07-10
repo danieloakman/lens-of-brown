@@ -17,7 +17,7 @@
 	<div use:scrollIntoView class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		<ServiceCard
 			title="Mini Shoots"
-			img={{ src: ImgMiniShoots, alt: 'todo' }}
+			img={{ src: ImgMiniShoots, alt: 'Boy crouching down, looking at the camera.' }}
 			description={[
 				'- Up to 30 mins to capture your best shots',
 				'- 10 edited images',
@@ -33,7 +33,7 @@
 		/>
 		<ServiceCard
 			title="Family Packages"
-			img={{ src: TimBear7, alt: 'todo' }}
+			img={{ src: TimBear7, alt: 'A family of 4, standing in a leafy green park looking at the camera and having fun.' }}
 			description={[
 				'Family Package 1:',
 				['- 25 edited images', '- Suitable for families of up to 6'],
@@ -50,7 +50,7 @@
 		/>
 		<ServiceCard
 			title="Couples Packages"
-			img={{ src: ImgCouples, alt: 'todo' }}
+			img={{ src: ImgCouples, alt: 'A couple sitting under a pine tree, both smiling.' }}
 			description={[
 				'- Packages available with 25-50+ edited images',
 				'- Secret/hidden proposal photography services available',
@@ -64,7 +64,7 @@
 		/>
 		<ServiceCard
 			title="Weddings"
-			img={{ src: Trot1, alt: 'todo' }}
+			img={{ src: Trot1, alt: 'A woman holding a man\'s arm with her engagement ring clearly visible.' }}
 			pricing={([min]) => `Starts from AUD $${min}*`}
 			description={[
 				'- Packages available from 2 - 12 hours of photography coverage',
@@ -78,7 +78,7 @@
 		/>
 		<ServiceCard
 			title="Events"
-			img={{ src: Events1, alt: 'todo' }}
+			img={{ src: Events1, alt: 'Sydney Opera House, with a woman standing infront of it.' }}
 			pricing={([min]) => `Starts from AUD $${min}*`}
 			description={[
 				'- Packages suitable for parties, corporate bookings and celebrations',
@@ -91,7 +91,7 @@
 		/>
 		<ServiceCard
 			title="Animals"
-			img={{ src: HoneySantos, alt: 'todo' }}
+			img={{ src: HoneySantos, alt: 'A golden fluffy dog sitting obediently.' }}
 			description={[
 				'Pet Package:',
 				['- 20 edited images of pet(s) only'],
