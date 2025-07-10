@@ -26,6 +26,8 @@
 
     # instaloader # Needed for downloading recent posts for lens.ofbrown
     gallery-dl
+
+    bun
   ]) ++ (with pkgs.xorg; [
     libX11
     libXext
