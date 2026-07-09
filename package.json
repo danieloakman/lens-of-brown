@@ -59,7 +59,9 @@
 		"unplugin-icons": "^0.19.1",
 		"vite": "^5.3.5",
 		"vite-plugin-tailwind-purgecss": "^0.3.3",
-		"vitest": "^2.0.5"
+		"vitest": "^2.0.5",
+		"baseline-browser-mapping": "^2.10.40",
+		"caniuse-lite": "^1.0.30001800"
 	},
 	"type": "module",
 	"trustedDependencies": [
