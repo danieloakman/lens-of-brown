@@ -7,31 +7,45 @@
 	import BottomBanner from '$components/BottomBanner.svelte';
 	import { scrollIntoView } from '$utils';
 
-	const swapIndices = <T,>(arr: T[], swaps: [i: number, j: number][]): T[] => {
-		const result = arr.slice();
-		for (const [i, j] of swaps) {
-			const temp = result[i] ?? raise('Index out of bounds: ' + i);
-			result[i] = result[j] ?? raise('Index out of bounds: ' + j);
-			result[j] = temp;
-		}
-		return result;
-	};
-
 	const assertImg = (obj: unknown): { default: string } => {
 		if (propIs(obj, 'default', 'object') || propIs(obj, 'default', 'string'))
 			return obj as unknown as { default: string };
 		throw new Error('Expected object with default string property');
 	};
 
-	const process = (
+	type Action =
+		| {
+				type: 'swap';
+				from: number;
+				to: number;
+		  }
+		| { type: 'splice'; from: number; to: number };
+
+	const Action = {
+		swap: (from: number, to: number): Action => ({ type: 'swap', from, to }),
+		splice: (from: number, to: number): Action => ({ type: 'splice', from, to }),
+	};
+
+	function process(
 		imgs: Record<string, unknown>,
 		alts: Iterable<string>,
-		swaps: [i: number, j: number][]
-	): [src: string, alt: string][] =>
-		swapIndices(
-			iter(Object.values(imgs)).map(assertImg).pluck('default').zip(alts).toArray(),
-			swaps
-		);
+		actions: Action[]
+	): [src: string, alt: string][] {
+		let result = iter(Object.values(imgs)).map(assertImg).pluck('default').zip(alts).toArray();
+		for (const { type, ...action } of actions) {
+			if (type === 'swap') {
+				const { from, to } = action;
+				const temp = result[from];
+				result[from] = result[to] ?? raise('Index out of bounds: ' + to);
+				result[to] = temp ?? raise('Index out of bounds: ' + from);
+			} else if (type === 'splice') {
+				const { from, to } = action;
+				const removed = result.splice(from, 1);
+				result.splice(to, 0, ...removed);
+			} else throw new Error(`Unknown action type: ${type}`);
+		}
+		return result;
+	}
 
 	const slug = page.params.slug as ImgSlug;
 	const imgs: [src: string, alt: string][] = iife(() => {
@@ -53,12 +67,12 @@
 					// TODO: can probably make a component that has a skeleton loading state for images.
 					repeat('', 12),
 					[
-						[1, 3],
-						[2, 5],
-						[3, 8],
-						[4, 6],
-						[5, 11],
-						[7, 8]
+						Action.swap(1, 3),
+						Action.swap(2, 5),
+						Action.swap(3, 8),
+						Action.swap(4, 6),
+						Action.swap(5, 11),
+						Action.swap(7, 8)
 					]
 				);
 			case 'families':
@@ -73,12 +87,12 @@
 					}),
 					repeat('', 12),
 					[
-						[1, 5],
-						[3, 6],
-						[4, 5],
-						[4, 8],
-						[8, 11],
-						[10, 11]
+						Action.swap(1, 5),
+						Action.swap(3, 6),
+						Action.swap(4, 5),
+						Action.swap(4, 8),
+						Action.swap(8, 11),
+						Action.swap(10, 11)
 					]
 				);
 			case 'couples':
@@ -93,15 +107,16 @@
 					}),
 					repeat('', 12),
 					[
-						[0, 11],
-						[1, 4],
-						[2, 9],
-						[4, 11],
-						[5, 6],
-						[4, 8],
-						[7, 11],
-						[8, 9],
-						[9, 10]
+						Action.swap(0, 11),
+						Action.swap(1, 4),
+						Action.swap(2, 9),
+						Action.swap(4, 11),
+						Action.swap(5, 6),
+						Action.swap(4, 8),
+						Action.swap(7, 11),
+						Action.swap(8, 9),
+						Action.swap(9, 10),
+						Action.splice(4, 0)
 					]
 				);
 			case 'landscapes':
@@ -142,12 +157,12 @@
 					}),
 					repeat('', 12),
 					[
-						[0, 4],
-						[1, 3],
-						[2, 3],
-						[3, 6],
-						[4, 6],
-						[9, 11]
+						Action.swap(0, 4),
+						Action.swap(1, 3),
+						Action.swap(2, 3),
+						Action.swap(3, 6),
+						Action.swap(4, 6),
+						Action.swap(9, 11)
 					]
 				);
 			case 'animals':
@@ -162,11 +177,11 @@
 					}),
 					repeat('', 12),
 					[
-						[0, 5],
-						[1, 5],
-						[2, 7],
-						[3, 6],
-						[7, 8]
+						Action.swap(0, 5),
+						Action.swap(1, 5),
+						Action.swap(2, 7),
+						Action.swap(3, 6),
+						Action.swap(7, 8)
 					]
 				);
 			default:

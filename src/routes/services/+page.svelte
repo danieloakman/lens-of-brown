@@ -4,11 +4,11 @@
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
 	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?format=webp&w=600&aspect=1:1&any';
-	import Trot1 from '$imgs/couples-weddings_trot3.jpg?format=webp&w=600&aspect=1:1&any';
 	import TimBear7 from '$imgs/_families-tim_bear7.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
 	import HoneySantos from '$imgs/animals-honey_santos4.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
 	import ImgCouples from '$imgs/_couples-dan_trot7.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
 	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
+	import BridalPortait1 from '$imgs/_portraits-bridal1.jpg?format=webp&w=600&aspect=1:1&position=top&any';
 	import { Icon, scrollIntoView } from '$lib';
 	import ServiceCard from '$components/ServiceCard.svelte';
 </script>
@@ -64,7 +64,7 @@
 		/>
 		<ServiceCard
 			title="Weddings"
-			img={{ src: Trot1, alt: 'A woman holding a man\'s arm with her engagement ring clearly visible.' }}
+			img={{ src: BridalPortait1, alt: 'A bride in a white dress.' }}
 			pricing={([min]) => `Starts from AUD $${min}*`}
 			description={[
 				'- Packages available from 2 - 12 hours of photography coverage',
