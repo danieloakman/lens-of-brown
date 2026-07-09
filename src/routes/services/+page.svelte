@@ -33,7 +33,10 @@
 		/>
 		<ServiceCard
 			title="Family Packages"
-			img={{ src: TimBear7, alt: 'A family of 4, standing in a leafy green park looking at the camera and having fun.' }}
+			img={{
+				src: TimBear7,
+				alt: 'A family of 4, standing in a leafy green park looking at the camera and having fun.'
+			}}
 			description={[
 				'Family Package 1:',
 				['- 25 edited images', '- Suitable for families of up to 6'],

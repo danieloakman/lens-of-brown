@@ -23,7 +23,7 @@
 
 	const Action = {
 		swap: (from: number, to: number): Action => ({ type: 'swap', from, to }),
-		splice: (from: number, to: number): Action => ({ type: 'splice', from, to }),
+		splice: (from: number, to: number): Action => ({ type: 'splice', from, to })
 	};
 
 	function process(
