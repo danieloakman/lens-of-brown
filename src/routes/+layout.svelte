@@ -1,7 +1,6 @@
 <script lang="ts">
 	// Most of your app wide CSS should be put in this file
-	import '../app.postcss';
-
+	import '../app.pcss';
 	import {
 		AppShell,
 		Drawer,
@@ -10,13 +9,13 @@
 		initializeStores
 		// setInitialClassState
 	} from '@skeletonlabs/skeleton';
-	initializeStores();
 
-	import Header from '$components/Header.svelte';
-	import DrawerContents from '$components/DrawerContents.svelte';
-
-	import { windowSize } from '$stores';
 	import { page } from '$app/state';
+	import DrawerContents from '$components/DrawerContents.svelte';
+	import Header from '$components/Header.svelte';
+	import { windowSize } from '$stores';
+
+	initializeStores();
 </script>
 
 <svelte:window bind:innerWidth={windowSize.w} bind:innerHeight={windowSize.h} />
