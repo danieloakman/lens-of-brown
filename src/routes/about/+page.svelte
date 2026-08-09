@@ -29,6 +29,7 @@
 				aim to capture authentic expression and connection. One of our favourite offerings is the
 				mini-shoots, providing an affordable way to capture family memories. We hope you enjoy
 				browsing our portfolio, and hope to hear from you soon.
+				<br /><br /> We both hold Working with Children Checks.
 				<br /><br /> Based in the Wollongong area, we service the Greater Sydney region and beyond.
 				<!-- In the last few years I've learnt that successfully photographing a wedding requires so much more than good technical knowledge. It's about knowing how to be. I build trust quickly and effortlessly with every guest - in every situation - so I can portray them as naturally and authentically as possible. I can never quite decide if I'm an energetic person or a clam one. I hide ini the shadows to capture the gentles of moments and I'm right up there with the craziest on the dance floor, sucking up the energy and vibrance. These are the images that will keep the memories and feelings fresh fo generations to come. -->
 			</p>
