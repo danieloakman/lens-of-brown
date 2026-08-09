@@ -1,10 +1,12 @@
 <!-- Displays one image, then on hover or click, display another. -->
 <script lang="ts">
-	import type { BasicImg } from '$types';
 	import { coerceHash, noop, raise } from 'js-utils';
 	import { quintOut } from 'svelte/easing';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { crossfade } from 'svelte/transition';
+
+	import type { BasicImg } from '$types';
+
 	import OverlayChildren from './OverlayChildren.svelte';
 
 	const {

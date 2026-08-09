@@ -6,12 +6,13 @@ which we cannot assign attributes to and breaks the css required for the carouse
 -->
 <script lang="ts">
 	import type { EmblaCarouselType } from 'embla-carousel';
-	import emblaCarouselSvelte, { type EmblaCarouselSvelteType } from 'embla-carousel-svelte';
 	import Autoplay, { type AutoplayOptionsType } from 'embla-carousel-autoplay';
+	import emblaCarouselSvelte, { type EmblaCarouselSvelteType } from 'embla-carousel-svelte';
+	import { type Snippet, untrack } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { untrack, type Snippet } from 'svelte';
-	import { Icon } from '$lib/icons';
 	import { fade } from 'svelte/transition';
+
+	import { Icon } from '$lib/icons';
 
 	type EmblaParams = Parameters<NonNullable<EmblaCarouselSvelteType['update']>>[number];
 	let emblaApi = $state<EmblaCarouselType | undefined>();

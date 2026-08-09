@@ -36,8 +36,7 @@
 			{inputmode}
 			{required}
 			{disabled}
-			{placeholder}
-		></textarea>
+			{placeholder}></textarea>
 	{:else}
 		<input
 			{name}
