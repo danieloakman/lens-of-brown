@@ -3,12 +3,14 @@
 @description Section that includes a link to the Instagram and a small amount of recent images.
 -->
 <script lang="ts">
-	import { INSTAGRAM_URL } from '$constants';
-	import Carousel from './Carousel.svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
 	import { iter } from 'iteragain';
 	import { memoize } from 'js-utils';
+	import type { HTMLAttributes } from 'svelte/elements';
+
+	import { INSTAGRAM_URL } from '$constants';
 	import alts from '$imgs/lens.ofbrown/alts.json';
+
+	import Carousel from './Carousel.svelte';
 
 	const numRegex = /^\d+$/;
 	const basename = memoize((path: string): string => path.split('/').pop() ?? '');
@@ -42,10 +44,15 @@
 <div {...rest}>
 	<h2 class="text-center text-3xl text-primary-500 font-Forum">For more</h2>
 	<h3 class="text-center text-xl">
-		Follow us on Instagram @<a class="anchor" href={INSTAGRAM_URL} target="_blank">lens.ofbrown</a>
+		Follow us on Instagram @<a
+			class="anchor"
+			href={INSTAGRAM_URL}
+			target="_blank"
+			rel="external noopener noreferrer">lens.ofbrown</a
+		>
 	</h3>
 	<Carousel class="pt-4 h-[300px]" showButtons>
-		{#each imgs as [img, alt]}
+		{#each imgs as [img, alt] (alt)}
 			{#await img() then src}
 				<img src={src.default} class="carousel-img-sq" {alt} />
 			{/await}

@@ -31,7 +31,7 @@
 <label class={'label ' + klass}>
 	<span class="text-2xl font-Forum uppercase">{_label}{required ? ' *' : ''}</span>
 	<select {name} class="select text-xl" {placeholder} {required} {size} bind:value>
-		{#each options as [value, label]}
+		{#each options as [value, label] (value)}
 			<option {value} class="text-xl">{label}</option>
 		{/each}
 	</select>

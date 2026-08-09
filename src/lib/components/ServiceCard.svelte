@@ -1,15 +1,17 @@
 <script lang="ts">
-	import type { BasicImg } from '$types';
 	import { map, minmax } from 'iteragain';
-	import Divider from './Divider.svelte';
 	import { onMount } from 'svelte';
+
+	import type { BasicImg } from '$types';
+
+	import Divider from './Divider.svelte';
 
 	type PricePackage = [name: string, amount: number];
 	type NestedStringList = Array<string | string[]>;
 	const {
 		title,
 		img,
-		pricing = ([min, max]) => `AUD $${min} - ${max}`,
+		pricing = ([min, max]) => `AUD ${min} - ${max}`,
 		description,
 		packages
 	}: {
@@ -58,13 +60,13 @@
 						? ''
 						: 'overflow-hidden text-ellipsi min-h-[90px] bg-gradient-to-b from-black text-transparent bg-clip-text')}
 			>
-				{#each description as item}
+				{#each description as item, i (typeof item === 'string' ? item : i)}
 					{#if typeof item === 'string'}
 						<li>{item}</li>
 					{:else}
 						<!-- TODO: Lighthouse complains that <ul> elements should only have <li> within them. So perhaps think of another nested list solution here. -->
 						<ul class="ps-4">
-							{#each item as nestedItem}
+							{#each item as nestedItem (nestedItem)}
 								<li>{nestedItem}</li>
 							{/each}
 						</ul>
@@ -83,7 +85,7 @@
 
 			<h2 class="text-2xl font-Forum bold">Pricing - <i>starts from*</i></h2>
 			<ul class="flex flex-col gap-4 px-4">
-				{#each packages as [name, amount]}
+				{#each packages as [name, amount] (name)}
 					<li>
 						<span class="text-xl font-Forum">{name} - ${amount}</span>
 					</li>

@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { iife, raise, propIs } from 'js-utils';
 	import { iter, repeat } from 'iteragain';
-	import type { ImgSlug } from './utils';
-	import PageBody from '$components/PageBody.svelte';
+	import { iife, propIs, raise } from 'js-utils';
+
+	import { page } from '$app/state';
 	import BottomBanner from '$components/BottomBanner.svelte';
+	import PageBody from '$components/PageBody.svelte';
 	import { scrollIntoView } from '$utils';
+
+	import type { ImgSlug } from './utils';
 
 	const assertImg = (obj: unknown): { default: string } => {
 		if (propIs(obj, 'default', 'object') || propIs(obj, 'default', 'string'))
@@ -193,7 +195,7 @@
 <PageBody>
 	<!-- TODO: these pictures don't resize dynamically like in /portfolio. So might just remove the enhanced part and just import a set width for all images -->
 	<div use:scrollIntoView class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
-		{#each imgs as [src, alt]}
+		{#each imgs as [src, alt], i (alt ?? i)}
 			<enhanced:img
 				{src}
 				{alt}

@@ -1,9 +1,10 @@
 <script lang="ts">
-	import PageBody from '$components/PageBody.svelte';
-	import Divider from '$components/Divider.svelte';
-	import BottomBanner from '$components/BottomBanner.svelte';
-	import ForMore from '$components/ForMore.svelte';
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+
+	import BottomBanner from '$components/BottomBanner.svelte';
+	import Divider from '$components/Divider.svelte';
+	import ForMore from '$components/ForMore.svelte';
+	import PageBody from '$components/PageBody.svelte';
 	import ImgDanTrot from '$imgs/_couples-dan_trot8.jpg?enhanced&aspect=1:1&any';
 	import { scrollIntoView } from '$utils';
 </script>
@@ -53,12 +54,12 @@
 					</svelte:fragment>
 					<svelte:fragment slot="content">
 						<ul class="text-xl">
-							{#each answer as item}
+							{#each answer as item, i (typeof item === 'string' ? item : i)}
 								{#if typeof item === 'string'}
 									<li>{@render escape(item)}</li>
 								{:else}
 									<ul class="ps-4">
-										{#each item as subItem}
+										{#each item as subItem (subItem)}
 											<li>{subItem}</li>
 										{/each}
 									</ul>

@@ -12,6 +12,7 @@
 		<a
 			href={FACEBOOK_URL}
 			target="_blank"
+			rel="external noopener noreferrer"
 			class="hover-lg"
 			aria-label="Lens of Brown Facebook link"
 		>
@@ -20,12 +21,19 @@
 		<a
 			href={INSTAGRAM_URL}
 			target="_blank"
+			rel="external noopener noreferrer"
 			class="hover-lg"
 			aria-label="Lens of Brown Instagram link"
 		>
 			<Icon.Instagram class="text-[rgb(255,255,255,0.4)] text-xl m-1" />
 		</a>
-		<a href={INFO_EMAIL} target="_blank" class="hover-lg" aria-label="Lens of Brown Email link">
+		<a
+			href={INFO_EMAIL}
+			target="_blank"
+			rel="external noopener noreferrer"
+			class="hover-lg"
+			aria-label="Lens of Brown Email link"
+		>
 			<Icon.Mail class="text-[rgb(255,255,255,0.4)] text-xl m-1" />
 		</a>
 	</div>
