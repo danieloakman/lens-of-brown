@@ -1,10 +1,10 @@
 <!-- Displays one image, then on hover or click, display another. -->
 <script lang="ts">
-	import type { BasicImg } from '$types';
-	import { coerceHash, noop, raise } from 'js-utils';
-	import { quintOut } from 'svelte/easing';
+	import { noop } from 'js-utils';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { crossfade } from 'svelte/transition';
+
+	import type { BasicImg } from '$types';
+
 	import OverlayChildren from './OverlayChildren.svelte';
 
 	const {
@@ -24,14 +24,7 @@
 	} = $props();
 
 	let i = $state(0);
-	const img = $derived(imgs.at(i % imgs.length) ?? raise(`No image at index ${i}`));
-	const key = coerceHash(imgs);
-
-	const [send, receive] = crossfade({
-		duration: fadeDurationMs,
-		easing: quintOut,
-		delay: delayMs
-	});
+	const fadeStyle = $derived(`transition: opacity ${fadeDurationMs}ms ease-out ${delayMs}ms;`);
 </script>
 
 <OverlayChildren
@@ -46,9 +39,11 @@
 	}}
 	{...rest}
 >
-	{#if i === 0}
-		<img in:send={{ key }} out:receive={{ key }} {...img} class={imgClass} />
-	{:else}
-		<img in:send={{ key }} out:receive={{ key }} {...img} class={imgClass} />
-	{/if}
+	<img {...imgs[0]} class={imgClass} style="opacity: {i === 0 ? 1 : 0}; {fadeStyle}" />
+	<img
+		{...imgs[1]}
+		class={imgClass}
+		style="opacity: {i === 1 ? 1 : 0}; {fadeStyle}"
+		aria-hidden="true"
+	/>
 </OverlayChildren>

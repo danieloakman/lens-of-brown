@@ -1,8 +1,9 @@
 <script lang="ts">
-	import type { BasicImg } from '$types';
 	import { quintOut } from 'svelte/easing';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { crossfade } from 'svelte/transition';
+
+	import type { BasicImg } from '$types';
 
 	const {
 		buttons = false,

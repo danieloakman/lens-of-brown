@@ -1,24 +1,25 @@
 <script lang="ts">
-	import type { BasicImg } from '$types';
-	import TwoImgs from '$components/TwoImgs.svelte';
-	import Divider from '$components/Divider.svelte';
+	import { resolve } from '$app/paths';
 	import BottomBanner from '$components/BottomBanner.svelte';
-	import Testimonial from '$components/Testimonial.svelte';
+	import Divider from '$components/Divider.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
+	import Testimonial from '$components/Testimonial.svelte';
+	import TwoImgs from '$components/TwoImgs.svelte';
+	import HoneySantos4 from '$imgs/_animals-honey_santos5.jpg?format=webp&w=600&aspect=1:1&any';
+	import Wombat1 from '$imgs/_animals-wombat1.jpg?format=webp&w=600&aspect=1:1&any';
+	import DanAndTrot2 from '$imgs/_couples-dan_trot6.jpg?format=webp&w=600&aspect=1:1&any';
+	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?format=webp&w=600&aspect=1:1&any';
 	import ShannonBrodbeck1 from '$imgs/_families-shannon_brodbeck1.jpg?format=webp&w=600&aspect=1:1&any';
 	import TimBear4 from '$imgs/_families-tim_bear6.jpg?format=webp&w=600&aspect=1:1&any';
-	import Wombat1 from '$imgs/_animals-wombat1.jpg?format=webp&w=600&aspect=1:1&any';
-	import HoneySantos4 from '$imgs/_animals-honey_santos5.jpg?format=webp&w=600&aspect=1:1&any';
-	import ScottChurchill1 from '$imgs/couples-scott_churchill1.jpg?format=webp&w=600&aspect=1:1&any';
-	import DanAndTrot2 from '$imgs/_couples-dan_trot6.jpg?format=webp&w=600&aspect=1:1&any';
-	import TrotPortrait1 from '$imgs/portraits-trot1.jpg?format=webp&w=600&aspect=1:1&any';
-	import BiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?format=webp&w=600&aspect=1:1&any';
-	import Landscape1 from '$imgs/landscapes-great_ocean_road.jpg?format=webp&w=600&aspect=1:1&any';
 	import Landscape2 from '$imgs/_landscapes-montague_island.jpg?format=webp&w=600&aspect=1:1&any';
-	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?format=webp&w=600&aspect=1:1&any';
+	import ScottChurchill1 from '$imgs/couples-scott_churchill1.jpg?format=webp&w=600&aspect=1:1&any';
 	import Events2 from '$imgs/events-canberra_balloons.jpg?format=webp&w=600&aspect=1:1&any';
+	import Landscape1 from '$imgs/landscapes-great_ocean_road.jpg?format=webp&w=600&aspect=1:1&any';
+	import BiancaCherie4 from '$imgs/portraits-bianca_cherie4.jpg?format=webp&w=600&aspect=1:1&any';
+	import TrotPortrait1 from '$imgs/portraits-trot1.jpg?format=webp&w=600&aspect=1:1&any';
 	import { scrollIntoView } from '$lib';
+	import type { BasicImg } from '$types';
 </script>
 
 {#snippet divider()}
@@ -28,14 +29,15 @@
 {#snippet portfolioSection({
 	title,
 	subheading,
-	href,
+	slug,
 	imgs
 }: {
 	title: string;
 	subheading: string;
-	href: string;
+	slug: string;
 	imgs: [BasicImg, BasicImg];
 })}
+	{@const href = resolve('/portfolio/[slug]', { slug })}
 	<div class="flex flex-col gap-2 bg-surface-200 rounded-container-token max-w-[600px]">
 		<a {href}>
 			<TwoImgs
@@ -60,7 +62,7 @@
 	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 self-center gap-3">
 		{@render portfolioSection({
 			title: 'Families',
-			href: '/portfolio/families',
+			slug: 'families',
 			subheading: '+ siblings & little ones',
 			imgs: [
 				{
@@ -75,7 +77,7 @@
 		})}
 		{@render portfolioSection({
 			title: 'Portraits',
-			href: '/portfolio/portraits',
+			slug: 'portraits',
 			subheading: '+ headshots',
 			imgs: [
 				{
@@ -88,7 +90,7 @@
 		{@render portfolioSection({
 			title: 'Landscapes',
 			subheading: '+ cities and nature',
-			href: '/portfolio/landscapes',
+			slug: 'landscapes',
 			imgs: [
 				{
 					src: Landscape2,
@@ -103,7 +105,7 @@
 		{@render portfolioSection({
 			title: 'Animals',
 			subheading: '+ pets & natives',
-			href: '/portfolio/animals',
+			slug: 'animals',
 			imgs: [
 				{
 					src: HoneySantos4,
@@ -118,7 +120,7 @@
 		{@render portfolioSection({
 			title: 'Couples',
 			subheading: '+ engagements & proposals',
-			href: '/portfolio/couples',
+			slug: 'couples',
 			imgs: [
 				{
 					src: DanAndTrot2,
@@ -133,7 +135,7 @@
 		{@render portfolioSection({
 			title: 'Events',
 			subheading: '+ special occasions',
-			href: '/portfolio/events',
+			slug: 'events',
 			imgs: [
 				{
 					src: Events2,
@@ -147,7 +149,7 @@
 		})}
 		<!-- {@render portfolioSection({
 			title: 'Weddings',
-			href: '/portfolio/weddings',
+			slug: 'weddings',
 			subheading: '+ elopements',
 			imgs: [
 				{

@@ -1,13 +1,13 @@
 <script lang="ts">
+	import { dev } from '$app/environment';
 	import BottomBanner from '$components/BottomBanner.svelte';
+	import Divider from '$components/Divider.svelte';
+	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
 	import TextInput from '$components/TextInput.svelte';
-	import ForMore from '$components/ForMore.svelte';
-	import Divider from '$components/Divider.svelte';
-	import { INSTAGRAM_URL, FACEBOOK_URL, INFO_EMAIL } from '$constants';
-	import { dev } from '$app/environment';
-	import { Icon, scrollIntoView } from '$lib';
+	import { FACEBOOK_URL, INFO_EMAIL, INSTAGRAM_URL } from '$constants';
 	import ImgLandscape from '$imgs/_landscapes-great_ocean_road2.jpg?format=webp&w=400&h=400&fit=cover&any';
+	import { Icon, scrollIntoView } from '$lib';
 
 	// let firstName = $state('');
 	// let lastName = $state('');
@@ -117,9 +117,15 @@
 			</ul>
 			<h2 class="text-xl sm:text-2xl uppercase text-primary-500 font-Forum pt-6">Contact us</h2>
 			<div class="flex flex-col gap-2">
-				<a href={INSTAGRAM_URL} class="icon-link"><Icon.Instagram /> @lens.ofbrown</a>
-				<a href={FACEBOOK_URL} class="icon-link"><Icon.Facebook /> Facebook</a>
-				<a href={INFO_EMAIL} class="icon-link"><Icon.Mail /> Email</a>
+				<a href={INSTAGRAM_URL} class="icon-link" rel="external noopener noreferrer"
+					><Icon.Instagram /> @lens.ofbrown</a
+				>
+				<a href={FACEBOOK_URL} class="icon-link" rel="external noopener noreferrer"
+					><Icon.Facebook /> Facebook</a
+				>
+				<a href={INFO_EMAIL} class="icon-link" rel="external noopener noreferrer"
+					><Icon.Mail /> Email</a
+				>
 			</div>
 		</div>
 	</div>

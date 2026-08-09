@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { Icon } from '$lib';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
+
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import SidewaysLogo from '$imgs/transparent-logo-sideways.png?enhanced&any';
+	import { Icon } from '$lib';
 
 	const drawerStore = getDrawerStore();
 	const isCurrentPage = (href: string): 'page' | undefined =>
@@ -18,7 +20,7 @@
 		<Icon.Menu class="text-2xl text-primary-500" />
 	</button>
 
-	<a href="/" aria-label="Home">
+	<a href={resolve('/')} aria-label="Home">
 		<enhanced:img
 			src={SidewaysLogo}
 			alt="Lens of Brown logo - header"
@@ -28,11 +30,16 @@
 
 	<div class="w-16 lg:hidden"></div>
 	<nav class="hidden lg:flex flex-row items-center gap-12 px-8">
-		<a href="/" class="header" aria-current={isCurrentPage('/')}>home</a>
-		<a href="/portfolio" class="header" aria-current={isCurrentPage('/portfolio')}>portfolio</a>
-		<a href="/services" class="header" aria-current={isCurrentPage('/services')}>services</a>
-		<a href="/about" class="header" aria-current={isCurrentPage('/about')}>about</a>
-		<a href="/contact" class="header" aria-current={isCurrentPage('/contact')}>contact</a>
+		<a href={resolve('/')} class="header" aria-current={isCurrentPage('/')}>home</a>
+		<a href={resolve('/portfolio')} class="header" aria-current={isCurrentPage('/portfolio')}
+			>portfolio</a
+		>
+		<a href={resolve('/services')} class="header" aria-current={isCurrentPage('/services')}
+			>services</a
+		>
+		<a href={resolve('/about')} class="header" aria-current={isCurrentPage('/about')}>about</a>
+		<a href={resolve('/contact')} class="header" aria-current={isCurrentPage('/contact')}>contact</a
+		>
 	</nav>
 </div>
 

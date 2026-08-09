@@ -1,7 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { drawerContentStore, Icon } from '$lib';
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
+
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
+	import { Icon, drawerContentStore } from '$lib';
+
 	import Divider from './Divider.svelte';
 
 	const drawerStore = getDrawerStore();
@@ -33,16 +36,24 @@
 		<svelte:component this={$drawerContentStore} />
 	{:else}
 		<nav class="flex flex-col gap-4 p-4">
-			<a aria-current={isCurrentPage('/')} href="/" onclick={onClickNav}> Home </a>
+			<a aria-current={isCurrentPage('/')} href={resolve('/')} onclick={onClickNav}> Home </a>
 			<Divider horizontal />
-			<a aria-current={isCurrentPage('/portfolio')} href="/portfolio" onclick={onClickNav}>
+			<a
+				aria-current={isCurrentPage('/portfolio')}
+				href={resolve('/portfolio')}
+				onclick={onClickNav}
+			>
 				Portfolio
 			</a>
-			<a aria-current={isCurrentPage('/services')} href="/services" onclick={onClickNav}>
+			<a aria-current={isCurrentPage('/services')} href={resolve('/services')} onclick={onClickNav}>
 				Services
 			</a>
-			<a aria-current={isCurrentPage('/about')} href="/about" onclick={onClickNav}> About </a>
-			<a aria-current={isCurrentPage('/contact')} href="/contact" onclick={onClickNav}> Contact </a>
+			<a aria-current={isCurrentPage('/about')} href={resolve('/about')} onclick={onClickNav}>
+				About
+			</a>
+			<a aria-current={isCurrentPage('/contact')} href={resolve('/contact')} onclick={onClickNav}>
+				Contact
+			</a>
 		</nav>
 	{/if}
 {/if}

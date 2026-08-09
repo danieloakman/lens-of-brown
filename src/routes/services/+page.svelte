@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Divider from '$components/Divider.svelte';
 	import BottomBanner from '$components/BottomBanner.svelte';
+	import Divider from '$components/Divider.svelte';
 	import ForMore from '$components/ForMore.svelte';
 	import PageBody from '$components/PageBody.svelte';
+	import ServiceCard from '$components/ServiceCard.svelte';
+	import ImgCouples from '$imgs/_couples-dan_trot7.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
 	import Events1 from '$imgs/_events-sydney_opera_house1.jpg?format=webp&w=600&aspect=1:1&any';
 	import TimBear7 from '$imgs/_families-tim_bear7.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
-	import HoneySantos from '$imgs/animals-honey_santos4.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
-	import ImgCouples from '$imgs/_couples-dan_trot7.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
-	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
 	import BridalPortait1 from '$imgs/_portraits-bridal1.jpg?format=webp&w=600&aspect=1:1&position=top&any';
+	import HoneySantos from '$imgs/animals-honey_santos4.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
+	import ImgMiniShoots from '$imgs/portraits-bianca_cherie6.jpg?format=webp&w=600&aspect=1:1&position=bottom&any';
 	import { Icon, scrollIntoView } from '$lib';
-	import ServiceCard from '$components/ServiceCard.svelte';
 </script>
 
 <PageBody class="pt-5 sm:pt-20 pb-20">
@@ -113,7 +113,7 @@
 	<div class="flex flex-col gap-10">
 		<h1 class="text-4xl text-primary-500 font-Forum">What to expect when you book with us...</h1>
 		<div class="grid grid-cols-[auto_1fr] gap-6 ps-6">
-			{#each ['Authentic and candid images that capture your unique story.', 'Support, direction and guidance at every stage, allowing for the photoshoot to flow seamlessly.', 'Prompt delivery of your best images via secure online gallery.', 'A photography team who is understanding and accomodating of any accessiblity requirements.'] as text}
+			{#each ['Authentic and candid images that capture your unique story.', 'Support, direction and guidance at every stage, allowing for the photoshoot to flow seamlessly.', 'Prompt delivery of your best images via secure online gallery.', 'A photography team who is understanding and accomodating of any accessiblity requirements.'] as text (text)}
 				<Icon.SquareCheckBig class="w-[44px] h-[44px]" />
 				<span class="text-xl sm:text-2xl">{text}</span>
 			{/each}
