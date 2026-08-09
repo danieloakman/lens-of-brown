@@ -36,7 +36,7 @@
 			const bDate = parseDateNum(b[0]);
 			return aDate > bDate ? -1 : aDate < bDate ? 1 : 0;
 		})
-		.map(([path, img]) => [img, (alts as any)[basename(path)]] as const);
+		.map(([path, img]) => [path, img, (alts as any)[basename(path)]] as const);
 
 	const { ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
@@ -52,7 +52,7 @@
 		>
 	</h3>
 	<Carousel class="pt-4 h-[300px]" showButtons>
-		{#each imgs as [img, alt] (alt)}
+		{#each imgs as [path, img, alt] (path)}
 			{#await img() then src}
 				<img src={src.default} class="carousel-img-sq" {alt} />
 			{/await}
